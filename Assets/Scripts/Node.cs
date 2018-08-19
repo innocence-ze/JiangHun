@@ -7,7 +7,7 @@ using UnityEngine;
 /// 方法有在点上对线进行增删查及找线的数量
 /// 排序方式先x后y
 /// </summary>
-public class Node : IComparable
+public class Node : MonoBehaviour, IComparable
 {
     [SerializeField]
     private ArrayList lineList = new ArrayList();
