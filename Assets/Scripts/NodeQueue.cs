@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 点的队列，储存所有点的信息，点的管理类
+/// 字段有点的数量，方法有对点进行增删查找
+/// </summary>
 public class NodeQueue  {
 
-    ArrayList nodes = new ArrayList();
+    static ArrayList nodes = new ArrayList();
+
+    public static ArrayList  Nodes { get { return nodes; } }
 
     public int Length
     {

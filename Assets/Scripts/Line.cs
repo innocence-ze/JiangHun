@@ -2,6 +2,9 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// 线的类，字段有线的位置，旋转，长度，是否被选中
+/// </summary>
 public class Line : IComparable
 {
     [SerializeField]
@@ -14,29 +17,46 @@ public class Line : IComparable
     private Vector3 position;
     private ArrayList nodes = new ArrayList();
 
-    public void MarkAsChoose()
-    {
-        isChoose = true;
-    }
-
+    /// <summary>
+    /// 是否被选中
+    /// </summary>
     public bool IsChoose
     {
         get { return isChoose; }
         set { isChoose = value; }
     }
 
+    /// <summary>
+    /// 获取线段的端点
+    /// </summary>
+    public ArrayList Nodes { get { return nodes; } }
+
+    /// <summary>
+    /// 寻路用
+    /// </summary>
+    public bool IsUse { get; set; }
+
+    /// <summary>
+    /// 线的长度(两端点的距离)
+    /// </summary>
     public float Length
     {
         get { return length; }
         set { length = value; }
     }
 
+    /// <summary>
+    /// 线段的旋转角度(-90,90)
+    /// </summary>
     public float Rotation
     {
         get { return rotation; }
         set { rotation = value; }
     }
 
+    /// <summary>
+    /// 线段的位置(transform.position)
+    /// </summary>
     public Vector3 Position
     {
         get { return position; }
@@ -74,6 +94,7 @@ public class Line : IComparable
     public Line(ArrayList nodes)
     {       
         isChoose = false;
+        IsUse = false;
         if (nodes.Count >= 2)
         {
             nodes.Sort();

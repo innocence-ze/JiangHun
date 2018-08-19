@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Map : MonoBehaviour {
 
@@ -21,10 +22,10 @@ public class Map : MonoBehaviour {
 
     private GameObject[] nodeList;
 
-	// Use this for initialization
-	void Awake () {
+    public void InitMap()
+    {
         nodeList = GameObject.FindGameObjectsWithTag("Node");
-        foreach(GameObject n in nodeList)
+        foreach (GameObject n in nodeList)
         {
             Node node = new Node(n.transform.position);
             if (!nodes.Contains(node))
@@ -32,10 +33,31 @@ public class Map : MonoBehaviour {
                 nodes.Add(node);
             }
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    public void UpdateMap(ArrayList addLine, ArrayList removeLine)
+    {
+        if(addLine != null)
+        {
+            foreach (Line l in addLine)
+            {
+                foreach (Node n in l.Nodes)
+                {
+                    n.AddLine(l);
+                }
+            }
+            foreach (Line l in addLine)
+                LineManager.FindCircleLine(l);
+        }
+        if (removeLine != null)
+        {
+            foreach (Line l in addLine)
+            {
+                foreach (Node n in l.Nodes)
+                {
+                    n.RemoveLine(l);
+                }
+            }
+        }
+    }
 }
