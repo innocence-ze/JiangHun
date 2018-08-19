@@ -93,18 +93,18 @@ public class LineManager {
                             break;
                         }
                     }
-                    if (temp == addLine.Nodes[1])
+                    if (temp == (object)addLine.Nodes[1])
                     {
                         break;
                     }
                     d = 0;
                 }
             }
-            if (temp == addLine.Nodes[1])
+            if (temp == (object)addLine.Nodes[1])
                 break;
             foreach(Line l in circleLine)
             {
-                if(l.Nodes[0] == circleNodes.Peek() || l.Nodes[1] == circleNodes.Peek())
+                if((object)l.Nodes[0] == circleNodes.Peek() || (object)l.Nodes[1] == circleNodes.Peek())
                 circleLine.Remove(l);
             }
             circleNodes.Pop();
