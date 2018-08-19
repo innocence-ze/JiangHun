@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -13,8 +14,11 @@ public class Node : MonoBehaviour, IComparable
     private ArrayList lineList = new ArrayList();
     [SerializeField]
     private Vector3 position;
+    [SerializeField]
+    private List<Node> nearNode = new List<Node>();
 
     public ArrayList LineList { get { return lineList; } }
+    public List<Node> NearNode { get { return nearNode; } }
 
     /// <summary>
     /// 返回位于index的线
