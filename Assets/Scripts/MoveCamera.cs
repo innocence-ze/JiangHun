@@ -23,8 +23,6 @@ public class MoveCamera : MonoBehaviour {
     float sizeFactor = 0.1f;
     [SerializeField]
     float moveFactor = 1f;
-    [SerializeField]
-    private bool useMouse = true;
 
     //定义摄像机可以活动的范围
     [SerializeField]
