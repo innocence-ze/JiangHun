@@ -1,35 +1,34 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System;
 using UnityEngine;
 
 /// <summary>
 /// 线的类，字段有线的位置，旋转，长度，是否被选中
 /// </summary>
-public class Line : IComparable
+/// 
+public class Line : MonoBehaviour
 {
     [SerializeField]
-    private bool isChoose;
+    private Linestate linestate;
     [SerializeField]
     private float length;
     [SerializeField]
     private float rotation;
     [SerializeField]
     private Vector3 position;
-    private ArrayList nodes = new ArrayList();
+    private List<Node> nodes = new List<Node>();
 
-    /// <summary>
-    /// 是否被选中
-    /// </summary>
-    public bool IsChoose
+
+    public Linestate GetState()
     {
-        get { return isChoose; }
-        set { isChoose = value; }
+        return linestate;
     }
 
     /// <summary>
     /// 获取线段的端点
     /// </summary>
-    public ArrayList Nodes { get { return nodes; } }
+    public List<Node> Nodes { get { return nodes; } }
 
     /// <summary>
     /// 寻路用
@@ -91,28 +90,49 @@ public class Line : IComparable
     /// Line的构造函数，nodes为线的两个端点构成的数组，储存两个端点的(Node)
     /// </summary>
     /// <param name="nodes"></param>
-    public Line(ArrayList nodes)
-    {       
-        isChoose = false;
+    public void Init(List<Node> nodes)
+    {
+        ChangeState(Linestate.ready);
         IsUse = false;
         if (nodes.Count >= 2)
         {
-            nodes.Sort();
-            this.nodes[0] = nodes[0];
-            this.nodes[1] = nodes[1];
+            this.nodes.Add((Node)nodes[0]);
+            this.nodes.Add((Node)nodes[1]);
+            this.nodes.Sort();
             length = CalculateLength();
             rotation = CalculateRotation();
             position = CalculatePosition();
         }
-       
+        Transform trans=gameObject.GetComponent<Transform>();
+        trans.position = position;
+        trans.localScale = new Vector3(length / 8.0f, length / 8.0f, 1);
+        trans.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
     }
 
-    public int CompareTo(object obj)
+    //public int CompareTo(object obj)
+    //{
+    //    Line line = (Line)obj;
+    //    if (line.rotation > rotation)
+    //        return -1;
+    //    else
+    //        return 1;
+    //}
+
+    public void ChangeState(Linestate state)
     {
-        Line line = (Line)obj;
-        if (line.rotation > rotation)
-            return -1;
-        else
-            return 1;
+        linestate = state;
+        switch(state)
+        {
+            case Linestate.isChoose: gameObject.GetComponent<SpriteRenderer>().color = Color.red; break;
+            case Linestate.ready: gameObject.GetComponent<SpriteRenderer>().color = Color.white; break;
+            case Linestate.show: gameObject.GetComponent<SpriteRenderer>().color = Color.black; break;
+        }
     }
+}
+
+public enum Linestate
+{
+    isChoose,
+    ready,
+    show
 }

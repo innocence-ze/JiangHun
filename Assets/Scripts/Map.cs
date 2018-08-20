@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Map : MonoBehaviour {
 
@@ -18,16 +19,19 @@ public class Map : MonoBehaviour {
         }
     }
 
+    //图中起作用的点
     public static NodeQueue nodes;
-
+    //点图中的所有点
     private GameObject[] nodeList;
 
     public void InitMap()
     {
+        nodes = new NodeQueue();
         nodeList = GameObject.FindGameObjectsWithTag("Node");
         foreach (GameObject n in nodeList)
         {
-            Node node = new Node(n.transform.position);
+            Node node = n.GetComponent<Node>();
+            node.Init(n.GetComponent<Transform>().position);
             if (!nodes.Contains(node))
             {
                 nodes.Add(node);
@@ -35,29 +39,24 @@ public class Map : MonoBehaviour {
         }
     }
 
-    public void UpdateMap(ArrayList addLine, ArrayList removeLine)
+    public void AddLine(List<Line> addLine)
     {
-        if(addLine != null)
+        if (addLine == null) return;
+        foreach(Line l in addLine)
         {
-            foreach (Line l in addLine)
-            {
-                foreach (Node n in l.Nodes)
-                {
-                    n.AddLine(l);
-                }
-            }
-            foreach (Line l in addLine)
-                LineManager.FindCircleLine(l);
+            foreach (Node n in l.Nodes)
+                n.AddLine(l);
+            LineManager.FindCircleLine(l);
         }
-        if (removeLine != null)
+    }
+
+    public void RemoveLine(ArrayList removeLine)
+    {
+        if (removeLine == null) return;
+        foreach(Line l in removeLine)
         {
-            foreach (Line l in addLine)
-            {
-                foreach (Node n in l.Nodes)
-                {
-                    n.RemoveLine(l);
-                }
-            }
+            foreach (Node n in l.Nodes)
+                n.RemoveLine(l);
         }
     }
 }

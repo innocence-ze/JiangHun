@@ -2,8 +2,8 @@
 
 public class AddLineList : MonoBehaviour
 {
-
     private static AddLineList s_Instance = null;
+
     public static AddLineList Instance
     {
         get
@@ -22,19 +22,6 @@ public class AddLineList : MonoBehaviour
     /// 存放每批线的两个端点
     /// </summary>
     public LineList[] eachLine_node;
-
-    // Use this for initialization
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
 
 }
 
