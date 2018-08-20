@@ -11,13 +11,13 @@ using UnityEngine;
 public class Node : MonoBehaviour, IComparable
 {
     [SerializeField]
-    private ArrayList lineList = new ArrayList();
+    private List<Line> lineList = new List<Line>();
     [SerializeField]
     private Vector3 position;
     [SerializeField]
     private List<Node> nearNode = new List<Node>();
 
-    public ArrayList LineList { get { return lineList; } }
+    public List<Line> LineList { get { return lineList; } }
     public List<Node> NearNode { get { return nearNode; } }
 
     /// <summary>
@@ -48,7 +48,7 @@ public class Node : MonoBehaviour, IComparable
     /// 构造函数，position = transform.position
     /// </summary>
     /// <param name="position"></param>
-    public Node(Vector3 position)
+    public void Init(Vector3 position)
     {
         this.position = position;
     }
@@ -60,7 +60,6 @@ public class Node : MonoBehaviour, IComparable
     public void AddLine(Line line)
     {
         lineList.Add(line);
-        lineList.Sort();
     }
 
     /// <summary>
@@ -70,7 +69,6 @@ public class Node : MonoBehaviour, IComparable
     public void RemoveLine(Line line)
     {
         lineList.Remove(line);
-        lineList.Sort();
     }
 
     /// <summary>

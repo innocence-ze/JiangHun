@@ -8,16 +8,16 @@ using UnityEngine;
 /// </summary>
 public class NodeQueue  {
 
-    static ArrayList nodes = new ArrayList();
+    static List<Node> nodes = new List<Node>();
 
-    public static ArrayList  Nodes { get { return nodes; } }
+    public static List<Node>  Nodes { get { return nodes; } }
 
     public int Length
     {
         get { return nodes.Count; }
     }
 
-    public bool Contains(object node)
+    public bool Contains(Node node)
     {
         return nodes.Contains(node);
     }

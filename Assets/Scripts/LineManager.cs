@@ -7,10 +7,10 @@ using UnityEngine;
 /// </summary>
 public class LineManager {
 
-    static public ArrayList FindBigLine(Line chooseLine)
+    static public List<Line> FindBigLine(Line chooseLine)
     {
         InitLine();
-        ArrayList bigLine = new ArrayList();
+        List<Line> bigLine = new List<Line>();
         chooseLine.IsUse = true;
         bigLine.Add(chooseLine);
 
@@ -24,7 +24,7 @@ public class LineManager {
         return bigLine;
     }
 
-    static void OnesideBigLine(Node temp, ref ArrayList bigLine)
+    static void OnesideBigLine(Node temp, ref List<Line> bigLine)
     {
         Stack<Node> bigNode = new Stack<Node>();
         bigNode.Push(temp);
@@ -59,10 +59,10 @@ public class LineManager {
         }
     }
 
-    public static ArrayList FindCircleLine(Line addLine)
+    public static List<Line> FindCircleLine(Line addLine)
     {
         InitLine();
-        ArrayList circleLine = new ArrayList();//成环的线的数组
+        List<Line> circleLine = new List<Line>();//成环的线的数组
         Stack<Node> circleNodes = new Stack<Node>();//成环的点的栈
         addLine.IsUse = true;
         circleLine.Add(addLine);
@@ -102,17 +102,21 @@ public class LineManager {
             }
             if (temp == (Node)addLine.Nodes[1])
                 break;
-            foreach(Line l in circleLine)
+            for(int i=0;i<circleLine.Count;i++)
             {
-                if((Node)l.Nodes[0] == circleNodes.Peek() || (Node)l.Nodes[1] == circleNodes.Peek())
-                circleLine.Remove(l);
+                if ((Node)circleLine[i].Nodes[0] == circleNodes.Peek() || (Node)circleLine[i].Nodes[1] == circleNodes.Peek())
+                    circleLine.Remove(circleLine[i]);
             }
+            //foreach(Line l in circleLine)
+            //{
+                
+            //}
             circleNodes.Pop();
         }
 
         if(circleNodes.Count == 0)
         {
-            circleLine = new ArrayList();
+            circleLine = new List<Line>();
         }
 
         InitLine();
