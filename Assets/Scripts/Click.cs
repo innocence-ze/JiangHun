@@ -5,12 +5,22 @@ using UnityEngine;
 public class Click : MonoBehaviour {
 
     List<Line> bigLine = new List<Line>();
-
+    [SerializeField]
+    private int clickStep;
     // Use this for initialization
     void Start () {
 		
 	}
 	
+    /// <summary>
+    /// 改变点击步数时调用，index可正可负
+    /// </summary>
+    /// <param name="index"></param>
+    public void ChangeClickStep(int index)
+    {
+        clickStep += index;
+    }
+
 	// Update is called once per frame
 	void Update () {
 
@@ -32,9 +42,13 @@ public class Click : MonoBehaviour {
                             bl.ChangeState(LineState.isChoose);
                         break;
                     case LineState.isChoose:
-                        Map.Instance.RemoveLine(bigLine);
-                        foreach (var bl in bigLine)
-                            Destroy(bl.gameObject);
+                        if (clickStep > 0)
+                        {
+                            Map.Instance.RemoveLine(bigLine);
+                            foreach (var bl in bigLine)
+                                Destroy(bl.gameObject);
+                            clickStep--;
+                        }                     
                         break;
                 }
             }

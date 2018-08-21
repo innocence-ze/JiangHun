@@ -9,24 +9,19 @@ public class Test : MonoBehaviour {
     [SerializeField]
     private List<Line> addLine;
     private AddLineList addLineList;
+    private bool bDefeat = false;
 
 	// Use this for initialization
 	void Awake () {
         Map.Instance.InitMap_Node();
         step = 0;
         addLineList = GetComponent<AddLineList>();
-        Step(0);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        AddReadyLine(step);
 	}
 
     public void NextStep()
     {
-        //foreach (Line l in addLine)
-            //l.ChangeState(LineState.show);
+        step++;
         foreach (Line l in addLine)
         {
             l.ChangeState(LineState.show);
@@ -37,17 +32,17 @@ public class Test : MonoBehaviour {
             }
         }
         addLine = new List<Line>();
-        if (step < addLineList.eachLine_node.Length - 1)
-        {
-            step++;
-            Step(step);
+        if (step < addLineList.eachLine_node.Length)
+        {           
+            AddReadyLine(step);
         }
-       Victory();
+        if(step == addLineList.eachLine_node.Length && !bDefeat)
+            Victory();
     }
 
-    public void Step(int index)
+    void AddReadyLine(int _step)
     {
-        LineList linelist = addLineList.eachLine_node[index];
+        LineList linelist = addLineList.eachLine_node[_step];
         int numberOfLines = linelist.Array.Length / 2;
 
         for (int i = 0; i < numberOfLines; i++)
@@ -71,8 +66,10 @@ public class Test : MonoBehaviour {
     {
         Debug.Log("Victory");
     }
+
     public void Fail()
     {
+        bDefeat = true;
         Debug.Log("Defeat");
     }
 }
