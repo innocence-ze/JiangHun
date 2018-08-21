@@ -31,6 +31,6 @@ public class NodeQueue  {
     public void Remove(Node node)
     {
         nodes.Remove(node);
-        nodes.Sort();
+        //nodes.Sort();
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Click : MonoBehaviour {
 
+    List<Line> bigLine = new List<Line>();
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -22,10 +22,20 @@ public class Click : MonoBehaviour {
             if (hit.collider != null&&hit.collider.gameObject.GetComponent<Line>()!= null)
             {
                 Line l = hit.collider.gameObject.GetComponent<Line>();
+
                 switch (l.GetState())
                 {
-                    case Linestate.show: l.ChangeState(Linestate.isChoose); break;
-                    case Linestate.isChoose: l.gameObject.SetActive(false); break;
+                    case LineState.show:
+                        Map.Instance.InitMap_Line();
+                        bigLine = LineManager.FindBigLine(l);
+                        foreach (var bl in bigLine)
+                            bl.ChangeState(LineState.isChoose);
+                        break;
+                    case LineState.isChoose:
+                        Map.Instance.RemoveLine(bigLine);
+                        foreach (var bl in bigLine)
+                            Destroy(bl.gameObject);
+                        break;
                 }
             }
         }

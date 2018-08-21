@@ -12,13 +12,10 @@ public class Test : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        Map.Instance.InitMap();
+        Map.Instance.InitMap_Node();
         step = 0;
         addLineList = GetComponent<AddLineList>();
         Step(0);
-
-        foreach (Line l in addLine)
-            l.ChangeState(Linestate.show);
 	}
 	
 	// Update is called once per frame
@@ -28,15 +25,23 @@ public class Test : MonoBehaviour {
 
     public void NextStep()
     {
+        //foreach (Line l in addLine)
+            //l.ChangeState(LineState.show);
         foreach (Line l in addLine)
-            l.ChangeState(Linestate.show);
+        {
+            l.ChangeState(LineState.show);
+            var circle = LineManager.FindCircleLine(l);
+            if (circle.Count != 0)
+            {
+                Fail();
+            }
+        }
         addLine = new List<Line>();
-        if (step < addLineList.eachLine_node.Length)
+        if (step < addLineList.eachLine_node.Length - 1)
         {
             step++;
             Step(step);
-        }  
-
+        }
        Victory();
     }
 
@@ -47,29 +52,27 @@ public class Test : MonoBehaviour {
 
         for (int i = 0; i < numberOfLines; i++)
         {
-            List<Node> nodes = new List<Node>();
-            nodes.Add(linelist.Array[i * 2].GetComponent<Node>());
-            nodes.Add(linelist.Array[i * 2 + 1].GetComponent<Node>());
-            GameObject line = GameObject.Instantiate(Resources.Load("Line") as GameObject);
-            line.GetComponent<Line>().Init(nodes);
+            var nodes = new List<Node>
+            {
+                linelist.Array[i * 2].GetComponent<Node>(),
+                linelist.Array[i * 2 + 1].GetComponent<Node>()
+            };
 
+            //TODO 设置父物体
+            GameObject line = Resources.Load<GameObject>("Line");
+            line = Instantiate(line);
+            line.GetComponent<Line>().Init(nodes);
             addLine.Add(line.GetComponent<Line>());
         }
         Map.Instance.AddLine(addLine);
-
-        foreach(Line l in addLine)
-        {
-            if (LineManager.FindCircleLine(l) != null)
-                Fail();
-        }
     }
 
     public void Victory()
     {
-        Debug.Log("This is victory judgement");
+        Debug.Log("Victory");
     }
     public void Fail()
     {
-        Debug.Log("Circle exists!");
+        Debug.Log("Defeat");
     }
 }

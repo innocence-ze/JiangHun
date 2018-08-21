@@ -10,17 +10,18 @@ using UnityEngine;
 public class Line : MonoBehaviour
 {
     [SerializeField]
-    private Linestate linestate;
+    private LineState linestate;
     [SerializeField]
     private float length;
     [SerializeField]
     private float rotation;
     [SerializeField]
     private Vector3 position;
+    [SerializeField]
     private List<Node> nodes = new List<Node>();
 
 
-    public Linestate GetState()
+    public LineState GetState()
     {
         return linestate;
     }
@@ -33,6 +34,7 @@ public class Line : MonoBehaviour
     /// <summary>
     /// 寻路用
     /// </summary>
+    [SerializeField]
     public bool IsUse { get; set; }
 
     /// <summary>
@@ -64,15 +66,15 @@ public class Line : MonoBehaviour
 
     float CalculateLength()
     {
-        Node node1 = (Node)nodes[0];
-        Node node2 = (Node)nodes[1];
+        Node node1 = nodes[0];
+        Node node2 = nodes[1];
         return Vector3.Distance(node1.Position,node2.Position);
     }
 
     float CalculateRotation()
     {
-        Node node1 = (Node)nodes[0];
-        Node node2 = (Node)nodes[1];
+        Node node1 = nodes[0];
+        Node node2 = nodes[1];
         float dX = node1.Position.x - node2.Position.x;
         float dY = node1.Position.y - node2.Position.y;
         float tan = dY / dX;
@@ -81,8 +83,8 @@ public class Line : MonoBehaviour
 
     Vector3 CalculatePosition()
     {
-        Node node1 = (Node)nodes[0];
-        Node node2 = (Node)nodes[1];
+        Node node1 = nodes[0];
+        Node node2 = nodes[1];
         return (node1.Position + node2.Position) / 2;
     }
 
@@ -92,12 +94,12 @@ public class Line : MonoBehaviour
     /// <param name="nodes"></param>
     public void Init(List<Node> nodes)
     {
-        ChangeState(Linestate.ready);
+        ChangeState(LineState.ready);
         IsUse = false;
         if (nodes.Count >= 2)
         {
-            this.nodes.Add((Node)nodes[0]);
-            this.nodes.Add((Node)nodes[1]);
+            this.nodes.Add(nodes[0]);
+            this.nodes.Add(nodes[1]);
             this.nodes.Sort();
             length = CalculateLength();
             rotation = CalculateRotation();
@@ -118,19 +120,19 @@ public class Line : MonoBehaviour
     //        return 1;
     //}
 
-    public void ChangeState(Linestate state)
+    public void ChangeState(LineState state)
     {
         linestate = state;
         switch(state)
         {
-            case Linestate.isChoose: gameObject.GetComponent<SpriteRenderer>().color = Color.red; break;
-            case Linestate.ready: gameObject.GetComponent<SpriteRenderer>().color = Color.white; break;
-            case Linestate.show: gameObject.GetComponent<SpriteRenderer>().color = Color.black; break;
+            case LineState.isChoose: gameObject.GetComponent<SpriteRenderer>().color = Color.red; break;
+            case LineState.ready: gameObject.GetComponent<SpriteRenderer>().color = Color.white; break;
+            case LineState.show: gameObject.GetComponent<SpriteRenderer>().color = Color.black;gameObject.tag = "Line"; break;
         }
     }
 }
 
-public enum Linestate
+public enum LineState
 {
     isChoose,
     ready,

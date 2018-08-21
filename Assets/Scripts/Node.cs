@@ -97,12 +97,21 @@ public class Node : MonoBehaviour, IComparable
             return -1;        
         else if (position.x > node.position.x)
             return 1;
-        else
+        else if(position.x == node.position.x)
         {
             if (position.y > node.position.y)
+            {
                 return 1;
-            else
+            }
+            else if (position.y < node.position.y)
+            {
                 return -1;
-        }
+            }
+            else
+                return 0;
+        }         
+        else
+           return 0;
+        
     }
 }
