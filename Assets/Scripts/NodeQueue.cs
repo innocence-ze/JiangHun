@@ -8,9 +8,9 @@ using UnityEngine;
 /// </summary>
 public class NodeQueue  {
 
-    static List<Node> nodes = new List<Node>();
+    List<Node> nodes = new List<Node>();
 
-    public static List<Node>  Nodes { get { return nodes; } }
+    public List<Node>  Nodes { get { return nodes; } }
 
     public int Length
     {
@@ -34,7 +34,7 @@ public class NodeQueue  {
         //nodes.Sort();
     }
 
-    public static void Clean()
+    public void Clean()
     {
         nodes.Clear();
     }

@@ -10,6 +10,11 @@ public class R_GameManager : MonoBehaviour {
 		
 	}
 	
+    void AvoidCircleLine(List<Line> addLine, List<StaticLine> staticLine)
+    {
+
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
