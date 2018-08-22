@@ -26,6 +26,7 @@ public class Map : MonoBehaviour {
 
     public void InitMap_Node()
     {
+        NodeQueue.Clean();
         nodes = new NodeQueue();
         nodeList = GameObject.FindGameObjectsWithTag("Node");
         foreach (GameObject n in nodeList)
@@ -41,7 +42,6 @@ public class Map : MonoBehaviour {
 
     public void InitMap_Line()
     {
-        NodeQueue.Clean();
         foreach (var n in NodeQueue.Nodes)
         {
             foreach (var l in n.LineList)

@@ -25,6 +25,9 @@ public class Test : MonoBehaviour {
         foreach (Line l in addLine)
         {
             l.ChangeState(LineState.show);
+        }
+        foreach(Line l in addLine)
+        {
             var circle = LineManager.FindCircleLine(l);
             if (circle.Count != 0)
             {
