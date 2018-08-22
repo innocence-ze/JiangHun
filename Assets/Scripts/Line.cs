@@ -10,7 +10,7 @@ using UnityEngine;
 public class Line : MonoBehaviour
 {
     [SerializeField]
-    private LineState linestate;
+    protected LineState linestate;
     [SerializeField]
     private float length;
     [SerializeField]
@@ -120,7 +120,7 @@ public class Line : MonoBehaviour
     //        return 1;
     //}
 
-    public void ChangeState(LineState state)
+    public virtual void ChangeState(LineState state)
     {
         linestate = state;
         switch(state)

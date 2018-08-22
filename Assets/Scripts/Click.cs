@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Click : MonoBehaviour {
 
-    List<Line> bigLine = new List<Line>();
     [SerializeField]
     private int clickStep;
     // Use this for initialization
@@ -33,6 +32,8 @@ public class Click : MonoBehaviour {
             {
                 Line l = hit.collider.gameObject.GetComponent<Line>();
 
+                List<Line> bigLine = new List<Line>();
+
                 switch (l.GetState())
                 {
                     case LineState.show:
@@ -42,6 +43,7 @@ public class Click : MonoBehaviour {
                             bl.ChangeState(LineState.isChoose);
                         break;
                     case LineState.isChoose:
+                        bigLine = LineManager.FindBigLine(l);
                         if (clickStep > 0)
                         {
                             Map.Instance.RemoveLine(bigLine);

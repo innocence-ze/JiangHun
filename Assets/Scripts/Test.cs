@@ -54,7 +54,11 @@ public class Test : MonoBehaviour {
             };
 
             //TODO 设置父物体
-            GameObject line = Resources.Load<GameObject>("Line");
+            GameObject line;
+            if(Random.Range(0f,2f)>1.6f)
+                line = Resources.Load<GameObject>("StaticLine");
+            else
+                line = Resources.Load<GameObject>("Line");
             line = Instantiate(line);
             line.GetComponent<Line>().Init(nodes);
             addLine.Add(line.GetComponent<Line>());
