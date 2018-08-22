@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public int numOfLevel;
+    public GameObject bg;
     [SerializeField]
     private int level;
     private GameObject prefab;
@@ -46,14 +47,28 @@ public class LevelManager : MonoBehaviour {
         if (level!=0&&prefab!=null)
         {
             DestroyImmediate(prefab);
+            bg.GetComponent<BgMove>().MoveLeft();
         }
        
         level++;
-        prefab = Resources.Load<GameObject>("Level" + level.ToString());
-        prefab = Instantiate(prefab,gameObject.transform);
-        prefab.transform.position = Vector3.zero;
+        StartCoroutine(Load()); 
+    }
 
-        //prefab.transform.position = new Vector3((level - 1) * 20f, 0f ,0f);
-        //Camera.main.transform.position = new Vector3((level - 1) * 20f, 0f, -10f);
+    public void ReStart()
+    {
+        DestroyImmediate(prefab);
+
+        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Instantiate(prefab, gameObject.transform);
+        prefab.transform.position = Vector3.zero;
+    }
+
+    //to do增加显示效果
+    IEnumerator Load()
+    {
+        yield return new WaitForSeconds(1f);  
+        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Instantiate(prefab);
+        prefab.transform.position = Vector3.zero;
     }
 }
