@@ -20,18 +20,18 @@ public class Map : MonoBehaviour {
     }
 
     //图中起作用的点
-    public static NodeQueue nodes;
+    public NodeQueue nodes;
     //点图中的所有点
     private GameObject[] nodeList;
 
-    public void InitMap()
+    public void InitMap_Node()
     {
         nodes = new NodeQueue();
         nodeList = GameObject.FindGameObjectsWithTag("Node");
         foreach (GameObject n in nodeList)
         {
-            Node node = n.GetComponent<Node>();
-            node.Init(n.GetComponent<Transform>().position);
+            var node = n.GetComponent<Node>();
+            node.Init(n.transform.position);
             if (!nodes.Contains(node))
             {
                 nodes.Add(node);
@@ -39,18 +39,42 @@ public class Map : MonoBehaviour {
         }
     }
 
+    public void InitMap_Line()
+    {
+        foreach (var n in NodeQueue.Nodes)
+        {
+            foreach (var l in n.LineList)
+            {
+                if(l.gameObject.tag == "Line")
+                {
+                    l.ChangeState(LineState.show);
+                }
+                l.IsUse = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 给点加上边，然后找环
+    /// </summary>
+    /// <param name="addLine"></param>
     public void AddLine(List<Line> addLine)
     {
         if (addLine == null) return;
         foreach(Line l in addLine)
         {
             foreach (Node n in l.Nodes)
+            {
                 n.AddLine(l);
-            LineManager.FindCircleLine(l);
+            }
         }
     }
 
-    public void RemoveLine(ArrayList removeLine)
+    /// <summary>
+    /// 把边从点上删除
+    /// </summary>
+    /// <param name="removeLine"></param>
+    public void RemoveLine(List<Line> removeLine)
     {
         if (removeLine == null) return;
         foreach(Line l in removeLine)

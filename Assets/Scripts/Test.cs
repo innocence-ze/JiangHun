@@ -9,67 +9,71 @@ public class Test : MonoBehaviour {
     [SerializeField]
     private List<Line> addLine;
     private AddLineList addLineList;
+    private bool bDefeat = false;
 
 	// Use this for initialization
 	void Awake () {
-        Map.Instance.InitMap();
+        Map.Instance.InitMap_Node();
         step = 0;
         addLineList = GetComponent<AddLineList>();
-        Step(0);
-
-        foreach (Line l in addLine)
-            l.ChangeState(Linestate.show);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        AddReadyLine(step);
 	}
 
     public void NextStep()
     {
+        step++;
         foreach (Line l in addLine)
-            l.ChangeState(Linestate.show);
+        {
+            l.ChangeState(LineState.show);
+            var circle = LineManager.FindCircleLine(l);
+            if (circle.Count != 0)
+            {
+                Fail();
+            }
+        }
         addLine = new List<Line>();
         if (step < addLineList.eachLine_node.Length)
-        {
-            step++;
-            Step(step);
-        }  
-
-       Victory();
+        {           
+            AddReadyLine(step);
+        }
+        if(step == addLineList.eachLine_node.Length && !bDefeat)
+            Victory();
     }
 
-    public void Step(int index)
+    void AddReadyLine(int _step)
     {
-        LineList linelist = addLineList.eachLine_node[index];
+        LineList linelist = addLineList.eachLine_node[_step];
         int numberOfLines = linelist.Array.Length / 2;
 
         for (int i = 0; i < numberOfLines; i++)
         {
-            List<Node> nodes = new List<Node>();
-            nodes.Add(linelist.Array[i * 2].GetComponent<Node>());
-            nodes.Add(linelist.Array[i * 2 + 1].GetComponent<Node>());
-            GameObject line = GameObject.Instantiate(Resources.Load("Line") as GameObject);
-            line.GetComponent<Line>().Init(nodes);
+            var nodes = new List<Node>
+            {
+                linelist.Array[i * 2].GetComponent<Node>(),
+                linelist.Array[i * 2 + 1].GetComponent<Node>()
+            };
 
+            //TODO 设置父物体
+            GameObject line;
+            if(Random.Range(0f,2f)>1.6f)
+                line = Resources.Load<GameObject>("StaticLine");
+            else
+                line = Resources.Load<GameObject>("Line");
+            line = Instantiate(line);
+            line.GetComponent<Line>().Init(nodes);
             addLine.Add(line.GetComponent<Line>());
         }
         Map.Instance.AddLine(addLine);
-
-        foreach(Line l in addLine)
-        {
-            if (LineManager.FindCircleLine(l) != null)
-                Fail();
-        }
     }
 
     public void Victory()
     {
-        Debug.Log("This is victory judgement");
+        Debug.Log("Victory");
     }
+
     public void Fail()
     {
-        Debug.Log("Circle exists!");
+        bDefeat = true;
+        Debug.Log("Defeat");
     }
 }

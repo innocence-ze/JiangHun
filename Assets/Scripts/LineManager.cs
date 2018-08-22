@@ -9,7 +9,7 @@ public class LineManager {
 
     static public List<Line> FindBigLine(Line chooseLine)
     {
-        InitLine();
+        Map.Instance.InitMap_Line();
         List<Line> bigLine = new List<Line>();
         chooseLine.IsUse = true;
         bigLine.Add(chooseLine);
@@ -20,7 +20,7 @@ public class LineManager {
         temp = (Node)chooseLine.Nodes[1];
         OnesideBigLine(temp, ref bigLine);
 
-        InitLine();
+        Map.Instance.InitMap_Line();
         return bigLine;
     }
 
@@ -31,7 +31,7 @@ public class LineManager {
         while (true)
         {
             temp = bigNode.Peek();
-            if (temp.LineCount() != 2)
+            if (temp.LineCount() != 2 || temp.LineAt(0) is StaticLine || temp.LineAt(1) is StaticLine)
             {
                 break;
             }
@@ -59,14 +59,19 @@ public class LineManager {
         }
     }
 
+    /// <summary>
+    /// 找环
+    /// </summary>
+    /// <param name="addLine"></param>
+    /// <returns>环</returns>
     public static List<Line> FindCircleLine(Line addLine)
     {
-        InitLine();
+        Map.Instance.InitMap_Line();
         List<Line> circleLine = new List<Line>();//成环的线的数组
         Stack<Node> circleNodes = new Stack<Node>();//成环的点的栈
         addLine.IsUse = true;
         circleLine.Add(addLine);
-        circleNodes.Push((Node)addLine.Nodes[0]);
+        circleNodes.Push(addLine.Nodes[0]);
 
         //DFS
         while(circleNodes.Count != 0)
@@ -85,32 +90,28 @@ public class LineManager {
                     temp.LineAt(d).IsUse = true;
                     foreach (var anotherNode in temp.LineAt(d).Nodes)
                     {
-                        if ((Node)anotherNode != temp)
+                        if (anotherNode != temp && temp.LineAt(d).gameObject.tag == "Line")
                         {
                             circleLine.Add(temp.LineAt(d));
-                            temp = (Node)anotherNode;
+                            temp = anotherNode;
                             circleNodes.Push(temp);
                             break;
                         }
                     }
-                    if (temp == (Node)addLine.Nodes[1])
+                    if (temp == addLine.Nodes[1])
                     {
                         break;
                     }
                     d = 0;
                 }
             }
-            if (temp == (Node)addLine.Nodes[1])
+            if (temp == addLine.Nodes[1])
                 break;
-            for(int i=0;i<circleLine.Count;i++)
+            for (int i = 0; i < circleLine.Count; i++)
             {
-                if ((Node)circleLine[i].Nodes[0] == circleNodes.Peek() || (Node)circleLine[i].Nodes[1] == circleNodes.Peek())
+                if (circleLine[i].Nodes[0] == circleNodes.Peek() || circleLine[i].Nodes[1] == circleNodes.Peek())
                     circleLine.Remove(circleLine[i]);
             }
-            //foreach(Line l in circleLine)
-            //{
-                
-            //}
             circleNodes.Pop();
         }
 
@@ -119,22 +120,9 @@ public class LineManager {
             circleLine = new List<Line>();
         }
 
-        InitLine();
+        Map.Instance.InitMap_Line();
 
         return circleLine;
-    }
-
-    static void InitLine()
-    {
-        foreach (var i in NodeQueue.Nodes)
-        {
-            Node n = (Node)i;
-            foreach (var j in n.LineList)
-            {
-                Line l = (Line)j;
-                l.IsUse = false;
-            }
-        }
     }
 
 }
