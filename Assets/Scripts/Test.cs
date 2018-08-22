@@ -53,13 +53,13 @@ public class Test : MonoBehaviour {
                 linelist.Array[i * 2 + 1].GetComponent<Node>()
             };
 
-            //TODO 设置父物体
+            //TODO 设置父物体,修改随机生成的线
             GameObject line;
-            if(Random.Range(0f,2f)>1.6f)
+            if(Random.Range(0f,2f)>2f)
                 line = Resources.Load<GameObject>("StaticLine");
             else
                 line = Resources.Load<GameObject>("Line");
-            line = Instantiate(line);
+            line = Instantiate(line,gameObject.transform);
             line.GetComponent<Line>().Init(nodes);
             addLine.Add(line.GetComponent<Line>());
         }
@@ -68,7 +68,8 @@ public class Test : MonoBehaviour {
 
     public void Victory()
     {
-        Debug.Log("Victory");
+        //Debug.Log("Victory");
+        LevelManager.Instance.LoadNewLevel();
     }
 
     public void Fail()
