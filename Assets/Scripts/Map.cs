@@ -21,14 +21,11 @@ public class Map : MonoBehaviour {
 
     //图中起作用的点
     public NodeQueue nodes;
-    //点图中的所有点
-    private GameObject[] nodeList;
 
     public void InitMap_Node()
-    {
-        NodeQueue.Clean();
+    {        
         nodes = new NodeQueue();
-        nodeList = GameObject.FindGameObjectsWithTag("Node");
+        var nodeList = GameObject.FindGameObjectsWithTag("Node");
         foreach (GameObject n in nodeList)
         {
             var node = n.GetComponent<Node>();
@@ -42,7 +39,7 @@ public class Map : MonoBehaviour {
 
     public void InitMap_Line()
     {
-        foreach (var n in NodeQueue.Nodes)
+        foreach (var n in nodes.Nodes)
         {
             foreach (var l in n.LineList)
             {

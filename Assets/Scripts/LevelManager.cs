@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour {
 
         if (level!=0&&prefab!=null)
         {
-            Destroy(prefab);
+            DestroyImmediate(prefab);
         }
        
         level++;
