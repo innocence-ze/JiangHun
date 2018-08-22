@@ -33,4 +33,9 @@ public class NodeQueue  {
         nodes.Remove(node);
         //nodes.Sort();
     }
+
+    public static void Clean()
+    {
+        nodes.Clear();
+    }
 }

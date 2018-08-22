@@ -85,6 +85,7 @@ public class Line : MonoBehaviour
     {
         Node node1 = nodes[0];
         Node node2 = nodes[1];
+        
         return (node1.Position + node2.Position) / 2;
     }
 
@@ -106,7 +107,7 @@ public class Line : MonoBehaviour
             position = CalculatePosition();
         }
         Transform trans=gameObject.GetComponent<Transform>();
-        trans.position = position;
+        trans.position = new Vector3(position.x, position.y, 0);
         trans.localScale = new Vector3(length / 8.0f, length / 8.0f, 1);
         trans.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
     }

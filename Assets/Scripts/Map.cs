@@ -41,6 +41,7 @@ public class Map : MonoBehaviour {
 
     public void InitMap_Line()
     {
+        NodeQueue.Clean();
         foreach (var n in NodeQueue.Nodes)
         {
             foreach (var l in n.LineList)
