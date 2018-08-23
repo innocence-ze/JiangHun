@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 public class R_GameManager : MonoBehaviour {
     [SerializeField]
+    [Header("记录当前步数，不用设定")]
     private int _step;
     [SerializeField]
+    [Header("储存随机步数，要设定")]
     private int r_step;
     [SerializeField]
+    [Header("储存固定步数，不要设定")]
     private int f_step;
 
     [SerializeField]
+    [Header("每次随机生成几条边，要设定")]
     private int randomIndex;
 
     [SerializeField]
+    [Header("每次增加的线，不用设定")]
     private List<Line> addLines;
     [SerializeField]
+    [Header("不可删除的线，不用设定")]
     private List<StaticLine> staticLines;
     private AddLineList addLineList;
     private bool bDefeat;
@@ -174,6 +180,11 @@ public class R_GameManager : MonoBehaviour {
             circleNodes.Pop();
         }
         return isCircle;
+    }
+
+    public void RePlay()
+    {
+        LevelManager.Instance.ReStart();
     }
 
     public void Victory()
