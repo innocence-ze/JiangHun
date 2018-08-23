@@ -15,9 +15,9 @@ public class LineManager {
         bigLine.Add(chooseLine);
 
         //DFS
-        var temp = (Node)chooseLine.Nodes[0];
+        var temp = chooseLine.Nodes[0];
         OnesideBigLine(temp, ref bigLine);
-        temp = (Node)chooseLine.Nodes[1];
+        temp = chooseLine.Nodes[1];
         OnesideBigLine(temp, ref bigLine);
 
         Map.Instance.InitMap_Line();
@@ -117,7 +117,7 @@ public class LineManager {
 
         if(circleNodes.Count == 0)
         {
-            circleLine = new List<Line>();
+            circleLine.Clear();
         }
 
         Map.Instance.InitMap_Line();

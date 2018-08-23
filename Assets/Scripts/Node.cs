@@ -16,10 +16,53 @@ public class Node : MonoBehaviour, IComparable
     private Vector3 position;
     [SerializeField]
     private List<Node> nearNode = new List<Node>();
+    [SerializeField]
+    private List<Line> templeLine = new List<Line>();
+
+    public int TempleLineIndex{ get; set; }
 
     public List<Line> LineList { get { return lineList; } }
     public List<Node> NearNode { get { return nearNode; } }
-
+    public List<Line> TempleLine { get { return templeLine; } set { templeLine = value; } }
+    public List<Node> FreeNode
+    {
+        private set {; }
+        get
+        {
+            var freeNode = new List<Node>();
+            foreach(var n in nearNode)
+            {
+                freeNode.Add(n);
+            }
+            if (lineList.Count + TempleLineIndex == 0)
+                return freeNode;
+            if (lineList.Count == nearNode.Count)
+                return new List<Node>();
+            foreach (var l in lineList)
+            {
+                foreach (var n in l.Nodes)
+                {
+                    if (n != this)
+                    {
+                        freeNode.Remove(n);
+                        break;
+                    }
+                }
+            }
+            foreach(var l in templeLine)
+            {
+                foreach (var n in l.Nodes)
+                {
+                    if (n != this)
+                    {
+                        freeNode.Remove(n);
+                        break;
+                    }
+                }
+            }
+            return freeNode;
+        }
+    }
     /// <summary>
     /// 返回位于index的线
     /// </summary>
@@ -27,8 +70,10 @@ public class Node : MonoBehaviour, IComparable
     /// <returns></returns>
     public Line LineAt(int index)
     {
-        if (lineList.Count > index)
-            return (Line)lineList[index];
+        if (LineCount() > index)
+        {
+            return lineList[index];
+        }
         else
             return null;
     }

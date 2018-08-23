@@ -33,6 +33,8 @@ public class Map : MonoBehaviour {
             if (!nodes.Contains(node))
             {
                 nodes.Add(node);
+                node.TempleLine.Clear();
+                node.TempleLineIndex = 0;
             }
         }
     }

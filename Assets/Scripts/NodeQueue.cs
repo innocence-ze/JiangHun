@@ -34,6 +34,11 @@ public class NodeQueue  {
         //nodes.Sort();
     }
 
+    public Node Contains(int index)
+    {
+        return nodes[index];
+    }
+
     public void Clean()
     {
         nodes.Clear();
