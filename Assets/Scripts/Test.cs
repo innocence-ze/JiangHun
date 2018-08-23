@@ -69,6 +69,11 @@ public class Test : MonoBehaviour {
         Map.Instance.AddLine(addLine);
     }
 
+    public void RePlay()
+    {
+        LevelManager.Instance.ReStart();
+    }
+
     public void Victory()
     {
         //Debug.Log("Victory");
