@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour {
         if (level >= numOfLevel)
         {
             Debug.Log("need to load new scene!");
+            SceneLoadManager.Instance.LoadNextScene();
             return;
         }
 
