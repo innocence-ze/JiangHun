@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 关卡中的点击效果
+/// </summary>
 public class Click : MonoBehaviour
 {
 

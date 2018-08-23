@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 选关界面的按钮
+/// </summary>
 public class ChapterButton : MonoBehaviour {
 
 	// Use this for initialization
@@ -16,7 +19,7 @@ public class ChapterButton : MonoBehaviour {
 
     public void Load()
     {
-        //SceneLoadManager.Instance.LoadScene(gameObject.name.ToCharArray()[0]-49);
+        //SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0]-49);
         Debug.Log(gameObject.name.ToCharArray()[0] - 48);
     }
 }

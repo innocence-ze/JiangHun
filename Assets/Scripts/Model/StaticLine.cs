@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 不可被删除的线
+/// </summary>
 public class StaticLine :Line {
     
     public override void ChangeState(LineState state)
