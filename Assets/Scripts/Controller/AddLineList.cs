@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// 生成固定位置的线的数组（二维）
+/// </summary>
 public class AddLineList : MonoBehaviour
 {
     private static AddLineList s_Instance = null;

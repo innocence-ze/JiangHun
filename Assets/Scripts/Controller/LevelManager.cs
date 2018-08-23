@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 章节内关卡的循环，最后一个关卡时加载下个章节
+/// </summary>
 public class LevelManager : MonoBehaviour {
 
     private static LevelManager instance = null;
@@ -41,7 +44,7 @@ public class LevelManager : MonoBehaviour {
         if (level >= numOfLevel)
         {
             Debug.Log("need to load new scene!");
-            SceneLoadManager.Instance.LoadNextScene();
+            SceneLoadManager.LoadNextScene();
             return;
         }
 
@@ -64,7 +67,7 @@ public class LevelManager : MonoBehaviour {
         prefab.transform.position = Vector3.zero;
     }
 
-    //to do增加显示效果
+    //TODO增加显示效果
     IEnumerator Load()
     {
         yield return new WaitForSeconds(1f);  

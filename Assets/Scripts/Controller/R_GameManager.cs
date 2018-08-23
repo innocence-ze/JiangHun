@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// 关卡内游戏主脚本，主逻辑
+/// </summary>
 public class R_GameManager : MonoBehaviour {
     [SerializeField]
     [Header("记录当前步数，不用设定")]

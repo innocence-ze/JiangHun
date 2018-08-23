@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 关卡内地图的相关信息初始化与边的增删
+/// </summary>
 public class Map : MonoBehaviour {
 
     private static Map s_Instance = null;

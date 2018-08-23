@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 关卡内缩放移动（相机）
+/// </summary>
 public class MoveCamera : MonoBehaviour {
 
     [SerializeField]

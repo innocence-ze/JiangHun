@@ -2,6 +2,9 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+/// <summary>
+/// UI是否可被点击
+/// </summary>
 public class DebugUILine : MonoBehaviour
 {
     static Vector3[] fourCorners = new Vector3[4];

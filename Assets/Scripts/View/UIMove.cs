@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// 初始界面UI移动效果
+/// </summary>
 public class UIMove : MonoBehaviour {
 
     /*获取空物体，用于定位*/

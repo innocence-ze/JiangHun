@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 章节管理器
+/// </summary>
 public class SceneLoadManager : MonoBehaviour {
 
-    private static SceneLoadManager instance;
-    public static SceneLoadManager Instance
-    {
-        get
-        {
-            if(instance==null)
-            {
-                instance = FindObjectOfType(typeof(SceneLoadManager)) as SceneLoadManager;
-            }
-            if (instance == null)
-                Debug.Log("can't find SceneLoadManager");
-            return instance;
-        }
-    }
+    //private static SceneLoadManager instance;
+    //public static SceneLoadManager Instance
+    //{
+    //    get
+    //    {
+    //        if(instance==null)
+    //        {
+    //            instance = FindObjectOfType(typeof(SceneLoadManager)) as SceneLoadManager;
+    //        }
+    //        if (instance == null)
+    //            Debug.Log("can't find SceneLoadManager");
+    //        return instance;
+    //    }
+    //}
 
     public static int currentChapter;
 
@@ -32,21 +35,21 @@ public class SceneLoadManager : MonoBehaviour {
 		
 	}
 
-    public void LoadScene(int i)
+    static public void LoadScene(int i)
     {
         i = 1;
         currentChapter = i;
         SceneManager.LoadScene(i);
     }
 
-    public void LoadNextScene()
+    public static void LoadNextScene()
     {
         //currentchapter++;
         //loadscene(currentchapter);
         Debug.Log("load next scene!");
     }
 
-    public void LoadEndLessScene()
+    public static void LoadEndLessScene()
     {
         //currentchapter
         Debug.Log("load endless scene!");
