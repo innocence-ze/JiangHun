@@ -7,6 +7,7 @@ public class Click : MonoBehaviour
 
     List<Line> bigLine = new List<Line>();
     [SerializeField]
+    [Header("可操作数，要设定")]
     private int clickStep;
     // Use this for initialization
     void Start()
