@@ -164,6 +164,7 @@ MonoBehaviour:
   randomIndex: 4
   addLines: []
   staticLines: []
+  overPanel: {fileID: 0}
 --- !u!114 &183761388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +268,7 @@ MonoBehaviour:
   - {fileID: 1832327843}
   - {fileID: 934736370}
   templeLine: []
+  bFragile: 0
 --- !u!212 &352705909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -537,6 +539,7 @@ MonoBehaviour:
   - {fileID: 1644236720}
   - {fileID: 934736370}
   templeLine: []
+  bFragile: 1
 --- !u!212 &531205033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -844,6 +847,7 @@ MonoBehaviour:
   - {fileID: 934736370}
   - {fileID: 1823069983}
   templeLine: []
+  bFragile: 0
 --- !u!212 &824595709
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -945,6 +949,7 @@ MonoBehaviour:
   - {fileID: 1644236720}
   - {fileID: 1823069983}
   templeLine: []
+  bFragile: 0
 --- !u!212 &934736371
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1082,6 +1087,7 @@ MonoBehaviour:
   - {fileID: 934736370}
   - {fileID: 1823069983}
   templeLine: []
+  bFragile: 0
 --- !u!212 &1644236721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1293,6 +1299,7 @@ MonoBehaviour:
   - {fileID: 1644236720}
   - {fileID: 934736370}
   templeLine: []
+  bFragile: 0
 --- !u!212 &1823069984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1377,6 +1384,7 @@ MonoBehaviour:
   - {fileID: 824595708}
   - {fileID: 934736370}
   templeLine: []
+  bFragile: 0
 --- !u!212 &1832327844
 SpriteRenderer:
   m_ObjectHideFlags: 0

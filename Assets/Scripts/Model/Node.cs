@@ -15,9 +15,16 @@ public class Node : MonoBehaviour, IComparable
     [SerializeField]
     private Vector3 position;
     [SerializeField]
+    [Header("可与哪些点形成连线，需要手动添加")]
     private List<Node> nearNode = new List<Node>();
     [SerializeField]
     private List<Line> templeLine = new List<Line>();
+
+    [SerializeField]
+    [Header("是否为脆弱的点")]
+    private bool bFragile;
+
+    public bool B_Fragile { get { return bFragile; } set { bFragile = value; } }
 
     public int TempleLineIndex{ get; set; }
 
@@ -90,12 +97,27 @@ public class Node : MonoBehaviour, IComparable
     }
 
     /// <summary>
-    /// 构造函数，position = transform.position
+    /// 初始函数，position = transform.position
     /// </summary>
     /// <param name="position"></param>
     public void Init(Vector3 position)
     {
         this.position = position;
+    }
+
+    /// <summary>
+    /// 初始函数，position = transform.position，nodes = 周围的点
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="nodes"></param>
+    public void Init(Vector3 position, List<Node> nodes)
+    {
+        this.position = position;
+        foreach(var n in nodes)
+        {
+            n.NearNode.Add(this);
+            NearNode.Add(n);
+        }
     }
 
     /// <summary>
