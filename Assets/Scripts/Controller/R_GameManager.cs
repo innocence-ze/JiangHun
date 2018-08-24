@@ -49,12 +49,17 @@ public class R_GameManager : MonoBehaviour {
     public void NextStep()
     {
         _step++;
+
+        //把ready的线添加到点上
         Map.Instance.AddLine(addLines);
+        //所有点初始化
         Map.Instance.InitMap_Node();
+        //所有线设为show
         foreach (Line l in addLines)
         {
             l.ChangeState(LineState.show);
         }
+        //如果有环，gameover
         foreach (Line l in addLines)
         {
             var circle = LineManager.FindCircleLine(l);
@@ -64,6 +69,7 @@ public class R_GameManager : MonoBehaviour {
             }
         }
         addLines.Clear();
+        //加ready的线
         if (_step < f_step)
         {
             AddFixedLine(_step);
@@ -72,11 +78,40 @@ public class R_GameManager : MonoBehaviour {
         {
             AddRandomLine(randomIndex);
         }
+        //所有步数完成通关
         if (_step == f_step+r_step && !bDefeat) 
             Victory();
     }
 
-    void AddFixedLine(int _step)
+    private void LoadLine(List<Node> nodes)
+    {
+        bool bStatic = false;
+        foreach(var n in nodes)
+        {
+            if (n.B_Fragile)
+            {
+                n.B_Fragile = false;
+                bStatic = true;
+            }
+        }
+        GameObject line;
+        if (bStatic)
+            line = Resources.Load<GameObject>("StaticLine");
+        else
+            line = Resources.Load<GameObject>("Line");        
+        line = Instantiate(line, gameObject.transform);
+        line.GetComponent<Line>().Init(nodes);
+        foreach (var n in nodes)
+        {
+            n.TempleLineIndex++;
+            n.TempleLine.Add(line.GetComponent<Line>());
+        }
+        if (bStatic)
+            staticLines.Add(line.GetComponent<StaticLine>());
+        addLines.Add(line.GetComponent<Line>());
+    }
+
+    private void AddFixedLine(int _step)
     {
         LineList linelist = addLineList.eachLine_node[_step];
         int numberOfLines = linelist.Array.Length / 2;
@@ -89,50 +124,47 @@ public class R_GameManager : MonoBehaviour {
                 linelist.Array[i * 2 + 1].GetComponent<Node>()
             };
 
-            //TODO 设置父物体,修改随机生成的线
-            GameObject line;
-            if (Random.Range(0f, 2f) > 2f)
-                line = Resources.Load<GameObject>("StaticLine");
-            else
-                line = Resources.Load<GameObject>("Line");
-            line = Instantiate(line, gameObject.transform);
-            line.GetComponent<Line>().Init(nodes);
-            addLines.Add(line.GetComponent<Line>());
+            LoadLine(nodes);
         }
     }
 
-    void AddRandomLine(int randomIndex)
+    private void AddRandomLine(int randomIndex)
     {
         int addIndex = 0;
+        var _lineIndex = 0;
+
+        ////能不能加下这么多边TODO
+        //foreach(var n in Map.Instance.nodes.Nodes)
+        //{
+        //    _lineIndex += n.FreeNode.Count;
+        //}
+        //if(_lineIndex < randomIndex * 2)
+        //{
+        //    Debug.Log("加的点太多了");
+        //    return;
+        //}
+
+        //是否还有边
+        _lineIndex = 0;
+        foreach (var n in Map.Instance.nodes.Nodes)
+        {
+            _lineIndex += n.LineCount();
+        }
         var _index = 0;
-        foreach(var n in Map.Instance.nodes.Nodes)
-        {
-            _index += n.FreeNode.Count;
-        }
-        if(_index < randomIndex * 2)
-        {
-            Debug.Log("加的点太多了");
-            return;
-        }
         while (addIndex < randomIndex)
         {
+            _index++;
+            if (_index > 10000) { break; }               
             var oneNode = Map.Instance.nodes.Contains(Random.Range(0, Map.Instance.nodes.Length));
-            if (oneNode.LineCount() + oneNode.TempleLineIndex == 0) continue;
+            //是否存在边
+            if (oneNode.LineCount() + oneNode.TempleLineIndex == 0 && _lineIndex + addIndex != 0) continue;
             if (oneNode.LineCount() + oneNode.TempleLineIndex < oneNode.NearNode.Count)
             {
                 var anotherNode = oneNode.FreeNode[Random.Range(0, oneNode.FreeNode.Count)];
                 var nodes = new List<Node> { oneNode, anotherNode };
                 if (!IsCircleLine(nodes))
                 {
-                    GameObject line = Resources.Load<GameObject>("Line");
-                    line = Instantiate(line, gameObject.transform);
-                    line.GetComponent<Line>().Init(nodes);
-                    foreach(var n in nodes)
-                    {
-                        n.TempleLineIndex++;
-                        n.TempleLine.Add(line.GetComponent<Line>());
-                    }
-                    addLines.Add(line.GetComponent<Line>());
+                    LoadLine(nodes);
                     addIndex++;
                 }               
             }
