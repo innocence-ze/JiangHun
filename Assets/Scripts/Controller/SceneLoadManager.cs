@@ -23,7 +23,7 @@ public class SceneLoadManager : MonoBehaviour {
     //    }
     //}
 
-    public static int currentChapter;
+    public static int currentChapter=1;
 
 	// Use this for initialization
 	void Start () {

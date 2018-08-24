@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour {
     {
         DestroyImmediate(prefab);
 
-        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
         prefab = Instantiate(prefab, gameObject.transform);
         prefab.transform.position = Vector3.zero;
     }
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour {
     IEnumerator Load()
     {
         yield return new WaitForSeconds(1f);  
-        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
         prefab = Instantiate(prefab);
         prefab.transform.position = Vector3.zero;
     }
