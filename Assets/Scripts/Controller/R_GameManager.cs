@@ -113,7 +113,7 @@ public class R_GameManager : MonoBehaviour {
             Debug.Log("加的点太多了");
             return;
         }
-        do
+        while (addIndex < randomIndex)
         {
             var oneNode = Map.Instance.nodes.Contains(Random.Range(0, Map.Instance.nodes.Length));
             if (oneNode.LineCount() + oneNode.TempleLineIndex == 0) continue;
@@ -135,36 +135,50 @@ public class R_GameManager : MonoBehaviour {
                     addIndex++;
                 }               
             }
-        } while (addIndex < randomIndex);
+        } 
     }
 
     private bool IsCircleLine(List<Node> nodes)
     {
         bool isCircle = false;
-        print(addLines.Count + staticLines.Count);
         if (addLines.Count + staticLines.Count < 2)
             return false;
-        var _lines = addLines;
-        foreach(var l in staticLines)
+
+        var _lines = new List<Line>();
+        foreach (var l in addLines)
         {
             _lines.Add(l);
+            l.IsUse = false;
         }
+        foreach (var l in staticLines)
+        {
+            _lines.Add(l);
+            l.IsUse = false;
+        }
+
         var circleNodes = new Stack<Node>();//成环的点的栈
         circleNodes.Push(nodes[0]);
+        var node_allLines = new List<Line>();
+
         while (circleNodes.Count != 0)
         {
             var temp = circleNodes.Peek();
             int d = 0;
-            while (d < temp.LineCount())
+            while (d < temp.LineCount() + temp.TempleLineIndex)
             {
-                if (!_lines.Contains(temp.LineAt(d)) || temp.LineAt(d).IsUse)
+                node_allLines.Clear();
+                foreach (var l in temp.LineList)
+                    node_allLines.Add(l);
+                foreach (var l in temp.TempleLine)
+                    node_allLines.Add(l);
+                if (!_lines.Contains(node_allLines[d]) || node_allLines[d].IsUse)
                 {
                     d++;
                 }
                 else
                 {
-                    temp.LineAt(d).IsUse = true;
-                    foreach(var anotherNode in temp.LineAt(d).Nodes)
+                    node_allLines[d].IsUse = true;
+                    foreach(var anotherNode in node_allLines[d].Nodes)
                     {
                         if(anotherNode != temp)
                         {
@@ -176,6 +190,7 @@ public class R_GameManager : MonoBehaviour {
                     if(temp == nodes[1])
                     {
                         isCircle = true;
+                        _lines.Clear();
                         return isCircle;
                     }
                     d = 0;
@@ -183,6 +198,7 @@ public class R_GameManager : MonoBehaviour {
             }
             circleNodes.Pop();
         }
+        _lines.Clear();
         return isCircle;
     }
 
