@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject bg;
     [SerializeField]
     private int level;
-    private GameObject prefab;
+    public GameObject prefab;
 
 	// Use this for initialization
 	void Start () {
@@ -43,7 +43,6 @@ public class LevelManager : MonoBehaviour {
     {
         if (level >= numOfLevel)
         {
-            Debug.Log("need to load new scene!");
             SceneLoadManager.LoadNextScene();
             return;
         }
@@ -62,7 +61,7 @@ public class LevelManager : MonoBehaviour {
     {
         DestroyImmediate(prefab);
 
-        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
         prefab = Instantiate(prefab, gameObject.transform);
         prefab.transform.position = Vector3.zero;
     }
@@ -71,8 +70,15 @@ public class LevelManager : MonoBehaviour {
     IEnumerator Load()
     {
         yield return new WaitForSeconds(1f);  
-        prefab = Resources.Load<GameObject>("Level" + level.ToString());
+        prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
         prefab = Instantiate(prefab);
         prefab.transform.position = Vector3.zero;
+    }
+
+    public void LoadLevelAt(int i)
+    {
+        level = i - 1;
+        bg.transform.position = new Vector3(bg.transform.position.x - 10f * level, bg.transform.position.y, bg.transform.position.z);
+        LoadNewLevel();
     }
 }

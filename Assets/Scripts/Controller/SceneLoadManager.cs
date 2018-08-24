@@ -23,7 +23,7 @@ public class SceneLoadManager : MonoBehaviour {
     //    }
     //}
 
-    public static int currentChapter;
+    public static int currentChapter = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -37,7 +37,6 @@ public class SceneLoadManager : MonoBehaviour {
 
     static public void LoadScene(int i)
     {
-        i = 1;
         currentChapter = i;
         SceneManager.LoadScene(i);
     }
