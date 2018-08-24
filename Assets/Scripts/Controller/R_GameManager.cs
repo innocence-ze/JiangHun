@@ -29,6 +29,7 @@ public class R_GameManager : MonoBehaviour {
     private AddLineList addLineList;
     private bool bDefeat;
 
+    public GameObject overPanel;
 
     // Use this for initialization
     void Awake()
@@ -216,6 +217,6 @@ public class R_GameManager : MonoBehaviour {
     public void Fail()
     {
         bDefeat = true;
-        Debug.Log("Defeat");
+        overPanel.GetComponent<ChoosePanel>().Stop();
     }
 }

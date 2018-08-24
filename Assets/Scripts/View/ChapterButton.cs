@@ -19,7 +19,6 @@ public class ChapterButton : MonoBehaviour {
 
     public void Load()
     {
-        //SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0]-49);
-        Debug.Log(gameObject.name.ToCharArray()[0] - 48);
+        SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0]-48);        
     }
 }
