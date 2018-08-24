@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject bg;
     [SerializeField]
     private int level;
-    private GameObject prefab;
+    public GameObject prefab;
 
 	// Use this for initialization
 	void Start () {
