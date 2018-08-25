@@ -204,20 +204,9 @@ public class E_GameManager : MonoBehaviour {
         return isCircle;
     }
 
-    public void RePlay()
-    {
-        LevelManager.Instance.ReStart();
-    }
-
-    public void Victory()
-    {
-        //Debug.Log("Victory");
-        LevelManager.Instance.LoadNewLevel();
-    }
-
     public void Fail()
     {
-        overPanel.GetComponent<ChoosePanel>().Stop();
+        overPanel.GetComponent<ChoosePanel>().EndStop();
     }
 
 }
