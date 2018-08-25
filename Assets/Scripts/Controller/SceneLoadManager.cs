@@ -43,9 +43,12 @@ public class SceneLoadManager : MonoBehaviour {
 
     public static void LoadNextScene()
     {
-        //currentchapter++;
-        //loadscene(currentchapter);
-        Debug.Log("load next scene!");
+        currentChapter++;
+        if (currentChapter > 3)
+            currentChapter = 0;
+        SceneManager.LoadScene(currentChapter);
+
+        
     }
 
     public static void LoadEndLessScene()
