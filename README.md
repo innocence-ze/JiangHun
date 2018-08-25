@@ -1,10 +1,12 @@
 # JiangHun
-tencent next Idea
+Tencent Next Idea
 
-推荐使用Unity2018.2
+## 开发工具
 
-# 如何搭建地图的prefab
-## 关卡模式
+推荐使用Unity2018.2.4f1
+
+## 如何搭建地图的prefab
+### 关卡模式
 1 添加gamemanager，挂载AddLineList.cs   Map.cs   Click.cs  R_GameManager.cs这四个脚本
 
 2 添加地图上需要的点(Prefabs/Point)
@@ -21,12 +23,12 @@ R_GameManager中的R_Step为随机生成边的步数，如本关不需要随机�
 
 5 UI层，Canvas下的NextButton为下一步按钮，在其Button组件的OnClick上绑定R_Gamemanager.NextStep方法。
 
-## 无尽模式
+### 无尽模式
 1 添加gamemanager，挂载Map.cs  Click.cs  E_GameManager.cs这三个脚本
 
 2，3，4同上
 
 E_GameManager中的RandomIndex为每一步随机生成时，生成的边的条数。addClick为每一步增加的点击次数。
 
-## 藏经阁
+### 藏经阁
 1 开发正在努力敲代码中，可怜的程序员。
