@@ -3,50 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 关卡内游戏主脚本，主逻辑
+/// 无尽模式主脚本，主循环
 /// </summary>
-public class R_GameManager : MonoBehaviour {
+public class E_GameManager : MonoBehaviour {
+
     [SerializeField]
     [Header("记录当前步数，不用设定")]
     private int _step;
-    [SerializeField]
-    [Header("储存随机步数，要设定")]
-    private int r_step;
-    [SerializeField]
-    [Header("储存固定步数，不要设定")]
-    private int f_step;
 
     [SerializeField]
-    [Header("每次随机生成几条边，要设定")]
+    [Header("每次随机生成几条边，要设定，可修改")]
     private int randomIndex;
 
     [SerializeField]
     [Header("每次增加的线，不用设定")]
     private List<Line> addLines;
-    private AddLineList addLineList;
-    private bool bDefeat;
+
+    [SerializeField]
+    [Header("每步增加的可点击次数，要设定，可修改")]
+    private int addClick;
 
     public GameObject overPanel;
 
-    // Use this for initialization
     void Awake()
     {
         Map.Instance.InitMap_Node();
         addLines = new List<Line>();
 
         _step = 0;
-        addLineList = GetComponent<AddLineList>();
-        f_step = addLineList.eachLine_node.Length;
-        AddFixedLine(_step);
+        AddRandomLine(randomIndex);
 
-        bDefeat = false;
         NextStep();
     }
 
     public void NextStep()
     {
         _step++;
-
+        gameObject.GetComponent<Click>().ChangeClickStep(addClick);
         //把ready的线添加到点上
         Map.Instance.AddLine(addLines);
         //所有点初始化
@@ -66,24 +59,13 @@ public class R_GameManager : MonoBehaviour {
             }
         }
         addLines.Clear();
-        //加ready的线
-        if (_step < f_step)
-        {
-            AddFixedLine(_step);
-        }
-        else if(_step < f_step + r_step)
-        {
-            AddRandomLine(randomIndex);
-        }
-        //所有步数完成通关
-        if (_step == f_step+r_step && !bDefeat) 
-            Victory();
+        AddRandomLine(randomIndex);
     }
 
     private void LoadLine(List<Node> nodes)
     {
         bool bStatic = false;
-        foreach(var n in nodes)
+        foreach (var n in nodes)
         {
             if (n.B_Fragile)
             {
@@ -95,7 +77,7 @@ public class R_GameManager : MonoBehaviour {
         if (bStatic)
             line = Resources.Load<GameObject>("StaticLine");
         else
-            line = Resources.Load<GameObject>("Line");        
+            line = Resources.Load<GameObject>("Line");
         line = Instantiate(line, gameObject.transform);
         line.GetComponent<Line>().Init(nodes);
         foreach (var n in nodes)
@@ -108,28 +90,11 @@ public class R_GameManager : MonoBehaviour {
         addLines.Add(line.GetComponent<Line>());
     }
 
-    private void AddFixedLine(int _step)
-    {
-        LineList linelist = addLineList.eachLine_node[_step];
-        int numberOfLines = linelist.Array.Length / 2;
-
-        for (int i = 0; i < numberOfLines; i++)
-        {
-            var nodes = new List<Node>
-            {
-                linelist.Array[i * 2].GetComponent<Node>(),
-                linelist.Array[i * 2 + 1].GetComponent<Node>()
-            };
-
-            LoadLine(nodes);
-        }
-    }
-
     private void AddRandomLine(int randomIndex)
     {
         int addIndex = 0;
-        var _lineIndex = 0;
 
+        //var _lineIndex = 0;
         ////能不能加下这么多边TODO
         //foreach(var n in Map.Instance.nodes.Nodes)
         //{
@@ -141,20 +106,27 @@ public class R_GameManager : MonoBehaviour {
         //    return;
         //}
 
-        //是否还有边
-        _lineIndex = 0;
-        foreach (var n in Map.Instance.nodes.Nodes)
-        {
-            _lineIndex += n.LineCount();
-        }
         var _index = 0;
         while (addIndex < randomIndex)
         {
             _index++;
-            if (_index > 10000) { break; }               
+            if (_index > 10000) { break; }
             var oneNode = Map.Instance.nodes.Contains(Random.Range(0, Map.Instance.nodes.Length));
-            //是否存在边
-            if (oneNode.LineCount() + oneNode.TempleLineIndex == 0 && _lineIndex + addIndex != 0) continue;
+            //这个点是否为空
+            if (oneNode.LineCount() + oneNode.TempleLineIndex == 0 && _step != 0) continue;
+            //如果是第一步
+            else if(_step == 0 && oneNode.TempleLineIndex < oneNode.NearNode.Count)
+            {
+                var anotherNode = oneNode.FreeNode[Random.Range(0, oneNode.FreeNode.Count)];
+                var nodes = new List<Node> { oneNode, anotherNode };
+                if (!IsCircleLine(nodes))
+                {
+                    LoadLine(nodes);
+                    addIndex++;
+                }
+                continue;
+            }
+
             if (oneNode.LineCount() + oneNode.TempleLineIndex < oneNode.NearNode.Count)
             {
                 var anotherNode = oneNode.FreeNode[Random.Range(0, oneNode.FreeNode.Count)];
@@ -163,9 +135,9 @@ public class R_GameManager : MonoBehaviour {
                 {
                     LoadLine(nodes);
                     addIndex++;
-                }               
+                }
             }
-        } 
+        }
     }
 
     private bool IsCircleLine(List<Node> nodes)
@@ -208,23 +180,23 @@ public class R_GameManager : MonoBehaviour {
                 else
                 {
                     node_allLines[d].IsUse = true;
-                    foreach(var anotherNode in node_allLines[d].Nodes)
+                    foreach (var anotherNode in node_allLines[d].Nodes)
                     {
-                        if(anotherNode != temp)
+                        if (anotherNode != temp)
                         {
                             temp = anotherNode;
                             circleNodes.Push(temp);
                             break;
                         }
                     }
-                    if(temp == nodes[1])
+                    if (temp == nodes[1])
                     {
                         isCircle = true;
                         _lines.Clear();
                         return isCircle;
                     }
                     d = 0;
-                }              
+                }
             }
             circleNodes.Pop();
         }
@@ -245,7 +217,7 @@ public class R_GameManager : MonoBehaviour {
 
     public void Fail()
     {
-        bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().Stop();
     }
+
 }
