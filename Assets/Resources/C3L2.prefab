@@ -906,7 +906,6 @@ MonoBehaviour:
   f_step: 0
   randomIndex: 3
   addLines: []
-  staticLines: []
   overPanel: {fileID: 1186636807871678}
 --- !u!114 &114244020141790240
 MonoBehaviour:
@@ -926,7 +925,7 @@ MonoBehaviour:
   - {fileID: 114801112530769280}
   - {fileID: 114535912377555676}
   templeLine: []
-  bFragile: 0
+  bFragile: 1
 --- !u!114 &114272387968636668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1262,7 +1261,7 @@ MonoBehaviour:
   - {fileID: 114383514742141946}
   - {fileID: 114613338354215398}
   templeLine: []
-  bFragile: 0
+  bFragile: 1
 --- !u!114 &114440196452455124
 MonoBehaviour:
   m_ObjectHideFlags: 1
