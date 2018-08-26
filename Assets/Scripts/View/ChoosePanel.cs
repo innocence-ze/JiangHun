@@ -16,6 +16,10 @@ public class ChoosePanel : MonoBehaviour
     private GameObject stopButton;
     [SerializeField]
     private GameObject nextButton;
+    
+    //只在无尽模式需要赋值
+    [SerializeField]
+    private Click click;
 
     public void MoveToTarget()
     {
@@ -55,5 +59,26 @@ public class ChoosePanel : MonoBehaviour
         stopButton.SetActive(false);
         nextButton.SetActive(false);
         MoveToTarget();
+    }
+
+    public void EndRestart()
+    {
+        SceneLoadManager.LoadScene(4);
+    }
+
+    public void EndStop()
+    {
+        click.enabled = false;
+        stopButton.SetActive(false);
+        nextButton.SetActive(false);
+        MoveToTarget();
+    }
+
+    public void EndContinue()
+    {
+        click.enabled = true;
+        stopButton.SetActive(true);
+        nextButton.SetActive(true);
+        MoveToSource();
     }
 }
