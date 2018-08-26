@@ -12,6 +12,15 @@ public class Click : MonoBehaviour
     [SerializeField]
     [Header("可操作数，要设定，可修改")]
     private int clickStep;
+
+    public int ClickSteps
+    {
+        get
+        {
+            return clickStep;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {

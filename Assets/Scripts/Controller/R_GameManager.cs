@@ -28,6 +28,14 @@ public class R_GameManager : MonoBehaviour {
 
     public GameObject overPanel;
 
+    public int StepsLeft
+    {
+        get
+        {
+            return r_step + f_step - _step;
+        }
+    }
+
     // Use this for initialization
     void Awake()
     {
