@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 /// <summary>
-/// 面板按键以及移动效果
+/// 章节内面板按键以及移动效果
 /// </summary>
 public class ChoosePanel : MonoBehaviour
 {

@@ -139,7 +139,7 @@ public class MoveCamera : MonoBehaviour {
         Vector3 currentTouchPosition = m_Camera.ScreenToWorldPoint(new Vector3(scenePos.x, scenePos.y, -10));
 
         Vector3 v = currentTouchPosition - lastTouchPostion;
-        m_CameraOffset += new Vector3(v.x, v.y, 0) * moveFactor;
+        m_CameraOffset += new Vector3(v.x, v.y, 0) * -moveFactor;
 
         //把摄像机的位置控制在范围内
         m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y, yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), -10);

@@ -25,6 +25,10 @@ public class SceneLoadManager : MonoBehaviour {
 
     public static int currentChapter = 0;
 
+    /*用于选择关卡*/
+    public static int aimLevel = 1;
+    public static int aimChoose = 3;
+
 	// Use this for initialization
 	void Start () {
 		
