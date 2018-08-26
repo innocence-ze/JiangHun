@@ -18,6 +18,10 @@ public class E_GameManager : MonoBehaviour {
     private int randomIndex;
 
     [SerializeField]
+    [Header("每次随机生成几条边，要设定，可修改")]
+    private int firstIndex;
+
+    [SerializeField]
     [Header("每次增加的线，不用设定")]
     private List<Line> addLines;
 
@@ -41,9 +45,14 @@ public class E_GameManager : MonoBehaviour {
         addLines = new List<Line>();
 
         _step = 0;
-        AddRandomLine(randomIndex);
+        AddRandomLine(firstIndex);
 
         NextStep();
+    }
+
+    void ChangeRandomIndex()
+    {
+
     }
 
     public void NextStep()
