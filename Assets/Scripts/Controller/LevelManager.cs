@@ -30,6 +30,16 @@ public class LevelManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        if(SceneLoadManager.aimLevel!=1)
+        {
+            level = SceneLoadManager.aimLevel-1;
+            bg.transform.position -= new Vector3(10*level, 0, 0);
+            LoadNewLevel();
+            SceneLoadManager.aimLevel = 1;
+            return;
+        }
+
         level = 0;
         LoadNewLevel();
 	}
