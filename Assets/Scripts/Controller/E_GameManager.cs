@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class E_GameManager : MonoBehaviour {
 
+    private RecordSystem m_recordSystem = new RecordSystem();
+
     [SerializeField]
     [Header("记录当前步数，不用设定")]
     private int _step;
@@ -25,6 +27,14 @@ public class E_GameManager : MonoBehaviour {
 
     public GameObject overPanel;
 
+    public int Step
+    {
+        get
+        {
+            return _step;
+        }
+    }
+
     void Awake()
     {
         Map.Instance.InitMap_Node();
@@ -38,6 +48,7 @@ public class E_GameManager : MonoBehaviour {
 
     public void NextStep()
     {
+        m_recordSystem.SetEndless(_step);
         _step++;
         gameObject.GetComponent<Click>().ChangeClickStep(addClick);
         //把ready的线添加到点上
@@ -50,6 +61,7 @@ public class E_GameManager : MonoBehaviour {
             l.ChangeState(LineState.show);
         }
         //如果有环，gameover
+        ShowData(LoadData());
         foreach (Line l in addLines)
         {
             var circle = LineManager.FindCircleLine(l);
@@ -209,15 +221,32 @@ public class E_GameManager : MonoBehaviour {
         LevelManager.Instance.ReStart();
     }
 
-    public void Victory()
-    {
-        //Debug.Log("Victory");
-        LevelManager.Instance.LoadNewLevel();
-    }
-
     public void Fail()
     {
+        SaveData();
         overPanel.GetComponent<ChoosePanel>().Stop();
+    }
+
+    //TODO
+    private void ShowData(RecordSaveData data)
+    {
+        var currentStep = _step - 1;
+        var recordStep = data.EndlessStep;
+        Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep);
+    }
+
+    private void SaveData()
+    {
+        RecordSaveData saveData = m_recordSystem.CreatSaveEndlessData();
+        saveData.SaveEndless();
+    }
+
+    private RecordSaveData LoadData()
+    {
+        RecordSaveData oldData = new RecordSaveData();
+        oldData.LoadEndless();
+        m_recordSystem.SetSaveData(oldData);
+        return oldData; 
     }
 
 }
