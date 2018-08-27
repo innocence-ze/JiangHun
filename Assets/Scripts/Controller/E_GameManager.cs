@@ -7,6 +7,12 @@ using UnityEngine;
 /// </summary>
 public class E_GameManager : MonoBehaviour {
 
+    //private RecordSystem m_recordSystem = new RecordSystem();
+
+    [SerializeField]
+    [Header("无敌")]
+    private bool xiaoze = false;
+
     [SerializeField]
     [Header("记录当前步数，不用设定")]
     private int _step;
@@ -14,6 +20,10 @@ public class E_GameManager : MonoBehaviour {
     [SerializeField]
     [Header("每次随机生成几条边，要设定，可修改")]
     private int randomIndex;
+
+    [SerializeField]
+    [Header("每次随机生成几条边，要设定，可修改")]
+    private int firstIndex;
 
     [SerializeField]
     [Header("每次增加的线，不用设定")]
@@ -25,19 +35,33 @@ public class E_GameManager : MonoBehaviour {
 
     public GameObject overPanel;
 
+    public int Step
+    {
+        get
+        {
+            return _step;
+        }
+    }
+
     void Awake()
     {
         Map.Instance.InitMap_Node();
         addLines = new List<Line>();
 
         _step = 0;
-        AddRandomLine(randomIndex);
+        AddRandomLine(firstIndex);
 
         NextStep();
     }
 
+    void ChangeRandomIndex()
+    {
+
+    }
+
     public void NextStep()
     {
+        //m_recordSystem.SetEndless(_step);
         _step++;
         gameObject.GetComponent<Click>().ChangeClickStep(addClick);
         //把ready的线添加到点上
@@ -50,11 +74,13 @@ public class E_GameManager : MonoBehaviour {
             l.ChangeState(LineState.show);
         }
         //如果有环，gameover
+        //ShowData(LoadData());
         foreach (Line l in addLines)
         {
             var circle = LineManager.FindCircleLine(l);
             if (circle.Count != 0)
             {
+                if(!xiaoze)
                 Fail();
             }
         }
@@ -204,9 +230,37 @@ public class E_GameManager : MonoBehaviour {
         return isCircle;
     }
 
+    public void RePlay()
+    {
+        LevelManager.Instance.ReStart();
+    }
+
     public void Fail()
     {
+        //SaveData();
         overPanel.GetComponent<ChoosePanel>().EndStop();
     }
+
+    //TODO
+    //private void ShowData(RecordSaveData data)
+    //{
+    //    var currentStep = _step - 1;
+    //    var recordStep = data.EndlessStep;
+    //    Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep);
+    //}
+
+    //private void SaveData()
+    //{
+    //    RecordSaveData saveData = m_recordSystem.CreatSaveEndlessData();
+    //    saveData.SaveEndless();
+    //}
+
+    //private RecordSaveData LoadData()
+    //{
+    //    RecordSaveData oldData = new RecordSaveData();
+    //    oldData.LoadEndless();
+    //    m_recordSystem.SetSaveData(oldData);
+    //    return oldData; 
+    //}
 
 }
