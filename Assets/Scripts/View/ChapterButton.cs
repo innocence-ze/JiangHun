@@ -20,17 +20,19 @@ public class ChapterButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     public void Focus()
-    {              
+    {
+        HideOtherButtons();
         ui.FocusOn(gameObject.GetComponent<RectTransform>());
         StartCoroutine(ShowOrHide(true));
     }   
 
     public void DisFocus()
-    {        
+    {
+        ShowOtherButtons();
         ui.DisFocus();
         StartCoroutine(ShowOrHide(false));
     }
@@ -72,5 +74,23 @@ public class ChapterButton : MonoBehaviour {
     public void LoadEndless()
     {
         SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0] - 48);
+    }
+
+    private void HideOtherButtons()
+    {
+        Button[] buttons = gameObject.transform.parent.GetComponentsInChildren<Button>();
+        foreach(Button b in buttons)
+        {
+            b.enabled = false;
+        }
+    }
+
+    private void ShowOtherButtons()
+    {
+        Button[] buttons = gameObject.transform.parent.GetComponentsInChildren<Button>();
+        foreach (Button b in buttons)
+        {
+            b.enabled = true;
+        }
     }
 }
