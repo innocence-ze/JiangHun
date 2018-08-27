@@ -36,7 +36,7 @@ public class LineManager {
                 break;
             }
             float dRot = Mathf.Abs(temp.LineAt(0).Rotation - temp.LineAt(1).Rotation);
-            if (temp.LineAt(1).Nodes[0] == temp.LineAt(0).Nodes[0] || temp.LineAt(1).Nodes[1] == temp.LineAt(0).Nodes[1])
+            if ((temp.LineAt(1).Nodes[0] == temp.LineAt(0).Nodes[0] || temp.LineAt(1).Nodes[1] == temp.LineAt(0).Nodes[1]) && dRot > 165)
                 break;
             if (dRot < 15 || dRot > 165)
             {

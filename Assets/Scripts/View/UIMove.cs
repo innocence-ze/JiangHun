@@ -21,6 +21,9 @@ public class UIMove : MonoBehaviour {
     [SerializeField]
     private RectTransform BG;
 
+    [SerializeField]
+    private GameObject shade;
+
     //用于镜头缩放
     private float scale;
     public float aimScale;
@@ -48,39 +51,51 @@ public class UIMove : MonoBehaviour {
 
     public void MoveToModelChoose()
     {
-        BG.DOLocalMove(BG.position - modelChoose.position, 1f);       
+        shade.SetActive(true);
+        BG.DOLocalMove(BG.position - modelChoose.position, 1f);
+        StartCoroutine(ShadeActive(1f, false));
     }
 
     public void MoveToLevelChoose()
     {
+        shade.SetActive(true);
         levelChoose.gameObject.SetActive(true);
         gathering.gameObject.SetActive(false);
         BG.DOLocalMove(BG.position - levelChoose.position, 1f);
+        StartCoroutine(ShadeActive(1f, false));
     }
 
     public void MoveToGathering()
     {
+        shade.SetActive(true);
         gathering.gameObject.SetActive(true);
         levelChoose.gameObject.SetActive(false);
         BG.DOLocalMove(BG.position - gathering.position, 1f);
+        StartCoroutine(ShadeActive(1f, false));
     }
 
     public void MoveToBegin()
     {
+        shade.SetActive(true);
         BG.DOLocalMove(BG.position - begin.position, 1f);
+        StartCoroutine(ShadeActive(1f, false));
     }
 
     //移动视角并且放大
     public void FocusOn(RectTransform trans)
     {
+        shade.SetActive(true);
         StartCoroutine(focus());
-        BG.DOLocalMove(BG.position - trans.position, 1f);        
+        BG.DOLocalMove(BG.position - trans.position, 1f);
+        StartCoroutine(ShadeActive(2f, false));
     }
 
     public void DisFocus()
     {
+        shade.SetActive(true);
         DOTween.To(() => scale, x => scale = x, 1, 1);
         StartCoroutine(disfocus());
+        StartCoroutine(ShadeActive(2f, false));
     }
 
     IEnumerator focus()
@@ -93,5 +108,11 @@ public class UIMove : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         MoveToLevelChoose();
+    }
+
+    IEnumerator ShadeActive(float time,bool active)
+    {
+        yield return new WaitForSeconds(time);
+        shade.SetActive(active);
     }
 }
