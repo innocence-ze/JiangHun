@@ -81,8 +81,11 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);  
         prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
-        prefab = Instantiate(prefab);
-        prefab.transform.position = Vector3.zero;
+        if (prefab != null)
+        {
+            prefab = Instantiate(prefab);
+            prefab.transform.position = Vector3.zero;
+        }
     }
 
     public void LoadLevelAt(int i)
