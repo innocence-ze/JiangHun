@@ -67,7 +67,6 @@ public class ChapterButton : MonoBehaviour {
     public void Load()
     {
         SceneLoadManager.aimLevel = childrens[0].GetComponentInChildren<Text>().text.ToCharArray()[0] - 48;
-        Debug.Log(SceneLoadManager.aimLevel);
         SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0] - 48);
     }
 
