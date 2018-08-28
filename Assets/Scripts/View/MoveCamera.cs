@@ -66,7 +66,7 @@ public class MoveCamera : MonoBehaviour {
             m_IsSingleFinger = true;
 
         }
-        else if (Input.touchCount > 1)
+        else if (Input.touchCount == 2)
         {
             //当从单指触摸进入多指触摸的时候,记录一下触摸的位置
             //保证计算缩放都是从两指手指触碰开始的
@@ -119,7 +119,7 @@ public class MoveCamera : MonoBehaviour {
 
         //把距离限制住在min和max之间
         m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
-        m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y + m_Camera.orthographicSize, yMin, yMax - m_Camera.orthographicSize), -10);
+        //m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y + m_Camera.orthographicSize, yMin, yMax - m_Camera.orthographicSize), -10);
 
 
         //备份上一次触摸点的位置，用于对比
