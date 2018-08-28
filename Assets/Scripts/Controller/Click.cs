@@ -8,6 +8,12 @@ using UnityEngine;
 public class Click : MonoBehaviour
 {
 
+    public int ClickScore { get; private set; }
+
+    [SerializeField]
+    [Header("消除一条边得到的分数，不用设定")]
+    private int _1score = 5;
+
     List<Line> bigLine = new List<Line>();
     [SerializeField]
     [Header("可操作数，要设定，可修改")]
@@ -60,6 +66,39 @@ public class Click : MonoBehaviour
                     case LineState.isChoose:
                         if (clickStep > 0)
                         {
+                            switch (bigLine.Count)
+                            {
+                                case 1:
+                                    ClickScore += _1score;
+                                    break;
+                                case 2:
+                                    ClickScore += _1score * 2;
+                                    break;
+                                case 3:
+                                    ClickScore += _1score * 3;
+                                    break;
+                                case 4:
+                                    ClickScore += _1score * 4;
+                                    break;
+                                case 5:
+                                    ClickScore += _1score * 5;
+                                    break;
+                                case 6:
+                                    ClickScore += _1score * 6;
+                                    break;
+                                case 7:
+                                    ClickScore += _1score * 7;
+                                    break;
+                                case 8:
+                                    ClickScore += _1score * 8;
+                                    break;
+                                case 9:
+                                    ClickScore += _1score * 9;
+                                    break;
+                                case 10:
+                                    ClickScore += _1score * 10;
+                                    break;
+                            }
                             Map.Instance.RemoveLine(bigLine);
                             foreach (var bl in bigLine)
                                 Destroy(bl.gameObject);

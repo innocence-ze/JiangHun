@@ -28,6 +28,8 @@ public class LevelManager : MonoBehaviour {
     private int level;
     public GameObject prefab;
 
+    public int Level { get { return level; } }
+
 	// Use this for initialization
 	void Start () {
 

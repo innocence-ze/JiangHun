@@ -6,6 +6,20 @@ using UnityEngine;
 /// 关卡内游戏主脚本，主逻辑
 /// </summary>
 public class R_GameManager : MonoBehaviour {
+
+    [SerializeField]
+    [Header("关卡结束时剩余步数，不用设定")]
+    private int eachLeftScore = 11;
+
+    [SerializeField]
+    private int chapter;
+    [SerializeField]
+    private int level;
+
+    public int Score { get; private set; }
+
+    private RecordSystem m_recordSystem = new RecordSystem();
+
     [SerializeField]
     [Header("记录当前步数，不用设定")]
     private int _step;
@@ -39,6 +53,10 @@ public class R_GameManager : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
+        Score = 0;
+        chapter = SceneLoadManager.currentChapter;
+        level = LevelManager.Instance.Level;
+
         Map.Instance.InitMap_Node();
         addLines = new List<Line>();
 
@@ -103,7 +121,7 @@ public class R_GameManager : MonoBehaviour {
         if (bStatic)
             line = Resources.Load<GameObject>("StaticLine");
         else
-            line = Resources.Load<GameObject>("Line");        
+            line = Resources.Load<GameObject>("Line");
         line = Instantiate(line, gameObject.transform);
         line.GetComponent<Line>().Init(nodes);
         foreach (var n in nodes)
@@ -247,6 +265,11 @@ public class R_GameManager : MonoBehaviour {
 
     public void Victory()
     {
+        Score += gameObject.GetComponent<Click>().ClickScore + StepsLeft * eachLeftScore;
+        print(chapter + "  " + level + "  " + Score);
+        m_recordSystem.SetCurrentCL(chapter, level, Score);
+        SaveData();
+        ShowData(LoadData());        
         //Debug.Log("Victory");
         LevelManager.Instance.LoadNewLevel();
     }
@@ -255,5 +278,28 @@ public class R_GameManager : MonoBehaviour {
     {
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().Stop();
+    }
+
+    //TODO
+    public void ShowData(RecordSaveData data)
+    {
+        var currentScore = Score;
+        var highScore = data.CurrentHighScore;
+        Debug.Log("第"+chapter+"章，第"+level+"关, 当前得分：" + currentScore +"  最高得分："+ highScore);
+    }
+
+    private void SaveData()
+    {
+        
+        RecordSaveData saveData = m_recordSystem.CreatSaveCurrentCLData();
+        saveData.SaveCurrentCL();
+    }
+
+    private RecordSaveData LoadData()
+    {
+        RecordSaveData oldData = new RecordSaveData();
+        oldData.LoadCurrentCL();
+        m_recordSystem.SetSaveData(oldData);
+        return oldData;
     }
 }

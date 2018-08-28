@@ -73,8 +73,8 @@ public class Line : MonoBehaviour
 
     float CalculateRotation()
     {
-        Node node1 = nodes[0];
-        Node node2 = nodes[1];
+        Node node2 = nodes[0];
+        Node node1 = nodes[1];
         float dX = node1.Position.x - node2.Position.x;
         float dY = node1.Position.y - node2.Position.y;
         float tan = dY / dX;
