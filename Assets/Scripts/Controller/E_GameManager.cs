@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// 无尽模式主脚本，主循环
-/// </summary>
 public class E_GameManager : MonoBehaviour {
 
-    //private RecordSystem m_recordSystem = new RecordSystem();
+    private RecordSystem m_recordSystem = new RecordSystem();
+
+    //TODO获取是否失败
+    public bool BFail { get; private set; }
 
     [SerializeField]
     [Header("无敌")]
@@ -45,6 +45,7 @@ public class E_GameManager : MonoBehaviour {
 
     void Awake()
     {
+        BFail = false;
         Map.Instance.InitMap_Node();
         addLines = new List<Line>();
 
@@ -61,8 +62,8 @@ public class E_GameManager : MonoBehaviour {
 
     public void NextStep()
     {
-        //m_recordSystem.SetEndless(_step);
         _step++;
+        m_recordSystem.SetEndless(_step);
         gameObject.GetComponent<Click>().ChangeClickStep(addClick);
         //把ready的线添加到点上
         Map.Instance.AddLine(addLines);
@@ -74,14 +75,17 @@ public class E_GameManager : MonoBehaviour {
             l.ChangeState(LineState.show);
         }
         //如果有环，gameover
-        //ShowData(LoadData());
+
         foreach (Line l in addLines)
         {
             var circle = LineManager.FindCircleLine(l);
             if (circle.Count != 0)
             {
-                if(!xiaoze)
-                Fail();
+                if (!xiaoze)
+                {
+                    ShowData(LoadData());
+                    Fail();
+                }
             }
         }
         addLines.Clear();
@@ -141,7 +145,7 @@ public class E_GameManager : MonoBehaviour {
             //这个点是否为空
             if (oneNode.LineCount() + oneNode.TempleLineIndex == 0 && _step != 0) continue;
             //如果是第一步
-            else if(_step == 0 && oneNode.TempleLineIndex < oneNode.NearNode.Count)
+            else if (_step == 0 && oneNode.TempleLineIndex < oneNode.NearNode.Count)
             {
                 var anotherNode = oneNode.FreeNode[Random.Range(0, oneNode.FreeNode.Count)];
                 var nodes = new List<Node> { oneNode, anotherNode };
@@ -237,30 +241,35 @@ public class E_GameManager : MonoBehaviour {
 
     public void Fail()
     {
-        //SaveData();
+        BFail = true;
+        SaveData();
         overPanel.GetComponent<ChoosePanel>().EndStop();
     }
 
-    //TODO
-    //private void ShowData(RecordSaveData data)
-    //{
-    //    var currentStep = _step - 1;
-    //    var recordStep = data.EndlessStep;
-    //    Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep);
-    //}
+    //TODO 与UI对接
+    public void ShowData(RecordSaveData data)
+    {
+        //当前的步数
+        var currentStep = _step;
+        //记录步数
+        var recordStep = data.EndlessStep;
+        //是否为新纪录
+        var bHighScore = currentStep >= recordStep ? true : false;
+        Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep + "是否为新纪录:" + bHighScore);
+    }
 
-    //private void SaveData()
-    //{
-    //    RecordSaveData saveData = m_recordSystem.CreatSaveEndlessData();
-    //    saveData.SaveEndless();
-    //}
+    private void SaveData()
+    {
+        RecordSaveData saveData = m_recordSystem.CreatSaveEndlessData();
+        saveData.SaveEndless();
+    }
 
-    //private RecordSaveData LoadData()
-    //{
-    //    RecordSaveData oldData = new RecordSaveData();
-    //    oldData.LoadEndless();
-    //    m_recordSystem.SetSaveData(oldData);
-    //    return oldData; 
-    //}
+    private RecordSaveData LoadData()
+    {
+        RecordSaveData oldData = new RecordSaveData();
+        oldData.LoadEndless();
+        m_recordSystem.SetSaveData(oldData);
+        return oldData;
+    }
 
 }
