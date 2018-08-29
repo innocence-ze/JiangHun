@@ -41,6 +41,12 @@ public class SceneLoadManager : MonoBehaviour {
 
     static public void LoadScene(int i)
     {
+        if (i == 1 && aimLevel == 1)
+        {
+            currentChapter = 5;
+            SceneManager.LoadScene(5);
+            return;
+        }
         currentChapter = i;
         SceneManager.LoadScene(i);
     }
