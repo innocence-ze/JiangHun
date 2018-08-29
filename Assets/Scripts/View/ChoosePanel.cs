@@ -108,6 +108,11 @@ public class ChoosePanel : MonoBehaviour
         StartCoroutine(delay());
     }
 
+    public void NextLevel()
+    {
+        LevelManager.Instance.LoadNewLevel();
+    }
+
     IEnumerator delay()
     {
         yield return new WaitForSeconds(1f);
