@@ -265,7 +265,7 @@ public class R_GameManager : MonoBehaviour {
 
     public void Victory()
     {
-        Score += gameObject.GetComponent<Click>().ClickScore + StepsLeft * eachLeftScore;
+        Score += gameObject.GetComponent<Click>().ClickScore + gameObject.GetComponent<Click>().ClickSteps * eachLeftScore;
         print(chapter + "  " + level + "  " + Score);
         m_recordSystem.SetCurrentCL(chapter, level, Score);
         SaveData();
