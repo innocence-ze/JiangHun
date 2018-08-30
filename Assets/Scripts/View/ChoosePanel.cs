@@ -20,6 +20,22 @@ public class ChoosePanel : MonoBehaviour
     //只在无尽模式需要赋值
     [SerializeField]
     private Click click;
+    //只在个别关卡赋值
+    [SerializeField]
+    private GameObject[] objects;
+    [SerializeField]
+    private bool ToturialPanel=false;
+
+
+    private void Start()
+    {
+        if (ToturialPanel)
+        {
+            Stop();
+            foreach (GameObject g in objects)
+                g.SetActive(false);
+        }
+    }
 
     public void MoveToTarget()
     {
@@ -46,6 +62,11 @@ public class ChoosePanel : MonoBehaviour
         MoveToSource();
         stopButton.SetActive(true);
         nextButton.SetActive(true);
+        if(ToturialPanel)
+        {
+            foreach (GameObject g in objects)
+                g.SetActive(true);
+        }
     }
 
     public void ReturnToMenu()
@@ -80,5 +101,23 @@ public class ChoosePanel : MonoBehaviour
         stopButton.SetActive(true);
         nextButton.SetActive(true);
         MoveToSource();
+    }
+
+    public void StopDelay()
+    {
+        StartCoroutine(delay());
+    }
+
+    public void NextLevel()
+    {
+        LevelManager.Instance.LoadNewLevel();
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1f);
+        MoveToTarget();
+        foreach (GameObject g in objects)
+            g.SetActive(false);
     }
 }

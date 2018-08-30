@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 关卡内游戏主脚本，主逻辑
@@ -28,6 +29,12 @@ public class R_GameManager : GameManager {
     private int randomIndex;
 
     private AddLineList addLineList;
+
+    [SerializeField]
+    private GameObject passPanel;
+    [SerializeField]
+    private Text text;
+
 
     public int StepsLeft
     {
@@ -138,8 +145,10 @@ public class R_GameManager : GameManager {
         print(chapter + "  " + level + "  " + Score);
         m_recordSystem.SetCurrentCL(chapter, level, Score);
         SaveData();
-        ShowData(LoadData());        
-        LevelManager.Instance.LoadNewLevel();
+        ShowData(LoadData());
+        //Debug.Log("Victory");
+        //LevelManager.Instance.LoadNewLevel();
+        passPanel.GetComponent<ChoosePanel>().Stop();
     }
 
     public override void Fail()
@@ -153,7 +162,8 @@ public class R_GameManager : GameManager {
     {
         var currentScore = Score;
         var highScore = data.CurrentHighScore;
-        Debug.Log("第"+chapter+"章，第"+level+"关, 当前得分：" + currentScore +"  最高得分："+ highScore);
+        text.text =" 当前得分：" + currentScore + "  最高得分：" + highScore;
+        //Debug.Log("第"+chapter+"章，第"+level+"关, 当前得分：" + currentScore +"  最高得分："+ highScore);
     }
 
     protected override void SaveData()
