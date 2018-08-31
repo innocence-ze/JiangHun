@@ -17,8 +17,6 @@ public class UIMove : MonoBehaviour {
     [SerializeField]
     private RectTransform levelChoose;
     [SerializeField]
-    private RectTransform gathering;
-    [SerializeField]
     private RectTransform BG;
 
     [SerializeField]
@@ -31,16 +29,14 @@ public class UIMove : MonoBehaviour {
     void Awake()
     {
         scale = BG.GetComponentInParent<CanvasScaler>().scaleFactor;
-        //levelChoose.gameObject.SetActive(false);
-        //gathering.gameObject.SetActive(false);
-        //switch(SceneLoadManager.aimChoose)
-        //{
-        //    case 1:BG.position = begin.position;return;
-        //    case 2:BG.position = begin.position - modelChoose.position; return;
-        //    case 3:BG.position = begin.position - levelChoose.position; levelChoose.gameObject.SetActive(true); return;
-        //    case 4:BG.position = begin.position - gathering.position; gathering.gameObject.SetActive(true); return;
-        //}
-        //SceneLoadManager.aimChoose = 1;
+
+        switch(SceneLoadManager.aimChoose)
+        {
+            case 1:BG.localPosition = -begin.localPosition; return;
+            case 2:BG.localPosition = -modelChoose.localPosition; return;
+            case 3:BG.localPosition = -levelChoose.localPosition; return;
+        }
+        SceneLoadManager.aimChoose = 1;
     }
 
     private void Update()
@@ -59,18 +55,8 @@ public class UIMove : MonoBehaviour {
     public void MoveToLevelChoose()
     {
         shade.SetActive(true);
-        levelChoose.gameObject.SetActive(true);
-        gathering.gameObject.SetActive(false);
+        levelChoose.gameObject.SetActive(true); 
         BG.DOLocalMove(BG.position - levelChoose.position, 1f);
-        StartCoroutine(ShadeActive(1f, false));
-    }
-
-    public void MoveToGathering()
-    {
-        shade.SetActive(true);
-        gathering.gameObject.SetActive(true);
-        levelChoose.gameObject.SetActive(false);
-        BG.DOLocalMove(BG.position - gathering.position, 1f);
         StartCoroutine(ShadeActive(1f, false));
     }
 
