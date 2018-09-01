@@ -8,6 +8,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ChapterButton : MonoBehaviour {
 
+    public GameObject sand;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,6 +22,13 @@ public class ChapterButton : MonoBehaviour {
 
     public void Load()
     {
+        sand.GetComponent<Animator>().Play(Animator.StringToHash("Sand"), 0, 0);
+        StartCoroutine(LoadScene());
+    }
+
+    IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(sand.GetComponent<Animation>().clip.length/2);
         SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0] - 48);
     }
 }
