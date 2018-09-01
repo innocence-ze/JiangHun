@@ -41,6 +41,11 @@ public class E_GameManager : GameManager {
         AddRandomLine(randomIndex);
     }
 
+    private void Update()
+    {
+        ChangeBgState();
+    }
+
     private void AddRandomLine(int randomIndex)
     {
         int addIndex = 0;
@@ -93,6 +98,7 @@ public class E_GameManager : GameManager {
 
     public override void Fail()
     {
+        ShowData(LoadData());
         bDefeat = true;
         SaveData();
         overPanel.GetComponent<ChoosePanel>().EndStop();
