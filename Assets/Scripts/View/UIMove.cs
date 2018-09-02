@@ -29,17 +29,19 @@ public class UIMove : MonoBehaviour {
     private GameObject sand;
     [SerializeField]
     private float animTime;
+    [SerializeField]
+    private GameObject canvas;
 
     void Awake()
     {
-        //DontDestroyOnLoad(canvasOfSand);
+        DontDestroyOnLoad(canvas);
 
         ChapterButton[] buttons = modelChoose.GetComponentsInChildren<ChapterButton>();
         foreach (ChapterButton c in buttons)
-            c.sand = sand;
+            c.canvas = canvas;
         buttons = levelChoose.GetComponentsInChildren<ChapterButton>();
         foreach (ChapterButton c in buttons)
-            c.sand = sand;
+            c.canvas = canvas;
 
         //scale = BG.GetComponentInParent<CanvasScaler>().scaleFactor;
 
