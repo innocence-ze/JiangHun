@@ -159,7 +159,8 @@ public class R_GameManager : GameManager {
     {
         ShowData(LoadData());
         bDefeat = true;
-        overPanel.GetComponent<ChoosePanel>().Stop();
+        overPanel.GetComponent<ChoosePanel>().R_DisableButton();
+        StartCoroutine(delayFail());
     }
 
     //TODO
@@ -184,5 +185,11 @@ public class R_GameManager : GameManager {
         oldData.LoadCurrentCL();
         m_recordSystem.SetSaveData(oldData);
         return oldData;
+    }
+
+    IEnumerator delayFail()
+    {
+        yield return new WaitForSeconds(1f);
+        overPanel.GetComponent<ChoosePanel>().Stop();
     }
 }

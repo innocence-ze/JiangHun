@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 /// <summary>
 /// 章节内面板按键以及移动效果
 /// </summary>
@@ -120,5 +121,19 @@ public class ChoosePanel : MonoBehaviour
         MoveToTarget();
         foreach (GameObject g in objects)
             g.SetActive(false);
+    }
+
+    public void R_DisableButton()
+    {
+        LevelManager.Instance.prefab.GetComponentInChildren<Click>().enabled = false;
+        stopButton.GetComponent<Button>().enabled = false;
+        nextButton.GetComponent<Button>().enabled = false;
+    }
+
+    public void E_DisableButton()
+    {
+        click.enabled = false;
+        stopButton.GetComponent<Button>().enabled = false;
+        nextButton.GetComponent<Button>().enabled = false;
     }
 }
