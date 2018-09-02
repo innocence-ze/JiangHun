@@ -1,17 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Destructible2D;
 
 public abstract class GameManager : MonoBehaviour {
 
     //-----------------------------------------------
     //字段及变量
     [SerializeField]
+    [Header("切割用的物体")]
+    private Texture2D StampTex;
+    [SerializeField]
+    [Header("旋转速率")]
+    private Vector3 bgRot;
+    [SerializeField]
     [Header("无敌")]
     private bool xiaoze = false;
 
     protected RecordSystem m_recordSystem = new RecordSystem();
 
+    [SerializeField]
     protected bool bDefeat;
     public bool BDefeat { get { return BDefeat; } }
 
@@ -51,7 +59,6 @@ public abstract class GameManager : MonoBehaviour {
 
     public void NextStep()
     {
-        print(_step);
         //把ready的线添加到点上
         Map.Instance.AddLine(addLines);
         //所有点初始化
@@ -69,7 +76,8 @@ public abstract class GameManager : MonoBehaviour {
             {
                 if (!xiaoze)
                 {
-                    ShowData(LoadData());
+                    DropOutBG(circle);
+
                     Fail();
                 }
             }
@@ -77,6 +85,49 @@ public abstract class GameManager : MonoBehaviour {
         addLines.Clear();
     }
 
+    private void DropOutBG(List<Line> circleLines)
+    {
+        foreach(var line in circleLines)
+        {
+            D2dDestructible.SliceAll(line.Nodes[0].transform.position, line.Nodes[1].transform.position, 0.2f, StampTex, 10);
+            Destroy(line.gameObject);
+        }
+    }
+
+    private List<GameObject> gos = new List<GameObject>();
+    private Vector3 dirRot = new Vector3();
+    protected void ChangeBgState()
+    {
+        if (bDefeat && gos.Count == 0)
+        {
+            foreach (var g in GameObject.FindGameObjectsWithTag("BackGround"))
+            {
+                if (g.transform.childCount == 0)
+                {
+                    gos.Add(g);
+                }
+            }
+            foreach (var g in gos)
+            {
+                g.GetComponent<D2dSorter>().SortingOrder++;
+            }
+        }
+        if (gos.Count != 0)
+        {
+            foreach(var go in gos)
+            {
+                dirRot += bgRot * Time.deltaTime;
+
+                go.transform.rotation = Quaternion.Euler(dirRot);
+            }
+        }
+        
+    }
+
+    /// <summary>
+    /// 实例化线
+    /// </summary>
+    /// <param name="nodes"></param>
     protected void LoadLine(List<Node> nodes)
     {
         bool bStatic = false;
@@ -105,6 +156,11 @@ public abstract class GameManager : MonoBehaviour {
         addLines.Add(line.GetComponent<Line>());
     }
 
+    /// <summary>
+    /// 添加的线是否自成环
+    /// </summary>
+    /// <param name="nodes"></param>
+    /// <returns></returns>
     protected bool IsCircleLine(List<Node> nodes)
     {
         bool isCircle = false;

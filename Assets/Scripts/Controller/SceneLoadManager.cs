@@ -27,7 +27,7 @@ public class SceneLoadManager : MonoBehaviour {
 
     /*用于选择关卡*/
     public static int aimLevel = 1;
-    public static int aimChoose = 3;
+    public static int aimChoose = 1;
 
 	// Use this for initialization
 	void Start () {

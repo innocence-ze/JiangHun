@@ -71,6 +71,7 @@ public class ChoosePanel : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        //SceneLoadManager.aimChoose = 3;
         SceneLoadManager.LoadScene(0);
     }
 
