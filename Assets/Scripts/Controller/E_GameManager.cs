@@ -101,7 +101,8 @@ public class E_GameManager : GameManager {
         ShowData(LoadData());
         bDefeat = true;
         SaveData();
-        overPanel.GetComponent<ChoosePanel>().EndStop();
+        overPanel.GetComponent<ChoosePanel>().E_DisableButton();
+        StartCoroutine(delayFail());
     }
 
     public override void Victory()
@@ -133,6 +134,12 @@ public class E_GameManager : GameManager {
         oldData.LoadEndless();
         m_recordSystem.SetSaveData(oldData);
         return oldData;
+    }
+
+    IEnumerator delayFail()
+    {
+        yield return new WaitForSeconds(1f);
+        overPanel.GetComponent<ChoosePanel>().EndStop();
     }
 
 }
