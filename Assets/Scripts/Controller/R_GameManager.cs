@@ -50,7 +50,7 @@ public class R_GameManager : GameManager {
         Init();
 
         chapter = SceneLoadManager.currentChapter;
-       // level = LevelManager.Instance.Level;      
+        level = LevelManager.Instance.Level;      
         
         addLineList = GetComponent<AddLineList>();
         f_step = addLineList.eachLine_node.Length;
