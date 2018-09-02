@@ -7,8 +7,6 @@ public abstract class GameManager : MonoBehaviour {
 
     //-----------------------------------------------
     //字段及变量
-    [SerializeField]
-    [Header("切割用的物体")]
     private Texture2D StampTex;
     [SerializeField]
     [Header("旋转速率")]
@@ -49,6 +47,7 @@ public abstract class GameManager : MonoBehaviour {
     //游戏循环
     protected void Init()
     {
+        StampTex = Resources.Load<Texture2D>("StampTex");
         bDefeat = false;
         xiaoze = false;
         Map.Instance.InitMap_Node();
@@ -139,20 +138,16 @@ public abstract class GameManager : MonoBehaviour {
                 bStatic = true;
             }
         }
-        GameObject line;
-        if (bStatic)
-            line = Resources.Load<GameObject>("StaticLine");
-        else
-            line = Resources.Load<GameObject>("Line");
+        var line = Resources.Load<GameObject>("Line");
         line = Instantiate(line, gameObject.transform);
-        line.GetComponent<Line>().Init(nodes);
+        line.GetComponent<Line>().Init(nodes, bStatic);
         foreach (var n in nodes)
         {
             n.TempleLineIndex++;
             n.TempleLine.Add(line.GetComponent<Line>());
         }
         if (bStatic)
-            Map.Instance.AddStaticLine(line.GetComponent<StaticLine>());
+            Map.Instance.AddStaticLine(line.GetComponent<Line>());
         addLines.Add(line.GetComponent<Line>());
     }
 

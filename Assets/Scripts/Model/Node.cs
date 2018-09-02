@@ -10,27 +10,31 @@ using UnityEngine;
 /// </summary>
 public class Node : MonoBehaviour, IComparable
 {
-    [SerializeField]
-    private List<Line> lineList = new List<Line>();
+    #region variable
     [SerializeField]
     private Vector3 position;
+
+    [SerializeField]
+    //已经存在的线
+    private List<Line> lineList = new List<Line>();
+    public List<Line> LineList { get { return lineList; } }
+
     [SerializeField]
     [Header("可与哪些点形成连线，需要手动添加")]
     private List<Node> nearNode = new List<Node>();
+    public List<Node> NearNode { get { return nearNode; } }
+
     [SerializeField]
+    //下一步生成的线
     private List<Line> templeLine = new List<Line>();
+    public List<Line> TempleLine { get { return templeLine; } set { templeLine = value; } }
+    public int TempleLineIndex { get; set; }
 
     [SerializeField]
     [Header("是否为脆弱的点")]
     private bool bFragile;
-
     public bool B_Fragile { get { return bFragile; } set { bFragile = value; } }
 
-    public int TempleLineIndex{ get; set; }
-
-    public List<Line> LineList { get { return lineList; } }
-    public List<Node> NearNode { get { return nearNode; } }
-    public List<Line> TempleLine { get { return templeLine; } set { templeLine = value; } }
     public List<Node> FreeNode
     {
         private set {; }
@@ -70,6 +74,9 @@ public class Node : MonoBehaviour, IComparable
             return freeNode;
         }
     }
+    #endregion
+
+    #region function
     /// <summary>
     /// 返回位于index的线
     /// </summary>
@@ -156,6 +163,19 @@ public class Node : MonoBehaviour, IComparable
     {
         return lineList.Contains(line);
     }
+
+    public bool BNearNodeHaveLine()
+    {
+        foreach(Node n in nearNode)
+        {
+            if(n.LineCount() + n.TempleLineIndex != 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    #endregion
 
     public int CompareTo(object obj)
     {
