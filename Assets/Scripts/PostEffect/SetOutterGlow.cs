@@ -12,6 +12,8 @@ public class SetOutterGlow : PostEffectsBase
     [Range(0, 10)]
     public float samplerRange = 7;
 
+    public Color color;
+
     public Shader outterGlowShader;
     private Material _material;
     public Material _Material
@@ -33,6 +35,7 @@ public class SetOutterGlow : PostEffectsBase
         _Material.SetFloat("_SamplerRange", samplerRange);
         GetComponent<SpriteRenderer>().material = _Material;
         GetComponent<SpriteRenderer>().sharedMaterial.color = new Color(0, 1, 0, 1);
+        //GetComponent<SpriteRenderer>().sharedMaterial.color = color;
         GetComponent<SpriteRenderer>().sharedMaterial.renderQueue = 3000;
     }
 
