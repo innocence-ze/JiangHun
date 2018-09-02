@@ -60,10 +60,14 @@ public class R_GameManager : GameManager {
         NextStep();
     }
 
+    private void Update()
+    {
+        ChangeBgState();
+    }
+
     public new void NextStep()
     {
         _step++;
-        print("r");
         base.NextStep();       
         //加ready的线
         if (_step < f_step)
@@ -153,6 +157,7 @@ public class R_GameManager : GameManager {
 
     public override void Fail()
     {
+        ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().Stop();
     }
