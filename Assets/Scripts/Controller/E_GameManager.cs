@@ -58,8 +58,8 @@ public class E_GameManager : GameManager {
         m_recordSystem.SetEndless(_step);
         gameObject.GetComponent<Click>().ChangeClickStep(addClick);
         base.NextStep();
-
-        AddRandomLine(randomIndex);
+        if(!bDefeat)
+            AddRandomLine(randomIndex);
     }
 
     private void Update()
