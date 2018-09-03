@@ -8,9 +8,7 @@ public abstract class GameManager : MonoBehaviour {
     //-----------------------------------------------
     //字段及变量
     private Texture2D StampTex;
-    [SerializeField]
-    [Header("旋转速率")]
-    private Vector3 bgRot;
+    private Vector3 bgRot = new Vector3(30, 30, 35);
     [SerializeField]
     [Header("无敌")]
     private bool xiaoze = false;
@@ -225,10 +223,10 @@ public abstract class GameManager : MonoBehaviour {
 
     public abstract void Victory();
 
-    public void RePlay()
-    {
-        LevelManager.Instance.ReStart();
-    }
+    //public void RePlay()
+    //{        
+    //    LevelManager.Instance.ReStart();
+    //}
 
     //文件系统
     public abstract void ShowData(RecordSaveData data);
@@ -236,4 +234,23 @@ public abstract class GameManager : MonoBehaviour {
     protected abstract void SaveData();
 
     protected abstract RecordSaveData LoadData();
+
+    public GameObject Find_HealBG()
+    {
+        var bgs = GameObject.FindGameObjectsWithTag("BackGround");
+        var bg = new GameObject();
+        foreach (var go in bgs)
+        {
+            if (go.transform.childCount == 0)
+            {
+                Destroy(go, 2f);
+            }
+            else
+            {
+                bg = go;
+                bg.GetComponent<D2dDestructible>().ResetAlpha();
+            }
+        }
+        return bg;
+    }
 }
