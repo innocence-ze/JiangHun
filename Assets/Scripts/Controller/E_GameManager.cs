@@ -30,9 +30,30 @@ public class E_GameManager : GameManager {
 
     }
 
+    void ChangeNode()
+    {
+        foreach(Node n in Map.Instance.nodes.Nodes)
+        {
+            if (n.BNearNodeHaveLine())
+            {
+                for(var i = 0; i < n.transform.childCount; i++)
+                {
+                    n.transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                for (var i = 0; i < n.transform.childCount; i++)
+                {
+                    n.transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
     public new void NextStep()
     {
-        print("e");
+        ChangeNode();
         _step++;
         m_recordSystem.SetEndless(_step);
         gameObject.GetComponent<Click>().ChangeClickStep(addClick);

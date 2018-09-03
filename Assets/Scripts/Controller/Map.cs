@@ -24,14 +24,14 @@ public class Map : MonoBehaviour {
 
     //图中起作用的点
     public NodeQueue nodes;
-    private List<StaticLine> staticLines = new List<StaticLine>();
+    private List<Line> staticLines = new List<Line>();
 
-    public void AddStaticLine(StaticLine staticLine)
+    public void AddStaticLine(Line staticLine)
     {
         staticLines.Add(staticLine);
     }
 
-    public List<StaticLine> StaticLines { get { return staticLines; } }
+    public List<Line> StaticLines { get { return staticLines; } }
 
     public void InitMap_Node()
     {        

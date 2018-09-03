@@ -49,7 +49,6 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}  
 
     public void LoadNewLevel()
@@ -73,6 +72,7 @@ public class LevelManager : MonoBehaviour {
 
     public void ReStart()
     {
+        bg = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().Find_HealBG();
         DestroyImmediate(prefab);
 
         prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());

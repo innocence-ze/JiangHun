@@ -7,12 +7,8 @@ public abstract class GameManager : MonoBehaviour {
 
     //-----------------------------------------------
     //字段及变量
-    [SerializeField]
-    [Header("切割用的物体")]
     private Texture2D StampTex;
-    [SerializeField]
-    [Header("旋转速率")]
-    private Vector3 bgRot;
+    private Vector3 bgRot = new Vector3(30, 30, 35);
     [SerializeField]
     [Header("无敌")]
     private bool xiaoze = false;
@@ -49,6 +45,7 @@ public abstract class GameManager : MonoBehaviour {
     //游戏循环
     protected void Init()
     {
+        StampTex = Resources.Load<Texture2D>("StampTex");
         bDefeat = false;
         xiaoze = false;
         Map.Instance.InitMap_Node();
@@ -139,20 +136,16 @@ public abstract class GameManager : MonoBehaviour {
                 bStatic = true;
             }
         }
-        GameObject line;
-        if (bStatic)
-            line = Resources.Load<GameObject>("StaticLine");
-        else
-            line = Resources.Load<GameObject>("Line");
+        var line = Resources.Load<GameObject>("Line");
         line = Instantiate(line, gameObject.transform);
-        line.GetComponent<Line>().Init(nodes);
+        line.GetComponent<Line>().Init(nodes, bStatic);
         foreach (var n in nodes)
         {
             n.TempleLineIndex++;
             n.TempleLine.Add(line.GetComponent<Line>());
         }
         if (bStatic)
-            Map.Instance.AddStaticLine(line.GetComponent<StaticLine>());
+            Map.Instance.AddStaticLine(line.GetComponent<Line>());
         addLines.Add(line.GetComponent<Line>());
     }
 
@@ -230,10 +223,10 @@ public abstract class GameManager : MonoBehaviour {
 
     public abstract void Victory();
 
-    public void RePlay()
-    {
-        LevelManager.Instance.ReStart();
-    }
+    //public void RePlay()
+    //{        
+    //    LevelManager.Instance.ReStart();
+    //}
 
     //文件系统
     public abstract void ShowData(RecordSaveData data);
@@ -241,4 +234,23 @@ public abstract class GameManager : MonoBehaviour {
     protected abstract void SaveData();
 
     protected abstract RecordSaveData LoadData();
+
+    public GameObject Find_HealBG()
+    {
+        var bgs = GameObject.FindGameObjectsWithTag("BackGround");
+        var bg = new GameObject();
+        foreach (var go in bgs)
+        {
+            if (go.transform.childCount == 0)
+            {
+                Destroy(go, 2f);
+            }
+            else
+            {
+                bg = go;
+                bg.GetComponent<D2dDestructible>().ResetAlpha();
+            }
+        }
+        return bg;
+    }
 }

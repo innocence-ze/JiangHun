@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 114268400048979354}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1909,8 +1909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114800511818277612}
   - {fileID: 114497436313255844}
@@ -1930,8 +1930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114951410469459428}
   - {fileID: 114990876276142596}
@@ -1949,8 +1949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114444197163896782}
   - {fileID: 114951410469459428}
@@ -2283,8 +2283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114116611071029046}
   - {fileID: 114132740293117710}
@@ -2536,8 +2536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114800511818277612}
   - {fileID: 114191942983222700}
@@ -2598,7 +2598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758491878c26a644c94c85411b9b6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StampTex: {fileID: 0}
   bgRot: {x: 0, y: 0, z: 0}
   xiaoze: 0
   bDefeat: 0
@@ -2624,8 +2623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114951410469459428}
   - {fileID: 114790511634386260}
@@ -3176,8 +3175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114800511818277612}
   - {fileID: 114191942983222700}
@@ -3195,8 +3194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114444197163896782}
   - {fileID: 114790511634386260}
@@ -3529,8 +3528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114444197163896782}
   - {fileID: 114191942983222700}
@@ -3601,8 +3600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114800511818277612}
   - {fileID: 114116611071029046}
@@ -3653,8 +3652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114497436313255844}
   - {fileID: 114116611071029046}

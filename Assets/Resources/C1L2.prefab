@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 114079461352818946}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,8 +1250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114075110031743226}
   - {fileID: 114857836442019006}
@@ -1465,8 +1465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114416852156036170}
   - {fileID: 114000888571811318}
@@ -1496,8 +1496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114243195650751776}
   - {fileID: 114251167988399800}
@@ -1795,8 +1795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114251167988399800}
   - {fileID: 114095152263654752}
@@ -1865,8 +1865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114243195650751776}
   - {fileID: 114095152263654752}
@@ -2152,8 +2152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114251167988399800}
   - {fileID: 114857836442019006}
@@ -2355,7 +2355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758491878c26a644c94c85411b9b6088, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StampTex: {fileID: 0}
   bgRot: {x: 0, y: 0, z: 0}
   xiaoze: 0
   bDefeat: 0
@@ -2965,8 +2964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineList: []
   position: {x: 0, y: 0, z: 0}
+  lineList: []
   nearNode:
   - {fileID: 114251167988399800}
   - {fileID: 114416852156036170}
