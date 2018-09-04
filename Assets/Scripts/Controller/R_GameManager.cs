@@ -62,25 +62,28 @@ public class R_GameManager : GameManager {
 
     private void Update()
     {
-        ChangeBgState();
+        ChangeBgState(level);
     }
 
     public new void NextStep()
     {
         _step++;
-        base.NextStep();       
+        base.NextStep();
         //加ready的线
-        if (_step < f_step)
+        if (!BDefeat)
         {
-            AddFixedLine(_step);
+            if (_step < f_step)
+            {
+                AddFixedLine(_step);
+            }
+            else if (_step < f_step + r_step)
+            {
+                AddRandomLine(randomIndex);
+            }
+            //所有步数完成通关
+            if (_step == f_step + r_step && !bDefeat)
+                Victory();
         }
-        else if(_step < f_step + r_step)
-        {
-            AddRandomLine(randomIndex);
-        }
-        //所有步数完成通关
-        if (_step == f_step+r_step && !bDefeat) 
-            Victory();
     }
 
     private void AddFixedLine(int _step)
