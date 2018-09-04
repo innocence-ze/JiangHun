@@ -10,7 +10,9 @@ using UnityEngine;
 public class Line : MonoBehaviour
 {
     [SerializeField]
-    protected LineState linestate;
+    private bool bStatic;
+    [SerializeField]
+    private LineState linestate;
     [SerializeField]
     private float length;
     [SerializeField]
@@ -20,6 +22,7 @@ public class Line : MonoBehaviour
     [SerializeField]
     private List<Node> nodes = new List<Node>();
 
+    public bool BStatic { get { return bStatic; } set { bStatic = value; } }
 
     public LineState GetState()
     {
@@ -93,8 +96,9 @@ public class Line : MonoBehaviour
     /// Line的构造函数，nodes为线的两个端点构成的数组，储存两个端点的(Node)
     /// </summary>
     /// <param name="nodes"></param>
-    public void Init(List<Node> nodes)
+    public void Init(List<Node> nodes, bool bStatic = false)
     {
+        this.bStatic = bStatic;
         ChangeState(LineState.ready);
         IsUse = false;
         if (nodes.Count >= 2)
@@ -125,14 +129,26 @@ public class Line : MonoBehaviour
     //        return 1;
     //}
 
-    public virtual void ChangeState(LineState state)
+    public void ChangeState(LineState state)
     {
+        if (state == LineState.isChoose && bStatic)
+            state = LineState.show;
         linestate = state;
         switch(state)
         {
-            case LineState.isChoose: gameObject.GetComponent<SpriteRenderer>().color = Color.red; break;
-            case LineState.ready: gameObject.GetComponent<SpriteRenderer>().color = Color.white; break;
-            case LineState.show: gameObject.GetComponent<SpriteRenderer>().color = Color.black;gameObject.tag = "Line"; break;
+            case LineState.isChoose:
+                transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.red;
+                break;
+            case LineState.ready:
+                transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.white;
+                break;
+            case LineState.show:
+                if (!bStatic)
+                    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.black;
+                else
+                    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.green;                
+                gameObject.tag = "Line";
+                break;
         }
     }
 }

@@ -31,7 +31,7 @@ public class LineManager {
         while (true)
         {
             temp = bigNode.Peek();
-            if (temp.LineCount() != 2 || temp.LineAt(0) is StaticLine || temp.LineAt(1) is StaticLine)
+            if (temp.LineCount() != 2 || temp.LineAt(0).BStatic || temp.LineAt(1).BStatic)
             {
                 break;
             }

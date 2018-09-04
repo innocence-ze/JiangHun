@@ -50,7 +50,7 @@ public class R_GameManager : GameManager {
         Init();
 
         chapter = SceneLoadManager.currentChapter;
-       // level = LevelManager.Instance.Level;      
+        level = LevelManager.Instance.Level;      
         
         addLineList = GetComponent<AddLineList>();
         f_step = addLineList.eachLine_node.Length;
@@ -62,25 +62,28 @@ public class R_GameManager : GameManager {
 
     private void Update()
     {
-        ChangeBgState();
+        ChangeBgState(level);
     }
 
     public new void NextStep()
     {
         _step++;
-        base.NextStep();       
+        base.NextStep();
         //加ready的线
-        if (_step < f_step)
+        if (!BDefeat)
         {
-            AddFixedLine(_step);
+            if (_step < f_step)
+            {
+                AddFixedLine(_step);
+            }
+            else if (_step < f_step + r_step)
+            {
+                AddRandomLine(randomIndex);
+            }
+            //所有步数完成通关
+            if (_step == f_step + r_step && !bDefeat)
+                Victory();
         }
-        else if(_step < f_step + r_step)
-        {
-            AddRandomLine(randomIndex);
-        }
-        //所有步数完成通关
-        if (_step == f_step+r_step && !bDefeat) 
-            Victory();
     }
 
     private void AddFixedLine(int _step)
@@ -159,7 +162,8 @@ public class R_GameManager : GameManager {
     {
         ShowData(LoadData());
         bDefeat = true;
-        overPanel.GetComponent<ChoosePanel>().Stop();
+        overPanel.GetComponent<ChoosePanel>().R_DisableButton();
+        StartCoroutine(delayFail());
     }
 
     //TODO
@@ -184,5 +188,11 @@ public class R_GameManager : GameManager {
         oldData.LoadCurrentCL();
         m_recordSystem.SetSaveData(oldData);
         return oldData;
+    }
+
+    IEnumerator delayFail()
+    {
+        yield return new WaitForSeconds(1f);
+        overPanel.GetComponent<ChoosePanel>().Stop();
     }
 }

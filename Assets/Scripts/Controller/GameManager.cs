@@ -7,12 +7,8 @@ public abstract class GameManager : MonoBehaviour {
 
     //-----------------------------------------------
     //字段及变量
-    [SerializeField]
-    [Header("切割用的物体")]
     private Texture2D StampTex;
-    [SerializeField]
-    [Header("旋转速率")]
-    private Vector3 bgRot;
+    private Vector3 bgRot = new Vector3(40, 40, 55);
     [SerializeField]
     [Header("无敌")]
     private bool xiaoze = false;
@@ -20,8 +16,8 @@ public abstract class GameManager : MonoBehaviour {
     protected RecordSystem m_recordSystem = new RecordSystem();
 
     [SerializeField]
-    protected bool bDefeat;
-    public bool BDefeat { get { return BDefeat; } }
+    protected bool bDefeat = false;
+    public bool BDefeat { get { return bDefeat; } }
 
     protected int score;
     public int Score { get; protected set; }
@@ -49,6 +45,7 @@ public abstract class GameManager : MonoBehaviour {
     //游戏循环
     protected void Init()
     {
+        StampTex = Resources.Load<Texture2D>("StampTex");
         bDefeat = false;
         xiaoze = false;
         Map.Instance.InitMap_Node();
@@ -96,10 +93,30 @@ public abstract class GameManager : MonoBehaviour {
 
     private List<GameObject> gos = new List<GameObject>();
     private Vector3 dirRot = new Vector3();
-    protected void ChangeBgState()
+    /// <summary>
+    /// 背景掉落后的旋转
+    /// </summary>
+    protected void ChangeBgState(int level = 0)
     {
         if (bDefeat && gos.Count == 0)
         {
+            switch (level)
+            {
+                case 0:
+                    break;
+                case 4:
+                    bgRot.z /= -4;
+                    break;
+                case 3:
+                    bgRot.z /= -1.5f;
+                    break;
+                case 2:
+                    bgRot.z /= 1.5f;
+                    break;
+                case 1:
+                    bgRot.z /= 4;
+                    break;
+            }
             foreach (var g in GameObject.FindGameObjectsWithTag("BackGround"))
             {
                 if (g.transform.childCount == 0)
@@ -125,6 +142,30 @@ public abstract class GameManager : MonoBehaviour {
     }
 
     /// <summary>
+    /// 背景复原
+    /// </summary>
+    /// <returns></returns>
+    public GameObject Find_HealBG()
+    {
+        gos.Clear();
+        var bgs = GameObject.FindGameObjectsWithTag("BackGround");
+        GameObject bg = null;
+        foreach (var go in bgs)
+        {
+            if (go.transform.childCount == 0)
+            {
+                Destroy(go, 2f);
+            }
+            else
+            {
+                bg = go;
+                bg.GetComponent<D2dDestructible>().ResetAlpha();
+            }
+        }
+        return bg;
+    }
+
+    /// <summary>
     /// 实例化线
     /// </summary>
     /// <param name="nodes"></param>
@@ -139,20 +180,16 @@ public abstract class GameManager : MonoBehaviour {
                 bStatic = true;
             }
         }
-        GameObject line;
-        if (bStatic)
-            line = Resources.Load<GameObject>("StaticLine");
-        else
-            line = Resources.Load<GameObject>("Line");
+        var line = Resources.Load<GameObject>("Line");
         line = Instantiate(line, gameObject.transform);
-        line.GetComponent<Line>().Init(nodes);
+        line.GetComponent<Line>().Init(nodes, bStatic);
         foreach (var n in nodes)
         {
             n.TempleLineIndex++;
             n.TempleLine.Add(line.GetComponent<Line>());
         }
         if (bStatic)
-            Map.Instance.AddStaticLine(line.GetComponent<StaticLine>());
+            Map.Instance.AddStaticLine(line.GetComponent<Line>());
         addLines.Add(line.GetComponent<Line>());
     }
 
@@ -230,10 +267,10 @@ public abstract class GameManager : MonoBehaviour {
 
     public abstract void Victory();
 
-    public void RePlay()
-    {
-        LevelManager.Instance.ReStart();
-    }
+    //public void RePlay()
+    //{        
+    //    LevelManager.Instance.ReStart();
+    //}
 
     //文件系统
     public abstract void ShowData(RecordSaveData data);
@@ -241,4 +278,6 @@ public abstract class GameManager : MonoBehaviour {
     protected abstract void SaveData();
 
     protected abstract RecordSaveData LoadData();
+
+
 }
