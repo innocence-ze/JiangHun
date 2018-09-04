@@ -17,14 +17,18 @@ public class UIMove : MonoBehaviour {
     [SerializeField]
     private RectTransform levelChoose;
     [SerializeField]
+    private RectTransform endless;
+    [SerializeField]
+    private RectTransform gathering;
+    [SerializeField]
     private RectTransform BG;
 
     [SerializeField]
     private GameObject shade;
 
     //用于镜头缩放
-    //private float scale;
-    //public float aimScale;
+    private float scale;
+    public float aimScale;
     [SerializeField]
     private GameObject sand;
     [SerializeField]
@@ -34,82 +38,71 @@ public class UIMove : MonoBehaviour {
 
     void Awake()
     {
-        DontDestroyOnLoad(canvas);
-
         ChapterButton[] buttons = modelChoose.GetComponentsInChildren<ChapterButton>();
         foreach (ChapterButton c in buttons)
+        {
             c.canvas = canvas;
+            c.sand = sand;
+        }
         buttons = levelChoose.GetComponentsInChildren<ChapterButton>();
         foreach (ChapterButton c in buttons)
+        {
             c.canvas = canvas;
+            c.sand = sand;
+        }
 
-        //scale = BG.GetComponentInParent<CanvasScaler>().scaleFactor;
+        scale = BG.GetComponentInParent<CanvasScaler>().scaleFactor;
 
         switch (SceneLoadManager.aimChoose)
         {
             case 1:BG.localPosition = -begin.localPosition; return;
-            case 2:BG.localPosition = -modelChoose.localPosition; return;
-            case 3:BG.localPosition = -levelChoose.localPosition; return;
+            case 2:BG.localPosition = -modelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; return;
+            case 3:BG.localPosition = -levelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; return;
         }
         SceneLoadManager.aimChoose = 1;
     }
 
     private void Update()
     {
-        //BG.GetComponentInParent<CanvasScaler>().scaleFactor = scale;
+        BG.GetComponentInParent<CanvasScaler>().scaleFactor = scale;
     }
 
-    public void MoveCamera(RectTransform rect)
+    public void MoveToModelChoose(float time)
     {
-        shade.SetActive(true);
-        sand.GetComponent<Animator>().Play(Animator.StringToHash("Sand"),0,0);
-        StartCoroutine(delayMove(sand.GetComponent<Animation>().clip.length / 2, rect));
-        StartCoroutine(ShadeActive(sand.GetComponent<Animation>().clip.length, false));
-    }
-
-    public void MoveToModelChoose()
-    {
-        MoveCamera(modelChoose);
+        FocusOn(modelChoose,time);
     }
 
     public void MoveToLevelChoose()
     {
-        MoveCamera(levelChoose);
+        LocalMove(levelChoose);
     }
 
-    public void MoveToBegin()
+    public void MoveToEndless()
     {
-        MoveCamera(begin);
+        LocalMove(endless);
+    }
+
+    public void MoveToGathering()
+    {
+        LocalMove(gathering);
+    }
+
+    public void LocalMove(RectTransform trans)
+    {
+        shade.SetActive(true);
+        BG.DOLocalMove(-trans.localPosition, 1f);
+        StartCoroutine(ShadeActive(1f, false));
     }
 
     //移动视角并且放大
-    //public void FocusOn(RectTransform trans)
-    //{
-    //    shade.SetActive(true);
-    //    StartCoroutine(focus());
-    //    BG.DOLocalMove(BG.position - trans.position, 1f);
-    //    StartCoroutine(ShadeActive(2f, false));
-    //}
-
-    //public void DisFocus()
-    //{
-    //    shade.SetActive(true);
-    //    DOTween.To(() => scale, x => scale = x, 1, 1);
-    //    StartCoroutine(disfocus());
-    //    StartCoroutine(ShadeActive(2f, false));
-    //}
-
-    //IEnumerator focus()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    DOTween.To(() => scale, x => scale = x, aimScale, 1);
-    //}
-
-    //IEnumerator disfocus()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    MoveToLevelChoose();
-    //}
+    public void FocusOn(RectTransform trans,float time)
+    {
+        shade.SetActive(true);
+        //StartCoroutine(focus());
+        DOTween.To(() => scale, x => scale = x, aimScale, time);
+        BG.DOLocalMove( - trans.localPosition, time);
+        StartCoroutine(ShadeActive(time, false));
+    }
 
     IEnumerator ShadeActive(float time,bool active)
     {
@@ -117,9 +110,5 @@ public class UIMove : MonoBehaviour {
         shade.SetActive(active);
     }
 
-    IEnumerator delayMove(float time, RectTransform trans)
-    {
-        yield return new WaitForSeconds(time);
-        BG.localPosition = -trans.localPosition;
-    }
+
 }
