@@ -7,13 +7,16 @@ public abstract class GameManager : MonoBehaviour {
 
     //-----------------------------------------------
     //字段及变量
-    private Texture2D StampTex;
+    [System.NonSerialized]
+    private Texture2D stampTax;
     private Vector3 bgRot = new Vector3(40, 40, 55);
     [SerializeField]
     [Header("无敌")]
     private bool xiaoze = false;
 
     protected RecordSystem m_recordSystem = new RecordSystem();
+
+    public Texture2D Tex { get { return stampTax; } }
 
     [SerializeField]
     protected bool bDefeat = false;
@@ -45,13 +48,17 @@ public abstract class GameManager : MonoBehaviour {
     //游戏循环
     protected void Init()
     {
-        StampTex = Resources.Load<Texture2D>("StampTex");
+        stampTax = Resources.Load<Texture2D>("StampTex");
         bDefeat = false;
         xiaoze = false;
         Map.Instance.InitMap_Node();
         addLines = new List<Line>();
         _step = 0;
         score = 0;
+        foreach(var node in Map.Instance.nodes.Nodes)
+        {
+            node.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        }
     }
 
     public void NextStep()
@@ -86,7 +93,7 @@ public abstract class GameManager : MonoBehaviour {
     {
         foreach(var line in circleLines)
         {
-            D2dDestructible.SliceAll(line.Nodes[0].transform.position, line.Nodes[1].transform.position, 0.2f, StampTex, 10);
+            D2dDestructible.SliceAll(line.Nodes[0].transform.position, line.Nodes[1].transform.position, 0.2f, stampTax, 10);
             Destroy(line.gameObject);
         }
     }

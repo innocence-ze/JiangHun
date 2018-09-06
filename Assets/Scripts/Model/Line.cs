@@ -137,16 +137,16 @@ public class Line : MonoBehaviour
         switch(state)
         {
             case LineState.isChoose:
-                transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.red;
+                //transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.red;
                 break;
             case LineState.ready:
-                transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.white;
+                //transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.white;
                 break;
             case LineState.show:
-                if (!bStatic)
-                    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.black;
-                else
-                    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.green;                
+                //if (!bStatic)
+                //    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.black;
+                //else
+                //    transform.Find("Line").GetComponent<SpriteRenderer>().color = Color.green;                
                 gameObject.tag = "Line";
                 break;
         }
