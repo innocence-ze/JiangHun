@@ -169,6 +169,7 @@ public abstract class GameManager : MonoBehaviour {
                 bg.GetComponent<D2dDestructible>().ResetAlpha();
             }
         }
+        bg.GetComponent<D2dDestructible>().Indestructible = true;
         return bg;
     }
 
@@ -187,7 +188,24 @@ public abstract class GameManager : MonoBehaviour {
                 bStatic = true;
             }
         }
-        var line = Resources.Load<GameObject>("Line");
+        var length = Vector3.Distance(nodes[0].Position, nodes[1].Position);
+        GameObject line;
+        if (length < 2)
+        {
+            line = Resources.Load<GameObject>("Line1");
+        }
+        else if (length < 3.5f)
+        {
+            line = Resources.Load<GameObject>("Line2");
+        }
+        else if (length < 5)
+        {
+            line = Resources.Load<GameObject>("Line3");
+        }
+        else
+        {
+            line = Resources.Load<GameObject>("Line4");
+        }
         line = Instantiate(line, gameObject.transform);
         line.GetComponent<Line>().Init(nodes, bStatic);
         foreach (var n in nodes)

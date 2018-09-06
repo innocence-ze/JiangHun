@@ -35,6 +35,7 @@ public class LineBuild : MonoBehaviour {
             ole = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<OutlineEffect>();
         else
             ole = GameObject.FindGameObjectWithTag("MainCamera").AddComponent<OutlineEffect>();
+        ole.lineColor0.a = 0;
         line = GetComponent<Line>();
     }
 
@@ -148,6 +149,7 @@ public class LineBuild : MonoBehaviour {
                                 goto BB;
                         }
                     }
+                    ole.lineColor1.a = 1;
                 }                               
                 else
                     lineGo.GetComponent<Outline>().enabled = false;
@@ -186,6 +188,10 @@ public class LineBuild : MonoBehaviour {
     private float timer = 0;
     // Update is called once per frame
     private void Update () {
+        if(BG == null)
+        {
+            BG = GameObject.FindGameObjectWithTag("BackGround");
+        }
 
         OutLineChange(line.GetState());
         if(line.GetState() != LineState.ready)
@@ -213,7 +219,7 @@ public class LineBuild : MonoBehaviour {
                 BBuild = false;
             var n1 = (pos - oneNode.Position);
             var n2 = (pos - anotherNode.Position);
-            if (lineGo.GetComponent<D2dDestructible>() != null && ( n1.x * n2.x > 0 && n1.y * n2.y > 0))
+            if (lineGo.GetComponent<D2dDestructible>() != null && ( ( n1.x * n2.x >= 0 && n1.y * n2.y > 0) || (n1.x * n2.x > 0 && n1.y * n2.y >= 0)))
             {
                 OnComponentChange();
             }

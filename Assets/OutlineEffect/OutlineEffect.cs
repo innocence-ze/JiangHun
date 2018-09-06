@@ -52,15 +52,15 @@ namespace cakeslice
         private readonly LinkedSet<Outline> outlines = new LinkedSet<Outline>();
 
         [Range(1.0f, 6.0f)]
-        public float lineThickness = 1.25f;
+        public float lineThickness = 1.5f;
         [Range(0, 10)]
-        public float lineIntensity = .5f;
+        public float lineIntensity = 1f;
         [Range(0, 1)]
-        public float fillAmount = 0.2f;
+        public float fillAmount = 0.1f;
 
-        public Color lineColor0 = Color.red;
-        public Color lineColor1 = Color.green;
-        public Color lineColor2 = Color.blue;
+        public Color lineColor0 = Color.white;
+        public Color lineColor1 = Color.yellow;
+        public Color lineColor2 = Color.red;
 
         public bool additiveRendering = false;
 
@@ -73,7 +73,7 @@ namespace cakeslice
         [Header("Advanced settings")]
         public bool scaleWithScreenSize = true;
         [Range(0.1f, .9f)]
-        public float alphaCutoff = .5f;
+        public float alphaCutoff = 0.46f;
         public bool flipY = false;
         public Camera sourceCamera;
 
