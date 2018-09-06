@@ -240,6 +240,10 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1243186621018414, guid: 77642e89ef1b72747b2f2b8a5760741a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77642e89ef1b72747b2f2b8a5760741a, type: 2}
   m_IsPrefabAsset: 0
@@ -549,7 +553,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Destructible2D.D2dDestructibleListEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  MainTex: {fileID: 2800000, guid: a1cdcaa1f6a96dd4d8466300a68f49e3, type: 3}
+  MainTex: {fileID: 2800000, guid: 0b363e8e7df229c4383166c8d16d1d72, type: 3}
   DensityTex: {fileID: 0}
   HealTex: {fileID: 0}
   Indestructible: 0
@@ -595,8 +599,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1355768415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.998, y: -0.033, z: 0}
-  m_LocalScale: {x: 18.294924, y: 1.3271528, z: 1}
+  m_LocalPosition: {x: 24.998, y: 0.076, z: 0}
+  m_LocalScale: {x: 18.294924, y: 1.9484726, z: 1}
   m_Children:
   - {fileID: 577465698}
   m_Father: {fileID: 0}
@@ -640,6 +644,30 @@ Prefab:
     - target: {fileID: 4246396474956276, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701240700789980, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 212309180757595430, guid: 30fff44be8f104a4a8cd32b5df915281,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768620823868236, guid: 30fff44be8f104a4a8cd32b5df915281,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212896534923319060, guid: 30fff44be8f104a4a8cd32b5df915281,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212181038813851124, guid: 30fff44be8f104a4a8cd32b5df915281,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
