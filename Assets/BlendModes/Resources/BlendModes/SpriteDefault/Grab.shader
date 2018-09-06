@@ -86,8 +86,7 @@ Shader "BlendModes/SpriteDefault/Grab"
 			{
 				fixed4 color = tex2D(_MainTex, vertexOutput.texcoord) * vertexOutput.color;
 				//color.rgb *= color.a;
-
-				//齐次除法，将点从裁剪空间映射到屏幕空间
+				
 				float2 grabTexcoord = vertexOutput.screenPos.xy / vertexOutput.screenPos.w; 
 				grabTexcoord.x = (grabTexcoord.x + 1.0) * .5;
 				grabTexcoord.y = (grabTexcoord.y + 1.0) * .5; 

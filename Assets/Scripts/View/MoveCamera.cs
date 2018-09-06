@@ -147,7 +147,4 @@ public class MoveCamera : MonoBehaviour {
         lastSingleTouchPosition = scenePos;
     }
 
-
-
-
 }
