@@ -151,7 +151,6 @@ public class R_GameManager : GameManager {
     public override void Victory()
     {
         Score += gameObject.GetComponent<Click>().ClickScore + gameObject.GetComponent<Click>().ClickSteps * eachLeftScore;
-        print(chapter + "  " + level + "  " + Score);
         m_recordSystem.SetCurrentCL(chapter, level, Score);
         SaveData();
         ShowData(LoadData());
