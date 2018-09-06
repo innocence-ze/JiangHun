@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Destructible2D;
 
 /// <summary>
 /// 关卡内游戏主脚本，主逻辑
@@ -161,6 +162,7 @@ public class R_GameManager : GameManager {
 
     public override void Fail()
     {
+        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();
