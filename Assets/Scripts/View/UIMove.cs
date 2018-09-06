@@ -56,10 +56,11 @@ public class UIMove : MonoBehaviour {
         switch (SceneLoadManager.aimChoose)
         {
             case 1:BG.localPosition = -begin.localPosition; return;
-            case 2:BG.localPosition = -modelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; return;
-            case 3:BG.localPosition = -levelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; return;
+            case 2:BG.localPosition = -modelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; scale = aimScale; return;
+            case 3:BG.localPosition = -levelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; scale = aimScale; return;
         }
         SceneLoadManager.aimChoose = 1;
+
     }
 
     private void Update()

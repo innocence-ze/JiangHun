@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using Destructible2D;
 
 /// <summary>
 /// 关卡内游戏主脚本，主逻辑
@@ -33,7 +35,7 @@ public class R_GameManager : GameManager {
     [SerializeField]
     private GameObject passPanel;
     [SerializeField]
-    private Text text;
+    private TextMeshProUGUI text;
 
 
     public int StepsLeft
@@ -160,6 +162,7 @@ public class R_GameManager : GameManager {
 
     public override void Fail()
     {
+        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();
@@ -171,7 +174,7 @@ public class R_GameManager : GameManager {
     {
         var currentScore = Score;
         var highScore = data.CurrentHighScore;
-        text.text =" 当前得分：" + currentScore + "  最高得分：" + highScore;
+        text.text =" 当前得分：" + currentScore +"\n"+ "  最高得分：" + highScore;
         //Debug.Log("第"+chapter+"章，第"+level+"关, 当前得分：" + currentScore +"  最高得分："+ highScore);
     }
 
