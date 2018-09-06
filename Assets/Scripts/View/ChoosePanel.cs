@@ -23,20 +23,9 @@ public class ChoosePanel : MonoBehaviour
     private Click click;
     //只在个别关卡赋值
     [SerializeField]
-    private GameObject[] objects;
+    public GameObject[] objects;
     [SerializeField]
     private bool ToturialPanel=false;
-
-
-    private void Start()
-    {
-        if (ToturialPanel)
-        {
-            Stop();
-            foreach (GameObject g in objects)
-                g.SetActive(false);
-        }
-    }
 
     public void MoveToTarget()
     {
