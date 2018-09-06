@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Destructible2D;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -119,6 +120,7 @@ public class E_GameManager : GameManager {
 
     public override void Fail()
     {
+        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         SaveData();
