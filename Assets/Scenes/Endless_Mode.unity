@@ -113,6 +113,19 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &841983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 547638844}
+  shaderProperties: []
 --- !u!1 &4380186
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +184,19 @@ MonoBehaviour:
   - {fileID: 1923900247}
   templeLine: []
   bFragile: 0
+--- !u!114 &8400792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1251144404}
+  shaderProperties: []
 --- !u!1 &20686572
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +251,19 @@ MonoBehaviour:
   - {fileID: 1352922075}
   templeLine: []
   bFragile: 0
+--- !u!114 &25246763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2007293201}
+  shaderProperties: []
 --- !u!1 &30496055
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,11 +308,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 765118840}
 --- !u!212 &30496058
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -375,6 +422,19 @@ Transform:
   m_Father: {fileID: 471243853}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40601766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1987848712}
+  shaderProperties: []
 --- !u!1 &41722285
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,11 +479,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 113580765}
 --- !u!212 &41722288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -562,11 +630,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 534899951}
 --- !u!1 &50437643
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,11 +687,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1381652798}
 --- !u!212 &50437646
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -663,6 +747,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &61127074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 413703146}
+  shaderProperties: []
+--- !u!114 &74540682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 817370473}
+  shaderProperties: []
 --- !u!1 &83954838
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,11 +817,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1941334669}
 --- !u!212 &83954841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -803,11 +921,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 947112628}
 --- !u!212 &90002335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -899,11 +1025,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1571414487}
 --- !u!212 &98897314
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -951,6 +1085,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &113580765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 41722288}
+  shaderProperties: []
 --- !u!1 &130811828
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,11 +1142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 930676863}
 --- !u!212 &130811831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1351,6 +1506,71 @@ MonoBehaviour:
   - {fileID: 1982087091}
   templeLine: []
   bFragile: 1
+--- !u!114 &162107520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 668039920}
+  shaderProperties: []
+--- !u!114 &165511378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1108684025}
+  shaderProperties: []
+--- !u!114 &168345103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 396467116}
+  shaderProperties: []
+--- !u!114 &179292211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1486329777}
+  shaderProperties: []
+--- !u!114 &182899807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1332878842}
+  shaderProperties: []
 --- !u!1 &183295441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,11 +1615,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1608735682}
 --- !u!212 &183295444
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1447,6 +1675,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &197660485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1775898822}
+  shaderProperties: []
+--- !u!114 &203610510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 645933805}
+  shaderProperties: []
 --- !u!1 &218928728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,11 +1745,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1869075623}
 --- !u!212 &218928731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1634,11 +1896,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1695759744}
+--- !u!114 &232774525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2069448844}
+  shaderProperties: []
 --- !u!1 &247545774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1984,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &256531508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 988925382}
+  shaderProperties: []
 --- !u!1 &269035984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,11 +2088,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1371318911}
+--- !u!114 &278040938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1002043594}
+  shaderProperties: []
+--- !u!114 &284995035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1460742229}
+  shaderProperties: []
+--- !u!114 &299952247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1378283266}
+  shaderProperties: []
 --- !u!1 &312084163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,11 +2231,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 465009837}
 --- !u!1 &317187971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +2298,19 @@ MonoBehaviour:
   - {fileID: 1208266968}
   templeLine: []
   bFragile: 0
+--- !u!114 &329954324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 651614029}
+  shaderProperties: []
 --- !u!1 &349084893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,11 +2355,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 527719377}
 --- !u!212 &349084896
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2043,6 +2415,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &349441368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1017331505}
+  shaderProperties: []
 --- !u!1 &349903869
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,11 +2647,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 735863733}
 --- !u!1 &376070929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,11 +2751,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1944734421}
+--- !u!114 &387730544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1171486704}
+  shaderProperties: []
 --- !u!1 &392118299
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,11 +2922,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 168345103}
 --- !u!1 &398212467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,11 +3179,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 61127074}
 --- !u!1 &441008244
 GameObject:
   m_ObjectHideFlags: 0
@@ -2806,11 +3236,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1610757334}
 --- !u!212 &441008247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2858,6 +3296,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &465009837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 312084165}
+  shaderProperties: []
 --- !u!1 &468870289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,11 +3400,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1518514174}
 --- !u!1 &471243852
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,6 +3489,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487931875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1070899929}
+  shaderProperties: []
 --- !u!1 &517169880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,6 +3757,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1018}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &527719377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 349084896}
+  shaderProperties: []
 --- !u!1 &532095648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3858,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532095648}
   m_CullTransparentMesh: 0
+--- !u!114 &534899951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 46005451}
+  shaderProperties: []
 --- !u!1 &547638841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3417,11 +3915,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 841983}
 --- !u!212 &547638844
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3469,6 +3975,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &582919695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1813229380}
+  shaderProperties: []
+--- !u!114 &599467474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 683199624}
+  shaderProperties: []
 --- !u!1 &613834277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3557,6 +4089,19 @@ MonoBehaviour:
   - {fileID: 1408192602}
   templeLine: []
   bFragile: 0
+--- !u!114 &626053915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2012015693}
+  shaderProperties: []
 --- !u!1 &626371498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,6 +4230,19 @@ RectTransform:
   m_AnchoredPosition: {x: -159.29, y: 90}
   m_SizeDelta: {x: 374, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &633221380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1224617685}
+  shaderProperties: []
 --- !u!1 &640102087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,11 +4341,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 203610510}
 --- !u!212 &645933805
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3879,11 +4445,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 329954324}
 --- !u!212 &651614029
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3975,11 +4549,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 748361715}
 --- !u!212 &655823814
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4027,6 +4609,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &663253949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 802899891}
+  shaderProperties: []
 --- !u!1 &668039917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,11 +4666,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 162107520}
 --- !u!212 &668039920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4123,6 +4726,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &677765057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1909883977}
+  shaderProperties: []
 --- !u!1 &683199621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,11 +4783,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 599467474}
 --- !u!212 &683199624
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4385,6 +5009,32 @@ Transform:
   m_Father: {fileID: 471243853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735863733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 362663918}
+  shaderProperties: []
+--- !u!114 &748361715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 655823814}
+  shaderProperties: []
 --- !u!1 &755038340
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,11 +5079,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1353293070}
 --- !u!212 &755038343
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4559,6 +5217,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbb130825af46f498092a09fbf86c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &762042054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 928611867}
+  shaderProperties: []
+--- !u!114 &765118840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 30496058}
+  shaderProperties: []
 --- !u!1 &779838257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,11 +5287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1277556576}
 --- !u!212 &779838260
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4699,11 +5391,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 895125421}
 --- !u!212 &783955620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4970,11 +5670,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1176187668}
 --- !u!1 &790615222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5223,11 +5931,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1776100600}
 --- !u!1 &796273937
 GameObject:
   m_ObjectHideFlags: 0
@@ -5429,11 +6145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 663253949}
 --- !u!212 &802899891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5525,11 +6249,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 74540682}
 --- !u!212 &817370473
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5631,6 +6363,19 @@ MonoBehaviour:
   - {fileID: 1664583383}
   templeLine: []
   bFragile: 0
+--- !u!114 &826119275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1247863718}
+  shaderProperties: []
 --- !u!1 &828986611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5675,11 +6420,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 870073451}
 --- !u!212 &828986614
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5727,6 +6480,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &836509244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1555016111}
+  shaderProperties: []
 --- !u!1 &842887669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5771,11 +6537,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1746843513}
 --- !u!212 &842887672
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5823,6 +6597,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &847349172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1270975685}
+  shaderProperties: []
 --- !u!1 &868094267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5914,11 +6701,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1441899786}
+--- !u!114 &870073451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 828986614}
+  shaderProperties: []
+--- !u!114 &889933710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1381746333}
+  shaderProperties: []
+--- !u!114 &895125421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 783955620}
+  shaderProperties: []
 --- !u!1 &925730757
 GameObject:
   m_ObjectHideFlags: 0
@@ -6010,11 +6844,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1332057964}
 --- !u!1 &928611864
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,11 +6901,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 762042054}
 --- !u!212 &928611867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6111,6 +6961,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &930676863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 130811831}
+  shaderProperties: []
 --- !u!1 &940361981
 GameObject:
   m_ObjectHideFlags: 0
@@ -6209,11 +7072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1244286913}
 --- !u!212 &945752458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6261,6 +7132,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &947112628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 90002335}
+  shaderProperties: []
 --- !u!1 &954107240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6698,11 +7582,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 256531508}
 --- !u!212 &988925382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6841,11 +7733,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 278040938}
 --- !u!1 &1007128001
 GameObject:
   m_ObjectHideFlags: 0
@@ -7047,11 +7947,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 349441368}
 --- !u!212 &1017331505
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7251,11 +8159,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1471179434}
 --- !u!212 &1062882255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7526,11 +8442,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 487931875}
+--- !u!114 &1091279387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1143419488}
+  shaderProperties: []
+--- !u!114 &1097094176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1517914840}
+  shaderProperties: []
 --- !u!1 &1104973717
 GameObject:
   m_ObjectHideFlags: 0
@@ -7750,11 +8700,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1923614156}
 --- !u!1 &1108684023
 GameObject:
   m_ObjectHideFlags: 0
@@ -7846,11 +8804,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 165511378}
 --- !u!1 &1143419486
 GameObject:
   m_ObjectHideFlags: 0
@@ -7942,11 +8908,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1091279387}
 --- !u!1 &1171486702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8038,11 +9012,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 387730544}
+--- !u!114 &1176187668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 789529708}
+  shaderProperties: []
 --- !u!1 &1185361863
 GameObject:
   m_ObjectHideFlags: 0
@@ -8614,11 +9609,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1766164827}
 --- !u!1 &1224617682
 GameObject:
   m_ObjectHideFlags: 0
@@ -8663,11 +9666,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 633221380}
 --- !u!212 &1224617685
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8759,11 +9770,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2013533730}
 --- !u!212 &1236272859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8868,6 +9887,19 @@ MonoBehaviour:
   - {fileID: 640102089}
   templeLine: []
   bFragile: 0
+--- !u!114 &1244286913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 945752458}
+  shaderProperties: []
 --- !u!1 &1247863716
 GameObject:
   m_ObjectHideFlags: 0
@@ -8959,11 +9991,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 826119275}
 --- !u!1 &1251144402
 GameObject:
   m_ObjectHideFlags: 0
@@ -9055,11 +10095,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 8400792}
 --- !u!1 &1254309111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,11 +10152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2120766934}
 --- !u!212 &1254309114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9303,11 +10359,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1486036236}
 --- !u!1 &1270975682
 GameObject:
   m_ObjectHideFlags: 0
@@ -9352,11 +10416,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 847349172}
 --- !u!212 &1270975685
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9404,6 +10476,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1277556576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 779838260}
+  shaderProperties: []
 --- !u!1 &1282455594
 GameObject:
   m_ObjectHideFlags: 0
@@ -9652,11 +10737,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2039607885}
 --- !u!1 &1294059884
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,6 +10848,19 @@ MonoBehaviour:
   - {fileID: 1408192602}
   templeLine: []
   bFragile: 0
+--- !u!114 &1332057964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 925730759}
+  shaderProperties: []
 --- !u!1 &1332878839
 GameObject:
   m_ObjectHideFlags: 0
@@ -9799,11 +10905,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 182899807}
 --- !u!212 &1332878842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9942,11 +11056,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1509821480}
 --- !u!1 &1345568565
 GameObject:
   m_ObjectHideFlags: 0
@@ -10086,11 +11208,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2031687951}
 --- !u!212 &1351983387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10193,6 +11323,32 @@ MonoBehaviour:
   - {fileID: 136587465}
   templeLine: []
   bFragile: 0
+--- !u!114 &1353293070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 755038343}
+  shaderProperties: []
+--- !u!114 &1361812525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1482048403}
+  shaderProperties: []
 --- !u!1 &1363542867
 GameObject:
   m_ObjectHideFlags: 0
@@ -10284,11 +11440,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1512997249}
+--- !u!114 &1371318911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 269035986}
+  shaderProperties: []
 --- !u!1 &1376843331
 GameObject:
   m_ObjectHideFlags: 0
@@ -10434,11 +11611,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 299952247}
+--- !u!114 &1381652798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 50437646}
+  shaderProperties: []
 --- !u!1 &1381746330
 GameObject:
   m_ObjectHideFlags: 0
@@ -10483,11 +11681,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 889933710}
 --- !u!212 &1381746333
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10535,6 +11741,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1396604084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1770210995}
+  shaderProperties: []
 --- !u!1 &1408192600
 GameObject:
   m_ObjectHideFlags: 0
@@ -10634,11 +11853,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2016144164}
 --- !u!212 &1422745136
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10686,6 +11913,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1441899786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 868094269}
+  shaderProperties: []
 --- !u!1 &1447563798
 GameObject:
   m_ObjectHideFlags: 0
@@ -10830,11 +12070,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 284995035}
+--- !u!114 &1471179434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1062882255}
+  shaderProperties: []
 --- !u!1 &1482048400
 GameObject:
   m_ObjectHideFlags: 0
@@ -10879,11 +12140,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1361812525}
 --- !u!212 &1482048403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10931,6 +12200,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1482776791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1777013532}
+  shaderProperties: []
+--- !u!114 &1486036236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1265179746}
+  shaderProperties: []
 --- !u!1 &1486329774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10975,11 +12270,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 179292211}
 --- !u!212 &1486329777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11080,6 +12383,32 @@ MonoBehaviour:
   - {fileID: 2036798471}
   templeLine: []
   bFragile: 0
+--- !u!114 &1509821480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1339921529}
+  shaderProperties: []
+--- !u!114 &1512997249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1363542869}
+  shaderProperties: []
 --- !u!1 &1517368675
 GameObject:
   m_ObjectHideFlags: 0
@@ -11267,11 +12596,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1097094176}
+--- !u!114 &1518514174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 468870291}
+  shaderProperties: []
 --- !u!1 &1520905881
 GameObject:
   m_ObjectHideFlags: 0
@@ -11363,11 +12713,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1632732558}
+--- !u!114 &1533169783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2133349937}
+  shaderProperties: []
+--- !u!114 &1542549900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1884716554}
+  shaderProperties: []
 --- !u!1 &1555016108
 GameObject:
   m_ObjectHideFlags: 0
@@ -11412,11 +12796,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 836509244}
 --- !u!212 &1555016111
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11592,6 +12984,32 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1559032163}
   m_CullTransparentMesh: 0
+--- !u!114 &1564135411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1681710080}
+  shaderProperties: []
+--- !u!114 &1571414487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 98897314}
+  shaderProperties: []
 --- !u!1 &1581941295
 GameObject:
   m_ObjectHideFlags: 0
@@ -11721,6 +13139,32 @@ MonoBehaviour:
   - {fileID: 1185361865}
   templeLine: []
   bFragile: 0
+--- !u!114 &1608735682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 183295444}
+  shaderProperties: []
+--- !u!114 &1610757334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 441008247}
+  shaderProperties: []
 --- !u!1 &1612887030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11812,11 +13256,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1965316220}
+--- !u!114 &1632732558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1520905883}
+  shaderProperties: []
 --- !u!1 &1634157665
 GameObject:
   m_ObjectHideFlags: 0
@@ -12015,11 +13480,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1564135411}
+--- !u!114 &1695759744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 220603559}
+  shaderProperties: []
 --- !u!1 &1696109087
 GameObject:
   m_ObjectHideFlags: 0
@@ -12166,11 +13652,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2036537392}
+--- !u!114 &1707884956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1804285565}
+  shaderProperties: []
 --- !u!1 &1712218429
 GameObject:
   m_ObjectHideFlags: 0
@@ -12435,6 +13942,32 @@ MonoBehaviour:
   - {fileID: 1696109089}
   templeLine: []
   bFragile: 0
+--- !u!114 &1746843513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 842887672}
+  shaderProperties: []
+--- !u!114 &1766164827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1222964793}
+  shaderProperties: []
 --- !u!1 &1770210992
 GameObject:
   m_ObjectHideFlags: 0
@@ -12479,11 +14012,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1396604084}
 --- !u!212 &1770210995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12622,11 +14163,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 197660485}
+--- !u!114 &1776100600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 791890472}
+  shaderProperties: []
 --- !u!1 &1777013530
 GameObject:
   m_ObjectHideFlags: 0
@@ -12718,11 +14280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1482776791}
 --- !u!1 &1795124933
 GameObject:
   m_ObjectHideFlags: 0
@@ -12921,11 +14491,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2129845325}
 --- !u!1 &1804285562
 GameObject:
   m_ObjectHideFlags: 0
@@ -12970,11 +14548,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1707884956}
 --- !u!212 &1804285565
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13113,11 +14699,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 582919695}
 --- !u!1 &1842599816
 GameObject:
   m_ObjectHideFlags: 0
@@ -13209,11 +14803,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2018392153}
 --- !u!1 &1864472609
 GameObject:
   m_ObjectHideFlags: 0
@@ -13305,11 +14907,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2129742730}
+--- !u!114 &1869075623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 218928731}
+  shaderProperties: []
 --- !u!1 &1884716551
 GameObject:
   m_ObjectHideFlags: 0
@@ -13354,11 +14977,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1542549900}
 --- !u!212 &1884716554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13497,11 +15128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1914785810}
 --- !u!1 &1909883975
 GameObject:
   m_ObjectHideFlags: 0
@@ -13593,11 +15232,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 677765057}
+--- !u!114 &1914785810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1891954791}
+  shaderProperties: []
+--- !u!114 &1923614156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1106197688}
+  shaderProperties: []
 --- !u!1 &1923900245
 GameObject:
   m_ObjectHideFlags: 0
@@ -13780,6 +15453,32 @@ RectTransform:
   m_AnchoredPosition: {x: -773, y: 430}
   m_SizeDelta: {x: 374, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1941334669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 83954841}
+  shaderProperties: []
+--- !u!114 &1944734421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 376070931}
+  shaderProperties: []
 --- !u!1 &1956836751
 GameObject:
   m_ObjectHideFlags: 0
@@ -13824,11 +15523,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2127632196}
 --- !u!212 &1956836754
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13876,6 +15583,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1965316220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1612887032}
+  shaderProperties: []
+--- !u!114 &1969958736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2116659664}
+  shaderProperties: []
 --- !u!1 &1982087090
 GameObject:
   m_ObjectHideFlags: 0
@@ -14020,11 +15753,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 40601766}
 --- !u!1 &1992818979
 GameObject:
   m_ObjectHideFlags: 0
@@ -14330,11 +16071,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 25246763}
 --- !u!1 &2012015690
 GameObject:
   m_ObjectHideFlags: 0
@@ -14379,11 +16128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 626053915}
 --- !u!212 &2012015693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14431,6 +16188,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2013533730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1236272859}
+  shaderProperties: []
+--- !u!114 &2016144164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1422745136}
+  shaderProperties: []
+--- !u!114 &2018392153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1842599818}
+  shaderProperties: []
+--- !u!114 &2031687951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1351983387}
+  shaderProperties: []
+--- !u!114 &2036537392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1698866008}
+  shaderProperties: []
 --- !u!1 &2036798469
 GameObject:
   m_ObjectHideFlags: 0
@@ -14486,6 +16308,19 @@ MonoBehaviour:
   - {fileID: 1352922075}
   templeLine: []
   bFragile: 0
+--- !u!114 &2039607885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1283162727}
+  shaderProperties: []
 --- !u!1 &2068122623
 GameObject:
   m_ObjectHideFlags: 0
@@ -14530,11 +16365,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 2082548561}
 --- !u!212 &2068122626
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14673,11 +16516,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 232774525}
+--- !u!114 &2082548561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 2068122626}
+  shaderProperties: []
 --- !u!1 &2089583240
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,11 +16761,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1969958736}
+--- !u!114 &2120766934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1254309114}
+  shaderProperties: []
+--- !u!114 &2127632196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1956836754}
+  shaderProperties: []
+--- !u!114 &2129742730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1864472611}
+  shaderProperties: []
+--- !u!114 &2129845325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ce624c2ae855e47ace5e7a9b7c7117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendedComponent: {fileID: 1799270439}
+  shaderProperties: []
 --- !u!1 &2133349935
 GameObject:
   m_ObjectHideFlags: 0
@@ -14993,8 +16917,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 1533169783}

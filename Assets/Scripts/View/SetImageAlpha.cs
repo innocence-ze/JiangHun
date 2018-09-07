@@ -42,6 +42,8 @@ public class SetImageAlpha : PostEffectsBase
         _Material.SetFloat("_AlphaPower", alphaSmooth);
         //变量的计算只是为了映射范围
         //GetComponent<Sprite>().material = _Material;
+        if (GetComponent<SpriteRenderer>() == null)
+            return;
         GetComponent<SpriteRenderer>().material = _Material;
         GetComponent<SpriteRenderer>().sharedMaterial.renderQueue = 3000;
     }
