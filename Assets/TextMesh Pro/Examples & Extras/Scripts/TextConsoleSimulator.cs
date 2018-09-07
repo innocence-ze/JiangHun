@@ -9,6 +9,8 @@ namespace TMPro.Examples
         private TMP_Text m_TextComponent;
         private bool hasTextChanged;
 
+        public float timePerWord;
+
         void Awake()
         {
             m_TextComponent = gameObject.GetComponent<TMP_Text>();
@@ -64,15 +66,18 @@ namespace TMPro.Examples
 
                 if (visibleCount > totalVisibleCharacters)
                 {
-                    yield return new WaitForSeconds(1.0f);
-                    visibleCount = 0;
+                    //yield return new WaitForSeconds(1.0f);
+                    //visibleCount = 0;
+                    yield return null;
+                    break;                  
                 }
 
                 textComponent.maxVisibleCharacters = visibleCount; // How many characters should TextMeshPro display?
 
                 visibleCount += 1;
 
-                yield return null;
+                //yield return null;
+                yield return new WaitForSeconds(timePerWord);
             }
         }
 
