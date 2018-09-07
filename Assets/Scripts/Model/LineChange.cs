@@ -95,6 +95,7 @@ public class LineChange : MonoBehaviour
         {
             //lineGo.GetComponent<SpriteRenderer>().enabled = false;
             var sia = lineGo.AddComponent<SetImageAlpha>();
+            lineGo.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
             if (dir > 0.5f)
                 sia.leftX = 1;
             else
@@ -143,7 +144,7 @@ public class LineChange : MonoBehaviour
         }
         if (lineGo.GetComponent<SetImageAlpha>() != null)
             DestroyImmediate(lineGo.GetComponent<SetImageAlpha>());
-        lineGo.GetComponent<SpriteRenderer>().enabled = true;
+        //lineGo.GetComponent<SpriteRenderer>().enabled = true;
         lineGo.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
         var blend = lineGo.AddComponent<BlendModeEffect>();
         blend.BlendMode = BlendMode.Multiply;
