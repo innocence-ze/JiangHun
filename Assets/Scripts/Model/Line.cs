@@ -110,12 +110,26 @@ public class Line : MonoBehaviour
             rotation = CalculateRotation();
             position = CalculatePosition();
         }
-        Transform trans=gameObject.GetComponent<Transform>();
-        trans.position = new Vector3(position.x, position.y, 0);
-        trans.localScale = new Vector3(length / 8.0f, length / 8.0f, 1);
-        trans.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
+        transform.position = new Vector3(position.x, position.y, 0);
+        if(length < 2)
+        {
+            transform.localScale = new Vector3(length / 3.5f, length / 3.5f, 1);
+        }
+        else if (length < 3.5f)
+        {
+            transform.localScale = new Vector3(length / 4.2f, length / 4.2f, 1);
+        }
+        else if (length < 5)
+        {
+            transform.localScale = new Vector3(length / 5f, length / 5f, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(length / 8.0f, length / 8.0f, 1);
+        }
+        transform.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
 
-        Vector2 size= gameObject.GetComponent<BoxCollider2D>().size;
+        var size= gameObject.GetComponent<BoxCollider2D>().size;
         //8.0f前的比例越小，插值受影响越小，需保证比例和余项合为1
         gameObject.GetComponent<BoxCollider2D>().size = new Vector2(size.x, 0.3f * 8.0f / length + 0.7f);
     }
