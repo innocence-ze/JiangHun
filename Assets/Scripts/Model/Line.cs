@@ -113,19 +113,19 @@ public class Line : MonoBehaviour
         transform.position = new Vector3(position.x, position.y, 0);
         if(length < 2)
         {
-            transform.localScale = new Vector3(length / 3.5f, length / 3.5f, 1);
+            transform.localScale = new Vector3(length / 3.3f, length / 3.3f, 1);
         }
         else if (length < 3.5f)
         {
-            transform.localScale = new Vector3(length / 4.2f, length / 4.2f, 1);
+            transform.localScale = new Vector3(length / 4f, length / 4f, 1);
         }
         else if (length < 5)
         {
-            transform.localScale = new Vector3(length / 5f, length / 5f, 1);
+            transform.localScale = new Vector3(length / 4.8f, length / 4.8f, 1);
         }
         else
         {
-            transform.localScale = new Vector3(length / 8.0f, length / 8.0f, 1);
+            transform.localScale = new Vector3(length / 7.8f, length / 7.8f, 1);
         }
         transform.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
 
