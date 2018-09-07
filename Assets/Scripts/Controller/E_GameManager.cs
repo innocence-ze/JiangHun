@@ -37,6 +37,7 @@ public class E_GameManager : GameManager {
         {
             if (n.BNearNodeHaveLine())
             {
+
                 for(var i = 0; i < n.transform.childCount; i++)
                 {
                     n.transform.GetChild(i).gameObject.SetActive(true);
