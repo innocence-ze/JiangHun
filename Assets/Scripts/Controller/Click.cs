@@ -12,7 +12,7 @@ public class Click : MonoBehaviour
 
     [SerializeField]
     [Header("消除一条边得到的分数，不用设定")]
-    private int _1score = 5;
+    private int _1score = 100;
 
     List<Line> bigLine = new List<Line>();
     [SerializeField]
@@ -75,28 +75,28 @@ public class Click : MonoBehaviour
                                     ClickScore += _1score * 2;
                                     break;
                                 case 3:
-                                    ClickScore += _1score * 3;
-                                    break;
-                                case 4:
                                     ClickScore += _1score * 4;
                                     break;
-                                case 5:
+                                case 4:
                                     ClickScore += _1score * 5;
                                     break;
-                                case 6:
-                                    ClickScore += _1score * 6;
-                                    break;
-                                case 7:
-                                    ClickScore += _1score * 7;
-                                    break;
-                                case 8:
+                                case 5:
                                     ClickScore += _1score * 8;
                                     break;
+                                case 6:
+                                    ClickScore += _1score * 12;
+                                    break;
+                                case 7:
+                                    ClickScore += _1score * 15;
+                                    break;
+                                case 8:
+                                    ClickScore += _1score * 20;
+                                    break;
                                 case 9:
-                                    ClickScore += _1score * 9;
+                                    ClickScore += _1score * 25;
                                     break;
                                 case 10:
-                                    ClickScore += _1score * 10;
+                                    ClickScore += _1score * 30;
                                     break;
                             }
                             Map.Instance.RemoveLine(bigLine);

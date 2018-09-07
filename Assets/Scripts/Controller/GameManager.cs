@@ -40,8 +40,15 @@ public abstract class GameManager : MonoBehaviour {
 
     [SerializeField]
     [Header("每次增加的线，不用设定")]
-    protected List<Line> addLines;
+    protected List<Line> addLines = new List<Line>();
     
+    public int AddLineCount
+    {
+        get
+        {
+            return addLines.Count;
+        }
+    }
     //-------------------------------------------------
     //方法
 
@@ -52,7 +59,6 @@ public abstract class GameManager : MonoBehaviour {
         bDefeat = false;
         xiaoze = false;
         Map.Instance.InitMap_Node();
-        addLines = new List<Line>();
         _step = 0;
         score = 0;
         foreach(var node in Map.Instance.nodes.Nodes)
@@ -63,6 +69,7 @@ public abstract class GameManager : MonoBehaviour {
 
     public void NextStep()
     {
+
         //把ready的线添加到点上
         Map.Instance.AddLine(addLines);
         //所有点初始化
@@ -85,6 +92,10 @@ public abstract class GameManager : MonoBehaviour {
                     Fail();
                 }
             }
+        }
+        foreach (var line in addLines)
+        {
+            line.GetComponent<LineChange>().B_Build1 = true;
         }
         addLines.Clear();
     }
@@ -110,6 +121,7 @@ public abstract class GameManager : MonoBehaviour {
             switch (level)
             {
                 case 0:
+                    bgRot.z /= 2;
                     break;
                 case 4:
                     bgRot.z /= -4;
@@ -169,7 +181,6 @@ public abstract class GameManager : MonoBehaviour {
                 bg.GetComponent<D2dDestructible>().ResetAlpha();
             }
         }
-        bg.GetComponent<D2dDestructible>().Indestructible = true;
         return bg;
     }
 

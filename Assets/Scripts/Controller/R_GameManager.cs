@@ -12,7 +12,7 @@ public class R_GameManager : GameManager {
 
     [SerializeField]
     [Header("剩余步数得分，用设定")]
-    private int eachLeftScore = 11;
+    private int eachLeftScore = 800;
 
     [SerializeField]
     private int chapter;

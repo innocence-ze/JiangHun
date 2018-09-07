@@ -131,7 +131,7 @@ public class LineBuild : MonoBehaviour {
                 c1.a = Mathf.Clamp01(c1.a);
                 ole.lineColor0 = c1;
                 ole.UpdateMaterialsPublicProperties();
-                lineGo.GetComponent<D2dDestructible>().Color = new Color(1, 1, 1, 0);
+                //lineGo.GetComponent<D2dDestructible>().Color = new Color(1, 1, 1, 0);
                 break;
 
                 AA: ole.lineColor0.a = 0;
@@ -201,7 +201,7 @@ public class LineBuild : MonoBehaviour {
                 BBuild = true;
                 if (bInit && !GM.BDefeat)
                 {
-                    BG.GetComponent<D2dDestructible>().Indestructible = true;
+                    //BG.GetComponent<D2dDestructible>().Indestructible = true;
                     D2dDestructible.SliceAll(oneNode.Position, anotherNode.Position, 1, GM.Tex, 1);
                     bInit = false;                    
                 }
