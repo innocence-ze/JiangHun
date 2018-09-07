@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1738,11 +1738,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114107665155627600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1948,11 +1956,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114184618105106578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2133,7 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2398,7 +2414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2513,7 +2529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2790,11 +2806,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114303850281251542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2966,11 +2990,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114372764079705084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2982,11 +3014,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114377080809786464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3044,11 +3084,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114450268090979562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3071,11 +3119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114484388809228118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3166,11 +3222,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114541343840219548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3193,11 +3257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114544404179195258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3209,11 +3281,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114568274590551012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3279,11 +3359,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114605993866357862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3335,11 +3423,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114626652161936960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3413,7 +3509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3600,11 +3696,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 2
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114698303346588476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3670,7 +3774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3921,7 +4025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4029,7 +4133,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300219031627386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -4113,11 +4217,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blendMode: 15
-  _renderMode: 0
-  _selectiveBlending: 0
-  _texture: {fileID: 0}
-  _tintColor: {r: 1, g: 1, b: 1, a: 1}
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114927251469450622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4214,7 +4326,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 2
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
