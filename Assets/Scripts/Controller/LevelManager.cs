@@ -55,8 +55,8 @@ public class LevelManager : MonoBehaviour {
     {
         if (level >= numOfLevel)
         {
-            SceneLoadManager.aimChoose = 3;
-            SceneLoadManager.LoadScene(0);
+            Camera.main.GetComponent<GameWinMove>().MoveWin();
+            StartCoroutine(WinAnim());
             return;
         }
 
@@ -127,7 +127,7 @@ public class LevelManager : MonoBehaviour {
         prefab = Resources.Load<GameObject>("C" + SceneLoadManager.currentChapter.ToString() + "L" + level.ToString());
         if (prefab != null)
         {
-            prefab = Instantiate(prefab);
+            prefab = Instantiate(prefab,gameObject.transform);
             prefab.GetComponentInChildren<Canvas>().enabled = false;
             prefab.GetComponentInChildren<Click>().enabled = false;
             prefab.transform.position = new Vector3(10f, 0, 0);
@@ -181,5 +181,12 @@ public class LevelManager : MonoBehaviour {
         {
             b.enabled = true;
         }
+    }
+
+    IEnumerator WinAnim()
+    {
+        yield return new WaitForSeconds(14f);
+        SceneLoadManager.aimChoose = 3;
+        SceneLoadManager.LoadScene(0);
     }
  }

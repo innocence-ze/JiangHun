@@ -24,6 +24,7 @@ public class AudioController : MonoBehaviour {
     /// <param name="audio">将要播放的音效</param>
     public void Play(AudioClip audio)
     {
+        musicSource = gameObject.AddComponent<AudioSource>();
         StartCoroutine(play(audio, musicSource));
     }
     public void Play(AudioClip audio, AudioSource source)
