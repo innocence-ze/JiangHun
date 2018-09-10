@@ -16,6 +16,13 @@ public class GatheringReturn : MonoBehaviour {
 
     public void ReturnBack()
     {
+        SceneLoadManager.aimChoose = 2;
+        StartCoroutine(Shade());
+    }
+
+    IEnumerator Shade()
+    {
+        yield return new WaitForSeconds(1.5f);
         SceneLoadManager.LoadScene(0);
     }
 }

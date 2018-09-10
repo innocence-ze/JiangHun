@@ -17,6 +17,12 @@ public class StoryButton : MonoBehaviour {
 
     public void LoadSceneOne()
     {
+        StartCoroutine(StoryLoad());
+    }
+
+    IEnumerator StoryLoad()
+    {
+        yield return new WaitForSeconds(1.5f);
         SceneLoadManager.currentChapter = 1;
         SceneManager.LoadScene(1);
     }
