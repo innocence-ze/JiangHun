@@ -58,8 +58,6 @@ public class AudioManager : MonoBehaviour {
 
     public void ChangeMusic()
     {
-        Debug.Log(currentScene);
-
         if (currentScene != 0 && currentScene != 5 && currentScene != 6)
             source.Stop();
 
