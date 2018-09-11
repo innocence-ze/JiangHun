@@ -24,14 +24,15 @@ public class ChapterButton : MonoBehaviour {
 
     public void Load()
     {
-        sand.GetComponent<Animator>().Play(Animator.StringToHash("Shade"));
+        sand.GetComponent<Animator>().Play(Animator.StringToHash("Sand"), 0, 0);
         StartCoroutine(LoadScene());    
     }
 
     IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(sand.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length);     
+        yield return new WaitForSeconds(sand.GetComponent<Animation>().clip.length);     
         SceneLoadManager.LoadScene(gameObject.name.ToCharArray()[0] - 48);  
+
     }
 
     IEnumerator LoadAsync()
