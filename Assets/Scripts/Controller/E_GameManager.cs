@@ -121,7 +121,6 @@ public class E_GameManager : GameManager {
 
     public override void Fail()
     {
-        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         SaveData();

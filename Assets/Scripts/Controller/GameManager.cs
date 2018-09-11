@@ -14,6 +14,22 @@ public abstract class GameManager : MonoBehaviour {
     [Header("无敌")]
     private bool xiaoze = false;
 
+    private static GameManager s_Instance = null;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (s_Instance == null)
+            {
+                s_Instance = FindObjectOfType(typeof(GameManager)) as GameManager;
+            }
+            if (s_Instance == null)
+                Debug.Log("Can't find GameManager");
+            return s_Instance;
+        }
+    }
+
+
     protected RecordSystem m_recordSystem = new RecordSystem();
 
     public Texture2D Tex { get { return stampTax; } }
@@ -103,7 +119,7 @@ public abstract class GameManager : MonoBehaviour {
     private void DropOutBG(List<Line> circleLines)
     {
         foreach(var line in circleLines)
-        {
+        { 
             D2dDestructible.SliceAll(line.Nodes[0].transform.position, line.Nodes[1].transform.position, 0.2f, stampTax, 10);
             Destroy(line.gameObject);
         }
@@ -145,7 +161,7 @@ public abstract class GameManager : MonoBehaviour {
             }
             foreach (var g in gos)
             {
-                g.GetComponent<D2dSorter>().SortingOrder++;
+                g.GetComponent<D2dSorter>().SortingLayerName = "Drop";
             }
         }
         if (gos.Count != 0)
