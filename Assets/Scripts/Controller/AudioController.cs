@@ -13,37 +13,22 @@ public class AudioController : MonoBehaviour {
     [Header("音乐淡出时间"), Range(0.1f, 2.0f)]
     public float musicFadeOutTime = 1.0f;
 
+    private  AudioSource audioSource = null;
 
+    private void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
 
-    public  AudioSource musicSource = null;
-
-    //方法
-    /// <summary>
-    /// 播放音效
-    /// </summary>
-    /// <param name="audio">将要播放的音效</param>
     public void Play(AudioClip audio)
     {
-        musicSource = gameObject.AddComponent<AudioSource>();
-        StartCoroutine(play(audio, musicSource));
+        audioSource.clip = audio;
+        audioSource.volume = musicVolumn;
+        audioSource.loop = true;
+        audioSource.Play();
     }
-    public void Play(AudioClip audio, AudioSource source)
-    {
-        StartCoroutine(play(audio, source));
-    }
-    private IEnumerator play(AudioClip audio, AudioSource source)
-    {
-        //AudioSource _source =
-        //source.gameObject.AddComponent<AudioSource>();
-        source.clip = audio;
-        source.volume = musicVolumn;
-        source.Play();
 
-        yield return new WaitForSeconds(audio.length);
-        Destroy(source);
 
-        yield return 0;
-    }
     /// <summary>
     /// 播放bgm
     /// </summary>
@@ -54,31 +39,20 @@ public class AudioController : MonoBehaviour {
     }
     private IEnumerator playMusic(AudioClip music)
     {
-        if(musicSource != null)
+        if(audioSource.isPlaying == true )
         {
             //已有bgm则淡出
             float volumn = musicVolumn;
             while (volumn > 0)
             {
-                musicSource.volume = volumn;
+                audioSource.volume = volumn;
                 volumn -= musicVolumn * Time.deltaTime / musicVolumn;
                 yield return 0;
             }
-            Destroy(musicSource);
         }
 
-        if(music == null)
-        {
-            musicSource = null;
-        }
-        else
-        {
-            musicSource = gameObject.AddComponent<AudioSource>();
-            musicSource.clip = music;
-            musicSource.volume = musicVolumn;
-            musicSource.loop = true;
-            musicSource.Play();
-        }
+        Play(music);
+
         yield return 0;
     }
 
