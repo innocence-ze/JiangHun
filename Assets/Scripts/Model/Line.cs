@@ -98,6 +98,7 @@ public class Line : MonoBehaviour
     /// <param name="nodes"></param>
     public void Init(List<Node> nodes, bool bStatic = false)
     {
+        var sprite = GetComponentInChildren<SpriteRenderer>().sprite;
         this.bStatic = bStatic;
         ChangeState(LineState.ready);
         IsUse = false;
@@ -110,28 +111,17 @@ public class Line : MonoBehaviour
             rotation = CalculateRotation();
             position = CalculatePosition();
         }
+        var x = length * 100f / sprite.texture.width;
         transform.position = new Vector3(position.x, position.y, 0);
-        if(length < 2)
-        {
-            transform.localScale = new Vector3(length / 3.3f, length / 3.3f, 1);
-        }
-        else if (length < 3.5f)
-        {
-            transform.localScale = new Vector3(length / 4f, length / 4f, 1);
-        }
-        else if (length < 5)
-        {
-            transform.localScale = new Vector3(length / 4.8f, length / 4.8f, 1);
-        }
+        if(x > 2f)
+            transform.localScale = new Vector3(x, x, 1);
         else
-        {
-            transform.localScale = new Vector3(length / 7.8f, length / 7.8f, 1);
-        }
+            transform.localScale = new Vector3(x, (2.8f - x) * x, 1);
         transform.rotation= Quaternion.AngleAxis(rotation, Vector3.forward);
 
         var size= gameObject.GetComponent<BoxCollider2D>().size;
         //8.0f前的比例越小，插值受影响越小，需保证比例和余项合为1
-        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(size.x, 0.3f * 8.0f / length + 0.7f);
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(x, size.y/*0.3f * 8.0f / length + 0.7f*/);
     }
 
     //public int CompareTo(object obj)

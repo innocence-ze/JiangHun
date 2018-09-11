@@ -13,6 +13,7 @@ public class Click : MonoBehaviour
     private int _1score = 100;
 
     List<Line> bigLine = new List<Line>();
+    public int BLCount { get; private set; }
     [SerializeField]
     [Header("可操作数，要设定，可修改")]
     private int clickStep;
@@ -58,12 +59,14 @@ public class Click : MonoBehaviour
                     case LineState.show:
                         Map.Instance.InitMap_Line();
                         bigLine = LineManager.FindBigLine(l);
+                        BLCount = bigLine.Count;
                         foreach (var bl in bigLine)
                             bl.ChangeState(LineState.isChoose);
                         break;
                     case LineState.isChoose:
                         if (clickStep > 0)
                         {
+                            BLCount = 0;
                             switch (bigLine.Count)
                             {
                                 case 1:
