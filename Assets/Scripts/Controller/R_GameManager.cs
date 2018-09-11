@@ -155,6 +155,7 @@ public class R_GameManager : GameManager {
         //Debug.Log("Victory");
         //LevelManager.Instance.LoadNewLevel();
         passPanel.GetComponent<ChoosePanel>().Stop();
+        StartCoroutine(delayStop(passPanel));
     }
 
     public override void Fail()
@@ -162,7 +163,7 @@ public class R_GameManager : GameManager {
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();
-        StartCoroutine(delayFail());
+        StartCoroutine(delayStop(overPanel));
     }
 
     //TODO
@@ -189,9 +190,9 @@ public class R_GameManager : GameManager {
         return oldData;
     }
 
-    IEnumerator delayFail()
+    IEnumerator delayStop(GameObject panel)
     {
         yield return new WaitForSeconds(1f);
-        overPanel.GetComponent<ChoosePanel>().Stop();
+        panel.GetComponent<ChoosePanel>().Stop();
     }
 }

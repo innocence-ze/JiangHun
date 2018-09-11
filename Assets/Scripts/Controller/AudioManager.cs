@@ -5,8 +5,13 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     [SerializeField]
-    private GameObject[] source;
+    private AudioController mainPlayer;
+    private AudioSource source;
     private int currentScene;
+
+    private AudioClip begin;
+    private AudioClip intro;
+    private AudioClip loop;
 
     private static bool exsist = false;
 
@@ -25,8 +30,15 @@ public class AudioManager : MonoBehaviour {
         currentScene = 0;
         DontDestroyOnLoad(gameObject);
 
-        source[1].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Tittle(wind)"));
-	}
+        mainPlayer = gameObject.GetComponentInChildren<AudioController>();
+        source = gameObject.GetComponent<AudioSource>();
+
+        begin = Resources.Load<AudioClip>("Music\\StartButton");
+        intro = Resources.Load<AudioClip>("Music\\title(intro)");
+        loop = Resources.Load<AudioClip>("Music\\title(loop)");
+
+        source.Play();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,27 +48,40 @@ public class AudioManager : MonoBehaviour {
             currentScene = SceneLoadManager.currentChapter;
             ChangeMusic();
         }
-
 	}
 
     public void GameBegin()
     {
-        source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Tittle(start button)"));
+        AudioSource.PlayClipAtPoint(begin, gameObject.transform.position);
+        StartCoroutine(ButtonDelay());
     }
 
     public void ChangeMusic()
     {
         if (currentScene != 0 && currentScene != 5 && currentScene != 6)
-            source[1].GetComponent<AudioSource>().Stop();
+            source.Stop();
 
         switch (currentScene)
         {
-            case 0: source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Tittle(wind)")); GameBegin(); break;
-            case 1: source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Level1(Loop)")); break;
-            case 2: source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Level2(Loop)")); break;
-            case 3: source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Level1(Loop)")); break;
-            case 4: source[0].GetComponent<AudioController>().PlayMusic(Resources.Load<AudioClip>("Level2(Loop)")); break;
+            case 0: mainPlayer.PlayMusic(intro); StartCoroutine(BeginScene()); source.Play(); break;
+            case 1: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
+            case 2: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level2(Loop)")); break;
+            case 3: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
+            case 4: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level2(Loop)")); break;
         }
     }
  
+    IEnumerator BeginScene()
+    {
+        yield return new WaitForSeconds(intro.length);
+        if(currentScene == 0)
+            mainPlayer.Play(loop);
+    }
+
+    IEnumerator ButtonDelay()
+    {
+        yield return new WaitForSeconds(begin.length);
+        mainPlayer.PlayMusic(intro);
+        StartCoroutine(BeginScene());
+    }
 }
