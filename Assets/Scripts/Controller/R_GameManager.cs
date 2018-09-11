@@ -161,7 +161,6 @@ public class R_GameManager : GameManager {
 
     public override void Fail()
     {
-        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();
