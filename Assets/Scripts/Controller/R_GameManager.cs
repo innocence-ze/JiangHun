@@ -10,8 +10,6 @@ using Destructible2D;
 /// </summary>
 public class R_GameManager : GameManager {
 
-    [SerializeField]
-    [Header("剩余步数得分，用设定")]
     private int eachLeftScore = 800;
 
     [SerializeField]
@@ -161,7 +159,6 @@ public class R_GameManager : GameManager {
 
     public override void Fail()
     {
-        GameObject.FindGameObjectWithTag("BackGround").GetComponent<D2dDestructible>().Indestructible = false;
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();

@@ -18,19 +18,22 @@ public class LineChange : MonoBehaviour
     //线出
     public bool B_Build2 = false;
     //红边渐现
-    public bool B_Build3 =false;
+    public bool B_Build3 = false;
     //一个开关
     private bool bInit = true;
+    private Outline OL;
 
     private void OnEnable()
     {
         lineGo = transform.Find("Line").gameObject;
         lightGo = transform.Find("Light").gameObject;
-        if (GameObject.FindGameObjectWithTag("MainCamera").GetComponent<OutlineEffect>() != null)
-            ole = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<OutlineEffect>();
+        var camera = GameObject.FindGameObjectWithTag("MainCamera");
+        if (camera.GetComponent<OutlineEffect>() != null)
+            ole = camera.GetComponent<OutlineEffect>();
         else
-            ole = GameObject.FindGameObjectWithTag("MainCamera").AddComponent<OutlineEffect>();        
+            ole = camera.AddComponent<OutlineEffect>();
         line = GetComponent<Line>();
+        OL = GetLineGoComponent<Outline>();
     }
 
     //方向
@@ -38,10 +41,13 @@ public class LineChange : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        lineGo.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        if (GameManager.Instance.Step <= 1)
+            return;
+        GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         lightGo.SetActive(false);
         dir = Random.Range(0, 1);
-        lineGo.GetComponent<Outline>().enabled = false;
+        OL.enabled = false;
+
     }
 
     [SerializeField]
@@ -66,7 +72,7 @@ public class LineChange : MonoBehaviour
     private float whiteAlpahDownSpeed = 1;
     void WhiteAlphaDown()
     {
-        if(lineGo.GetComponent<Outline>().enabled == false)
+        if(OL.enabled == false)
         {
             B_Build1 = false;
             B_Build2 = true;
@@ -78,7 +84,7 @@ public class LineChange : MonoBehaviour
         {
             B_Build1 = false;
             B_Build2 = true;
-            lineGo.GetComponent<Outline>().enabled = false;
+            OL.enabled = false;
             c.a = 0;
         }
         ole.lineColor0 = c;
@@ -94,14 +100,13 @@ public class LineChange : MonoBehaviour
         if(lineGo.GetComponent<SetImageAlpha>() == null)
         {
             //lineGo.GetComponent<SpriteRenderer>().enabled = false;
-            var sia = lineGo.AddComponent<SetImageAlpha>();
-            lineGo.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            var sia = lineGo.AddComponent<SetImageAlpha>();            
             if (dir > 0.5f)
                 sia.leftX = 1;
             else
                 sia.rightX = 1;
         }
-        var ia = lineGo.GetComponent<SetImageAlpha>();
+        var ia = GetLineGoComponent<SetImageAlpha>();
 
        
         if (dir > 0.5f)
@@ -140,13 +145,13 @@ public class LineChange : MonoBehaviour
         if (lightGo.activeSelf == false)
         {
             lightGo.SetActive(true);
-            lightGo.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+            GetLineGoComponent<SpriteRenderer>().color = new Color(1,1,1,0);
         }
         if (lineGo.GetComponent<SetImageAlpha>() != null)
             DestroyImmediate(lineGo.GetComponent<SetImageAlpha>());
         //lineGo.GetComponent<SpriteRenderer>().enabled = true;
-        lineGo.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        var blend = lineGo.AddComponent<BlendModeEffect>();
+        GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+        var blend = GetLineGoComponent<BlendModeEffect>();
         blend.BlendMode = BlendMode.Multiply;
     }
     
@@ -180,18 +185,18 @@ public class LineChange : MonoBehaviour
             case LineState.show:
                 if (line.BStatic)
                 {
-                    lineGo.GetComponent<Outline>().enabled = true;
-                    lineGo.GetComponent<Outline>().color = 1;
+                    OL.enabled = true;
+                    OL.color = 1;
                 }
                 else
-                    lineGo.GetComponent<Outline>().enabled = false;
+                    OL.enabled = false;
                 break;
                 
             case LineState.isChoose:
 
-                if (lineGo.GetComponent<Outline>().enabled == false)
-                    lineGo.GetComponent<Outline>().enabled = true;
-                lineGo.GetComponent<Outline>().color = 2;
+                if (OL.enabled == false)
+                    OL.enabled = true;
+                OL.color = 2;
 
                 var c2 = ole.lineColor2;
                 if (b2)
@@ -213,9 +218,42 @@ public class LineChange : MonoBehaviour
         }
     }
     
+    private void Init()
+    {
+        switch (line.GetState())
+        {
+            case LineState.ready:
+                lightGo.SetActive(false);
+                GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+                OL.enabled = true;
+                break;
+            case LineState.show:
+                if (line.BStatic == false)
+                {
+                    OL.enabled = false;
+                }
+                else
+                {
+                    OL.enabled = true;
+                    OL.color = 1;
+                }
+                var bme = GetLineGoComponent<BlendModeEffect>();
+                bme.BlendMode = BlendMode.Multiply;            
+                lightGo.SetActive(true);
+                break;
+        }
+    }
+
     // Update is called once per frame
     private void Update()
     {
+        if (GameManager.Instance.BDefeat)
+            return;
+        if(GameManager.Instance.Step <= 1 && line.GetState() != LineState.isChoose)
+        {
+            Init();
+            return;
+        }
         if (bInit)
         {
             foreach(var node in Map.Instance.nodes.Nodes)
@@ -231,24 +269,33 @@ public class LineChange : MonoBehaviour
             }
             bInit = false;
             B_Build3 = true;
-            lineGo.GetComponent<Outline>().enabled = true;
+            OL.enabled = true;
         }
         aa:
         if (B_Build3)
         {
-            print(3);
             WhiteAlphaUp();
         }
         if (B_Build1)
         {
-            print(1);
             WhiteAlphaDown();
         }
         if (B_Build2)
         {
-            print(2);
             LineAlphaUp();
         }
         OutLineChange(line.GetState());
+    }
+
+    private T GetLineGoComponent<T>() where T : Component
+    {
+        T component;
+        if (lineGo.GetComponent<T>() == null)
+        {
+            component = lineGo.AddComponent<T>();
+        }
+        else
+            component = lineGo.GetComponent<T>();
+        return component;
     }
 }
