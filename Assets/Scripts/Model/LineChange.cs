@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using BlendModes;
+//using BlendModes;
 using cakeslice;
 
 public class LineChange : MonoBehaviour
 {
+    //获取长边数量
+    private Click click;
     //camera的
     private OutlineEffect ole;
-    //两个子物体
+    //子物体
     private GameObject lineGo;
-    private GameObject lightGo;
+    //private GameObject lightGo;
     //这个线
     private Line line;
     //红边渐隐
@@ -20,13 +22,14 @@ public class LineChange : MonoBehaviour
     //红边渐现
     public bool B_Build3 = false;
     //一个开关
+    [SerializeField]
     private bool bInit = true;
     private Outline OL;
 
     private void OnEnable()
     {
         lineGo = transform.Find("Line").gameObject;
-        lightGo = transform.Find("Light").gameObject;
+        //lightGo = transform.Find("Light").gameObject;
         var camera = GameObject.FindGameObjectWithTag("MainCamera");
         if (camera.GetComponent<OutlineEffect>() != null)
             ole = camera.GetComponent<OutlineEffect>();
@@ -34,6 +37,7 @@ public class LineChange : MonoBehaviour
             ole = camera.AddComponent<OutlineEffect>();
         line = GetComponent<Line>();
         OL = GetLineGoComponent<Outline>();
+        click = GameObject.FindGameObjectWithTag("GameController").GetComponent<Click>();
     }
 
     //方向
@@ -44,7 +48,7 @@ public class LineChange : MonoBehaviour
         if (GameManager.Instance.Step <= 1)
             return;
         GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        lightGo.SetActive(false);
+        //lightGo.SetActive(false);
         dir = Random.Range(0, 1);
         OL.enabled = false;
 
@@ -142,17 +146,16 @@ public class LineChange : MonoBehaviour
 
     private void OverShowChange()
     {
-        if (lightGo.activeSelf == false)
-        {
-            lightGo.SetActive(true);
-            GetLineGoComponent<SpriteRenderer>().color = new Color(1,1,1,0);
-        }
+        //if (lightGo.activeSelf == false)
+        //{
+        //    lightGo.SetActive(true);
+        //    GetLineGoComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+        //}
         if (lineGo.GetComponent<SetImageAlpha>() != null)
             DestroyImmediate(lineGo.GetComponent<SetImageAlpha>());
-        //lineGo.GetComponent<SpriteRenderer>().enabled = true;
         GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-        var blend = GetLineGoComponent<BlendModeEffect>();
-        blend.BlendMode = BlendMode.Multiply;
+        //var blend = GetLineGoComponent<BlendModeEffect>();
+        //blend.BlendMode = BlendMode.Multiply;
     }
     
     [SerializeField]
@@ -163,25 +166,24 @@ public class LineChange : MonoBehaviour
     {
         if (B_Build1)
             return;
-        if (lineState != LineState.ready)
-        {
-            if (lightGo.GetComponent<SpriteRenderer>().color.a < 0.95f)
-            {
-                var c = lightGo.GetComponent<SpriteRenderer>().color;
-                c.a += Time.deltaTime;
-                c.a = Mathf.Clamp01(c.a);
-                if (c.a >= 0.95f)
-                {
-                    c.a = 1;
-                }
-                lightGo.GetComponent<SpriteRenderer>().color = c;
-            }
-        }
+        //if (lineState != LineState.ready)
+        //{
+        //    if (lightGo.GetComponent<SpriteRenderer>().color.a < 0.95f)
+        //    {
+        //        var c = lightGo.GetComponent<SpriteRenderer>().color;
+        //        c.a += Time.deltaTime;
+        //        c.a = Mathf.Clamp01(c.a);
+        //        if (c.a >= 0.95f)
+        //        {
+        //            c.a = 1;
+        //        }
+        //        lightGo.GetComponent<SpriteRenderer>().color = c;
+        //    }
+        //}
         switch (lineState)
         {
             case LineState.ready:
                 break;
-
             case LineState.show:
                 if (line.BStatic)
                 {
@@ -201,13 +203,13 @@ public class LineChange : MonoBehaviour
                 var c2 = ole.lineColor2;
                 if (b2)
                 {
-                    c2.a += Time.deltaTime * a2;
+                    c2.a += Time.deltaTime * a2 / click.BLCount;
                     if (c2.a >= 1)
                         b2 = false;
                 }
                 else
                 {
-                    c2.a -= Time.deltaTime * a2;
+                    c2.a -= Time.deltaTime * a2 / click.BLCount;
                     if (c2.a <= 0)
                         b2 = true;
                 }
@@ -220,10 +222,13 @@ public class LineChange : MonoBehaviour
     
     private void Init()
     {
+        bInit = false;
+        B_Build1 = false;
         switch (line.GetState())
         {
             case LineState.ready:
-                lightGo.SetActive(false);
+                ole.lineColor0 = Color.white;
+                //lightGo.SetActive(false);
                 GetLineGoComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
                 OL.enabled = true;
                 break;
@@ -237,9 +242,9 @@ public class LineChange : MonoBehaviour
                     OL.enabled = true;
                     OL.color = 1;
                 }
-                var bme = GetLineGoComponent<BlendModeEffect>();
-                bme.BlendMode = BlendMode.Multiply;            
-                lightGo.SetActive(true);
+                //var bme = GetLineGoComponent<BlendModeEffect>();
+                //bme.BlendMode = BlendMode.Multiply;            
+                //lightGo.SetActive(true);
                 break;
         }
     }
@@ -261,7 +266,7 @@ public class LineChange : MonoBehaviour
                 foreach(var line in node.LineList)
                 {
                     var lc = line.GetComponent<LineChange>();
-                    if (lc.B_Build1 == true || lc.B_Build2 == true)
+                    if ((lc.B_Build1 == true || lc.B_Build2 == true)&&lc!=this)
                     {
                         goto aa;
                     }
