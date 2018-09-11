@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// 关卡内缩放移动（相机）
@@ -8,7 +9,7 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour {
 
     [SerializeField]
-    private float maxSize = 4f;
+    protected float maxSize = 4f;
     [SerializeField]
     private float minSize = 1f;
 
@@ -19,37 +20,38 @@ public class MoveCamera : MonoBehaviour {
 
     private Vector2 lastSingleTouchPosition;
 
-    private Vector3 m_CameraOffset;
-    private Camera m_Camera;
+    protected Vector3 m_CameraOffset;
+    protected Camera m_Camera;
 
-    [SerializeField]
-    float sizeFactor = 0.1f;
-    [SerializeField]
-    float moveFactor = 1f;
+    float sizeFactor = 0.3f;
+    float moveFactor = 0.45f;
 
     //定义摄像机可以活动的范围
     [SerializeField]
-    private float xMin = -8;
+    protected float xMin = -8;
     [SerializeField]
-    private float xMax = 8;
+    protected float xMax = 8;
     [SerializeField]
-    private float yMin = -5;
+    protected float yMin = -5;
     [SerializeField]
-    private float yMax = 5;
+    protected float yMax = 5;
 
     //这个变量用来记录单指双指的变换
     private bool m_IsSingleFinger;
 
     //初始化游戏信息设置
-    void Start()
+    protected void Start()
     {
         m_Camera = GetComponent<Camera>();
         m_Camera.orthographicSize = 10f;
         m_CameraOffset = m_Camera.transform.position;
     }
 
-    void Update()
+    protected void Update()
     {
+        if (BOnUI())
+            return;    
+
 #if !UNITY_EDITOR
         //判断触摸数量为单点触摸
         if (Input.touchCount == 1)
@@ -103,6 +105,7 @@ public class MoveCamera : MonoBehaviour {
     /// </summary>
     private void ScaleCamera()
     {
+
         //计算出当前两点触摸点的位置
         var tempPosition1 = Input.GetTouch(0).position;
         var tempPosition2 = Input.GetTouch(1).position;
@@ -119,7 +122,7 @@ public class MoveCamera : MonoBehaviour {
 
         //把距离限制住在min和max之间
         m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
-        //m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y + m_Camera.orthographicSize, yMin, yMax - m_Camera.orthographicSize), -10);
+        m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y, yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), m_CameraOffset.z);
 
 
         //备份上一次触摸点的位置，用于对比
@@ -130,7 +133,21 @@ public class MoveCamera : MonoBehaviour {
     //Update方法一旦调用结束以后进入这里算出重置摄像机的位置
     private void LateUpdate()
     {
+        if (BOnUI())
+            return;
         m_Camera.transform.position = m_CameraOffset;
+    }
+
+    bool BOnUI()
+    {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+        if (EventSystem.current.IsPointerOverGameObject())
+            return true;
+#elif UNITY_IPHONE || UNITY_ANDROID
+        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+            return true;
+#endif
+        return false;
     }
 
     private void MovingCamera(Vector3 scenePos)
