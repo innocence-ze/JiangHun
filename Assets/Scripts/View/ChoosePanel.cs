@@ -61,8 +61,15 @@ public class ChoosePanel : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        //SceneLoadManager.aimChoose = 3;
-        SceneLoadManager.LoadScene(0);
+        LevelManager.Instance.HideAnim();
+        SceneLoadManager.aimChoose = 3;
+        StartCoroutine(Shade());
+    }
+
+    public void E_ReturnToMenu()
+    {
+        SceneLoadManager.aimChoose = 2;
+        StartCoroutine(Shade());
     }
 
     public void Stop()
@@ -124,5 +131,11 @@ public class ChoosePanel : MonoBehaviour
         click.enabled = false;
         stopButton.GetComponent<Button>().enabled = false;
         nextButton.GetComponent<Button>().enabled = false;
+    }
+
+    IEnumerator Shade()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneLoadManager.LoadScene(0);
     }
 }

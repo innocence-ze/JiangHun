@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour {
     private int level;
     public GameObject prefab;
     [SerializeField]
-    private GameObject canvas;
+    public GameObject canvas;
 
     public int Level { get { return level; } }
 
@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour {
         if (level >= numOfLevel)
         {
             Camera.main.GetComponent<GameWinMove>().MoveWin();
+            StartCoroutine(Hide());
             StartCoroutine(WinAnim());
             return;
         }
@@ -92,13 +93,6 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    public void LoadLevelAt(int i)
-    {
-        level = i - 1;
-        bg.transform.position = new Vector3(bg.transform.position.x - 10f * level, bg.transform.position.y, bg.transform.position.z);
-        LoadNewLevel();
-    }
-
     public void check()
     {
         prefab.GetComponentInChildren<Canvas>().enabled = true;
@@ -113,7 +107,7 @@ public class LevelManager : MonoBehaviour {
         if (level >= numOfLevel)
             return;
 
-        disActivate();
+        DisActivate();
         StartCoroutine(Activate());
 
         if (prefab != null)
@@ -141,7 +135,7 @@ public class LevelManager : MonoBehaviour {
         if (level <= 1)
             return;
 
-        disActivate();
+        DisActivate();
         StartCoroutine(Activate());
 
         if (prefab != null)
@@ -164,7 +158,7 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
-    private void disActivate()
+    private void DisActivate()
     {
         Button[] buttons = canvas.GetComponentsInChildren<Button>();
         foreach (Button b in buttons)
@@ -188,5 +182,22 @@ public class LevelManager : MonoBehaviour {
         yield return new WaitForSeconds(14f);
         SceneLoadManager.aimChoose = 3;
         SceneLoadManager.LoadScene(0);
+    }
+
+    IEnumerator Hide()
+    {
+        yield return new WaitForSeconds(12.5f);
+        HideAnim();
+    }
+
+    public void HideAnim()
+    {
+        canvas.SetActive(true);
+        Image[] buttons = canvas.GetComponentsInChildren<Image>();
+        Animator shade = canvas.GetComponentInChildren<Animator>();
+        foreach (Image b in buttons)
+            b.gameObject.SetActive(false);
+        shade.gameObject.SetActive(true);
+        shade.Play(Animator.StringToHash("Shade"));
     }
  }
