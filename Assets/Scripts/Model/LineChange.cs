@@ -247,6 +247,8 @@ public class LineChange : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (GameManager.Instance.BDefeat)
+            return;
         if(GameManager.Instance.Step <= 1 && line.GetState() != LineState.isChoose)
         {
             Init();

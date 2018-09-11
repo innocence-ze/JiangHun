@@ -10,8 +10,6 @@ public class Click : MonoBehaviour
 
     public int ClickScore { get; private set; }
 
-    [SerializeField]
-    [Header("消除一条边得到的分数，不用设定")]
     private int _1score = 100;
 
     List<Line> bigLine = new List<Line>();
