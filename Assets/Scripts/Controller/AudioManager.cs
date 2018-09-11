@@ -74,8 +74,7 @@ public class AudioManager : MonoBehaviour {
     IEnumerator BeginScene()
     {
         yield return new WaitForSeconds(intro.length);
-        if(currentScene == 0)
-            mainPlayer.Play(loop);
+        mainPlayer.Play(loop);
     }
 
     IEnumerator ButtonDelay()
