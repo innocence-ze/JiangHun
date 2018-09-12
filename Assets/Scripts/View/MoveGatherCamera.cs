@@ -27,5 +27,6 @@ public class MoveGatherCamera : MoveCamera {
         yMin = -yMax;
         maxSize = (xMax / 16 > yMax / 9) ? yMax : 16 / 9f * xMax;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(transform.position.y, yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), -10);
+        m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
     }
 }
