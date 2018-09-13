@@ -297,6 +297,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1072779641629578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4489779076367940}
+  - component: {fileID: 114614755437382590}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Node
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1086010223074794
 GameObject:
   m_ObjectHideFlags: 1
@@ -973,6 +989,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1338845296346548
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4452042471334232}
+  - component: {fileID: 212693942517342788}
+  - component: {fileID: 114140979606622936}
+  m_Layer: 0
+  m_Name: Enlighten
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1358145858980074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1149,7 @@ GameObject:
   - component: {fileID: 4708391892157944}
   - component: {fileID: 114584215661941340}
   m_Layer: 0
-  m_Name: Point
+  m_Name: Point (36)
   m_TagString: Node
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,6 +1488,23 @@ GameObject:
   - component: {fileID: 4000162874796174}
   - component: {fileID: 114853122489154824}
   - component: {fileID: 212085733480702982}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1537580144473326
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4012481807756606}
+  - component: {fileID: 114063473847689634}
+  - component: {fileID: 212135347064452616}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -2443,6 +2493,19 @@ Transform:
   m_Father: {fileID: 4098109772727436}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4012481807756606
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537580144473326}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4489779076367940}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4025839019279156
 Transform:
   m_ObjectHideFlags: 1
@@ -2593,12 +2656,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040987556331196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.786714, y: -0.35777482, z: 0}
+  m_LocalPosition: {x: -6.83, y: -7.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4454997090437368}
   - {fileID: 4189124116626404}
-  - {fileID: 4708391892157944}
+  - {fileID: 4489779076367940}
   - {fileID: 4594063160095270}
   - {fileID: 4578983695742016}
   - {fileID: 4755309070460616}
@@ -2634,6 +2697,7 @@ Transform:
   - {fileID: 4236926291216346}
   - {fileID: 4184877646198760}
   - {fileID: 4967129781120278}
+  - {fileID: 4708391892157944}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3199,6 +3263,19 @@ Transform:
   m_Father: {fileID: 4004047640575070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4452042471334232
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338845296346548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4489779076367940}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4454997090437368
 Transform:
   m_ObjectHideFlags: 1
@@ -3226,6 +3303,21 @@ Transform:
   - {fileID: 4349024511236084}
   m_Father: {fileID: 4098109772727436}
   m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4489779076367940
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072779641629578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.84, y: 5.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4012481807756606}
+  - {fileID: 4452042471334232}
+  m_Father: {fileID: 4098109772727436}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4497742523694486
 Transform:
@@ -3497,13 +3589,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423347350288536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.84, y: 5.72, z: 0}
+  m_LocalPosition: {x: -3.95, y: 5.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4903716266422700}
   - {fileID: 4928972650627602}
   m_Father: {fileID: 4098109772727436}
-  m_RootOrder: 2
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4714842692389444
 Transform:
@@ -4155,8 +4247,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114078865715906030}
+  - {fileID: 114624479058396660}
+  - {fileID: 114090136481287518}
+  - {fileID: 114826630823265628}
   templeLine: []
   bFragile: 0
 --- !u!114 &114038820116990112
@@ -4312,8 +4406,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114683004028270486}
+  - {fileID: 114829193380095284}
+  - {fileID: 114595080665970756}
   templeLine: []
   bFragile: 0
 --- !u!114 &114056257769480596
@@ -4322,6 +4417,30 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184783462143186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
+--- !u!114 &114063473847689634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537580144473326}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
@@ -4408,8 +4527,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114887129769415466}
+  - {fileID: 114794462128953596}
+  - {fileID: 114553742948860214}
+  - {fileID: 114032599317795600}
   templeLine: []
   bFragile: 0
 --- !u!114 &114090136481287518
@@ -4426,8 +4547,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114553742948860214}
+  - {fileID: 114032599317795600}
+  - {fileID: 114878629646125564}
+  - {fileID: 114826630823265628}
   templeLine: []
   bFragile: 0
 --- !u!114 &114091645235118262
@@ -4548,8 +4671,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114219785383995184}
+  - {fileID: 114804121189924656}
+  - {fileID: 114607737470415346}
+  - {fileID: 114683004028270486}
   templeLine: []
   bFragile: 0
 --- !u!114 &114127043032505588
@@ -4590,8 +4715,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114381340673292320}
+  - {fileID: 114553742948860214}
+  - {fileID: 114848642585655042}
+  - {fileID: 114878629646125564}
+  - {fileID: 114471957197637724}
+  - {fileID: 114536669806977938}
   templeLine: []
   bFragile: 0
 --- !u!114 &114130154709357432
@@ -4631,31 +4760,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eachLine_node:
   - Array:
-    - {fileID: 1423347350288536}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Array:
-    - {fileID: 1423347350288536}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Array:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Array:
-    - {fileID: 1423347350288536}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1574549945628314}
+    - {fileID: 1945379425982164}
+    - {fileID: 1945379425982164}
+    - {fileID: 1755547517424530}
+    - {fileID: 1755547517424530}
+    - {fileID: 1016398311142246}
+    - {fileID: 1016398311142246}
+    - {fileID: 1694874261941656}
+--- !u!114 &114140979606622936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338845296346548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198ada6227b2f4c419bd5cbefdf722f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderFamily: SpritesDefault
+  blendMode: 0
+  renderMode: 0
+  maskMode: 0
+  maskBehaviour: 0
+  overlayColor: {r: 1, g: 1, b: 1, a: 1}
+  overlayTexture: {fileID: 0}
+  overlayTextureOffset: {x: 0, y: 0}
+  overlayTextureScale: {x: 1, y: 1}
+  framebufferEnabled: 0
+  unifiedGrabEnabled: 0
+  shareMaterial: 0
+  componentExtension: {fileID: 0}
 --- !u!114 &114144908110069778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4869,8 +5005,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114826630823265628}
+  - {fileID: 114801476518453256}
+  - {fileID: 114410504088231058}
+  - {fileID: 114624479058396660}
   templeLine: []
   bFragile: 0
 --- !u!114 &114194731397965554
@@ -5098,8 +5236,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114614755437382590}
+  - {fileID: 114804121189924656}
+  - {fileID: 114109405680193840}
   templeLine: []
   bFragile: 0
 --- !u!114 &114222589829314622
@@ -5734,8 +5873,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114545079452558562}
+  - {fileID: 114478809604207322}
+  - {fileID: 114595080665970756}
   templeLine: []
   bFragile: 0
 --- !u!114 &114295449904281182
@@ -5984,8 +6124,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114410504088231058}
+  - {fileID: 114794462128953596}
+  - {fileID: 114887129769415466}
+  - {fileID: 114584215661941340}
   templeLine: []
   bFragile: 0
 --- !u!114 &114379465140746314
@@ -6026,8 +6168,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114614755437382590}
+  - {fileID: 114887129769415466}
+  - {fileID: 114804121189924656}
+  - {fileID: 114553742948860214}
+  - {fileID: 114128691404880160}
+  - {fileID: 114848642585655042}
   templeLine: []
   bFragile: 0
 --- !u!114 &114389986679304004
@@ -6179,8 +6325,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114375751718459900}
+  - {fileID: 114794462128953596}
+  - {fileID: 114193868643024330}
+  - {fileID: 114801476518453256}
   templeLine: []
   bFragile: 0
 --- !u!114 &114413264439833972
@@ -6513,8 +6661,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114545079452558562}
+  - {fileID: 114478809604207322}
+  - {fileID: 114536669806977938}
+  - {fileID: 114128691404880160}
+  - {fileID: 114878629646125564}
+  - {fileID: 114977389388534170}
   templeLine: []
   bFragile: 0
 --- !u!114 &114477295497534396
@@ -6607,8 +6759,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114471957197637724}
+  - {fileID: 114536669806977938}
+  - {fileID: 114290752962027182}
+  - {fileID: 114595080665970756}
   templeLine: []
   bFragile: 0
 --- !u!114 &114482687310602038
@@ -6728,8 +6882,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114848642585655042}
+  - {fileID: 114128691404880160}
+  - {fileID: 114471957197637724}
+  - {fileID: 114478809604207322}
+  - {fileID: 114595080665970756}
+  - {fileID: 114658649451256560}
   templeLine: []
   bFragile: 0
 --- !u!114 &114536956518807612
@@ -6770,8 +6928,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114706011750919458}
+  - {fileID: 114471957197637724}
+  - {fileID: 114290752962027182}
   templeLine: []
   bFragile: 0
 --- !u!114 &114547786400506348
@@ -6840,8 +6999,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114658649451256560}
+  - {fileID: 114595080665970756}
+  - {fileID: 114693740399498486}
+  - {fileID: 114758863304494112}
   templeLine: []
   bFragile: 0
 --- !u!114 &114553742948860214
@@ -6858,8 +7019,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114887129769415466}
+  - {fileID: 114078865715906030}
+  - {fileID: 114090136481287518}
+  - {fileID: 114128691404880160}
+  - {fileID: 114381340673292320}
+  - {fileID: 114878629646125564}
   templeLine: []
   bFragile: 0
 --- !u!114 &114554406460453676
@@ -7072,8 +7237,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114375751718459900}
+  - {fileID: 114614755437382590}
+  - {fileID: 114887129769415466}
   templeLine: []
   bFragile: 0
 --- !u!114 &114587057695889546
@@ -7117,8 +7283,14 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114290752962027182}
+  - {fileID: 114478809604207322}
+  - {fileID: 114536669806977938}
+  - {fileID: 114658649451256560}
+  - {fileID: 114553519196975248}
+  - {fileID: 114758863304494112}
+  - {fileID: 114829193380095284}
+  - {fileID: 114055639951428472}
   templeLine: []
   bFragile: 0
 --- !u!114 &114597155447363420
@@ -7255,8 +7427,31 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114109405680193840}
+  - {fileID: 114693740399498486}
+  - {fileID: 114758863304494112}
+  - {fileID: 114683004028270486}
+  templeLine: []
+  bFragile: 0
+--- !u!114 &114614755437382590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072779641629578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaed362f4435ce94b9dd23a4058ab5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  lineList: []
+  nearNode:
+  - {fileID: 114584215661941340}
+  - {fileID: 114887129769415466}
+  - {fileID: 114381340673292320}
+  - {fileID: 114804121189924656}
+  - {fileID: 114219785383995184}
   templeLine: []
   bFragile: 0
 --- !u!114 &114624479058396660
@@ -7273,8 +7468,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114794462128953596}
+  - {fileID: 114193868643024330}
+  - {fileID: 114826630823265628}
+  - {fileID: 114032599317795600}
   templeLine: []
   bFragile: 0
 --- !u!114 &114634465379919212
@@ -7596,8 +7793,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114848642585655042}
+  - {fileID: 114536669806977938}
+  - {fileID: 114553519196975248}
+  - {fileID: 114595080665970756}
   templeLine: []
   bFragile: 0
 --- !u!114 &114659225488157580
@@ -7686,8 +7885,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114109405680193840}
+  - {fileID: 114607737470415346}
+  - {fileID: 114829193380095284}
+  - {fileID: 114055639951428472}
   templeLine: []
   bFragile: 0
 --- !u!114 &114693740399498486
@@ -7704,8 +7905,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114804121189924656}
+  - {fileID: 114848642585655042}
+  - {fileID: 114607737470415346}
+  - {fileID: 114553519196975248}
   templeLine: []
   bFragile: 0
 --- !u!114 &114694660989246240
@@ -7740,8 +7943,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114826630823265628}
+  - {fileID: 114545079452558562}
+  - {fileID: 114977389388534170}
   templeLine: []
   bFragile: 0
 --- !u!114 &114713540703509432
@@ -7857,8 +8061,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114607737470415346}
+  - {fileID: 114553519196975248}
+  - {fileID: 114829193380095284}
+  - {fileID: 114595080665970756}
   templeLine: []
   bFragile: 0
 --- !u!114 &114764034090606410
@@ -7995,8 +8201,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114375751718459900}
+  - {fileID: 114078865715906030}
+  - {fileID: 114624479058396660}
+  - {fileID: 114410504088231058}
   templeLine: []
   bFragile: 0
 --- !u!114 &114801476518453256
@@ -8013,8 +8221,9 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114826630823265628}
+  - {fileID: 114410504088231058}
+  - {fileID: 114193868643024330}
   templeLine: []
   bFragile: 0
 --- !u!114 &114804121189924656
@@ -8031,8 +8240,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114614755437382590}
+  - {fileID: 114219785383995184}
+  - {fileID: 114109405680193840}
+  - {fileID: 114381340673292320}
+  - {fileID: 114848642585655042}
+  - {fileID: 114693740399498486}
   templeLine: []
   bFragile: 0
 --- !u!114 &114816198645373190
@@ -8109,8 +8322,14 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114801476518453256}
+  - {fileID: 114193868643024330}
+  - {fileID: 114624479058396660}
+  - {fileID: 114032599317795600}
+  - {fileID: 114090136481287518}
+  - {fileID: 114878629646125564}
+  - {fileID: 114977389388534170}
+  - {fileID: 114706011750919458}
   templeLine: []
   bFragile: 0
 --- !u!114 &114828469195828192
@@ -8151,8 +8370,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114595080665970756}
+  - {fileID: 114758863304494112}
+  - {fileID: 114055639951428472}
+  - {fileID: 114683004028270486}
   templeLine: []
   bFragile: 0
 --- !u!114 &114830573801508384
@@ -8241,8 +8462,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114804121189924656}
+  - {fileID: 114381340673292320}
+  - {fileID: 114128691404880160}
+  - {fileID: 114536669806977938}
+  - {fileID: 114658649451256560}
+  - {fileID: 114693740399498486}
   templeLine: []
   bFragile: 0
 --- !u!114 &114852650301189900
@@ -8414,8 +8639,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114553742948860214}
+  - {fileID: 114090136481287518}
+  - {fileID: 114826630823265628}
+  - {fileID: 114977389388534170}
+  - {fileID: 114471957197637724}
+  - {fileID: 114128691404880160}
   templeLine: []
   bFragile: 0
 --- !u!114 &114881356612524288
@@ -8489,8 +8718,12 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114375751718459900}
+  - {fileID: 114584215661941340}
+  - {fileID: 114614755437382590}
+  - {fileID: 114078865715906030}
+  - {fileID: 114553742948860214}
+  - {fileID: 114381340673292320}
   templeLine: []
   bFragile: 0
 --- !u!114 &114889428526204664
@@ -8705,8 +8938,10 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   lineList: []
   nearNode:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114826630823265628}
+  - {fileID: 114706011750919458}
+  - {fileID: 114471957197637724}
+  - {fileID: 114878629646125564}
   templeLine: []
   bFragile: 0
 --- !u!114 &114987669513111852
@@ -9414,6 +9649,52 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 888dda50ddab8f44a889895869ba85ff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!212 &212135347064452616
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1537580144473326}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -771290525
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: bbee7627303a626428c1538a31ff6f3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11362,6 +11643,52 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1848708025839172}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -771290525
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 888dda50ddab8f44a889895869ba85ff, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!212 &212693942517342788
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338845296346548}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
