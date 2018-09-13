@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using BlendModes;
+using cakeslice;
 /// <summary>
 /// 点的类，字段有点的位置与点上的线的集合
 /// 方法有在点上对线进行增删查及找线的数量
@@ -174,6 +175,27 @@ public class Node : MonoBehaviour, IComparable
             }
         }
         return false;
+    }
+
+    void Update()
+    {
+        if (bFragile)
+        {
+            for(int i = 0; i < transform.childCount; i++)
+            {
+                if(transform.GetChild(i).GetComponent<Outline>() == null)
+                    transform.GetChild(i).gameObject.AddComponent<Outline>();
+                    transform.GetChild(i).gameObject.GetComponent<Outline>().color = 1;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).GetComponent<Outline>() != null)
+                    DestroyImmediate(transform.GetChild(i).gameObject.GetComponent<Outline>());
+            }
+        }
     }
     #endregion
 

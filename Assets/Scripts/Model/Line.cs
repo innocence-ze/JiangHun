@@ -121,7 +121,7 @@ public class Line : MonoBehaviour
 
         var size= gameObject.GetComponent<BoxCollider2D>().size;
         //8.0f前的比例越小，插值受影响越小，需保证比例和余项合为1
-        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(length, size.y/*0.3f * 8.0f / length + 0.7f*/);
+        gameObject.GetComponent<BoxCollider2D>().size = new Vector2(length / x, size.y/*0.3f * 8.0f / length + 0.7f*/);
     }
 
     //public int CompareTo(object obj)
