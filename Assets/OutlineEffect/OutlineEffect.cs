@@ -52,7 +52,7 @@ namespace cakeslice
         private readonly LinkedSet<Outline> outlines = new LinkedSet<Outline>();
 
         [Range(1.0f, 6.0f)]
-        public float lineThickness = 1.5f;
+        public float lineThickness = 2f;
         [Range(0, 10)]
         public float lineIntensity = 1f;
         [Range(0, 1)]
@@ -73,7 +73,7 @@ namespace cakeslice
         [Header("Advanced settings")]
         public bool scaleWithScreenSize = true;
         [Range(0.1f, .9f)]
-        public float alphaCutoff = 0.46f;
+        public float alphaCutoff = 0.9f;
         public bool flipY = false;
         public Camera sourceCamera;
 

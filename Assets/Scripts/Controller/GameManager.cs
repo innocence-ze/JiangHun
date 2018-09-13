@@ -218,7 +218,7 @@ public abstract class GameManager : MonoBehaviour {
             }
         }
         var length = Vector3.Distance(nodes[0].Position, nodes[1].Position);
-        int index = Random.Range(1, 6);
+        int index = Random.Range(2, 6);
         GameObject line= Resources.Load<GameObject>("Line" + index);           
         line = Instantiate(line, gameObject.transform);
         line.GetComponent<Line>().Init(nodes, bStatic);
