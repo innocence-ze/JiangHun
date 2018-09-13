@@ -104,6 +104,7 @@ public class Click : MonoBehaviour
                             foreach (var bl in bigLine)
                                 Destroy(bl.gameObject);
                             clickStep--;
+                            AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("Music\\Erase1"), Camera.main.transform.position);
                         }
                         break;
                 }
