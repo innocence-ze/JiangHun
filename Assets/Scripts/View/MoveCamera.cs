@@ -138,7 +138,7 @@ public class MoveCamera : MonoBehaviour {
         m_Camera.transform.position = m_CameraOffset;
     }
 
-    bool BOnUI()
+    protected bool BOnUI()
     {
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (EventSystem.current.IsPointerOverGameObject())
