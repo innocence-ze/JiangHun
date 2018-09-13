@@ -23,7 +23,7 @@ public class ToturialManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-        if(click.ClickSteps==1&&flag[1]==false)
+        if(panel.Length>1&&click.ClickSteps==1&&flag[1]==false)
         {
             panel[1].GetComponent<ChoosePanel>().Stop();
             foreach (GameObject g in panel[1].GetComponent<ChoosePanel>().objects)

@@ -1098,11 +1098,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811977467}
   m_CullTransparentMesh: 0
---- !u!224 &875547949 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224173573154634986, guid: 8aca74775832a884bb9392543df89811,
-    type: 2}
-  m_PrefabInternal: {fileID: 1336411258}
 --- !u!1 &993625353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,7 +1571,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1155968654}
   m_OnClick:
     m_PersistentCalls:
@@ -1805,7 +1800,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 875547949}
+  - {fileID: 1533182563}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1905,6 +1900,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800931578217380, guid: 8aca74775832a884bb9392543df89811, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aca74775832a884bb9392543df89811, type: 2}
@@ -2262,6 +2261,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1487473190}
   m_CullTransparentMesh: 0
+--- !u!224 &1533182563 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224829662155361478, guid: 8aca74775832a884bb9392543df89811,
+    type: 2}
+  m_PrefabInternal: {fileID: 1336411258}
 --- !u!1 &1547318815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2385,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1562945488}
   m_OnClick:
     m_PersistentCalls:
