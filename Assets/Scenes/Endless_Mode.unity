@@ -3036,14 +3036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5dd1cb7db5ceb45b80bcdd25d36af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 10
+  maxSize: 7
   minSize: 1
-  sizeFactor: 1
-  moveFactor: 2
-  xMin: -20
-  xMax: 20
-  yMin: -11
-  yMax: 11
+  xMin: -23
+  xMax: 23
+  yMin: -10
+  yMax: 10
 --- !u!114 &398212472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5226,7 +5224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8c753cb16402343adbf04a51b94fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _1score: 5
   clickStep: 3
 --- !u!114 &757963647
 MonoBehaviour:
@@ -13112,7 +13109,7 @@ SpriteRenderer:
   m_Size: {x: 11.92, y: 6.87}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1581941297
