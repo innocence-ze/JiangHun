@@ -32,8 +32,6 @@ public class R_GameManager : GameManager {
 
     [SerializeField]
     private GameObject passPanel;
-    [SerializeField]
-    private TextMeshProUGUI text;
 
 
     public int StepsLeft
@@ -151,11 +149,11 @@ public class R_GameManager : GameManager {
         Score += gameObject.GetComponent<Click>().ClickScore + gameObject.GetComponent<Click>().ClickSteps * eachLeftScore;
         m_recordSystem.SetCurrentCL(chapter, level, Score);
         SaveData();
-        ShowData(LoadData());
+        //ShowData(LoadData());
         //Debug.Log("Victory");
         //LevelManager.Instance.LoadNewLevel();
         //passPanel.GetComponent<ChoosePanel>().Stop();
-        StartCoroutine(delayStop(passPanel));
+        StartCoroutine(DelayStop(passPanel));
     }
 
     public override void Fail()
@@ -163,15 +161,16 @@ public class R_GameManager : GameManager {
         ShowData(LoadData());
         bDefeat = true;
         overPanel.GetComponent<ChoosePanel>().R_DisableButton();
-        StartCoroutine(delayStop(overPanel));
+        StartCoroutine(DelayStop(overPanel));
     }
+
 
     //TODO
     public override void ShowData(RecordSaveData data)
     {
         var currentScore = Score;
         var highScore = data.CurrentHighScore;
-        text.text =" 当前得分：" + currentScore +"\n"+ "  最高得分：" + highScore;
+        //text.text =" 当前得分：" + currentScore +"\n"+ "  最高得分：" + highScore;
         //Debug.Log("第"+chapter+"章，第"+level+"关, 当前得分：" + currentScore +"  最高得分："+ highScore);
     }
 
@@ -190,9 +189,9 @@ public class R_GameManager : GameManager {
         return oldData;
     }
 
-    IEnumerator delayStop(GameObject panel)
+    IEnumerator DelayStop(GameObject panel)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         panel.GetComponent<ChoosePanel>().Stop();
     }
 }

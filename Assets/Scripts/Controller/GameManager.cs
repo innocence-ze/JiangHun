@@ -91,6 +91,8 @@ public abstract class GameManager : MonoBehaviour {
         //所有点初始化
         Map.Instance.InitMap_Node();
         //所有线设为show
+        if(_step>1)
+            StartCoroutine(SoundEffect());
         foreach (Line l in addLines)
         {
             l.ChangeState(LineState.show);
@@ -316,5 +318,10 @@ public abstract class GameManager : MonoBehaviour {
 
     protected abstract RecordSaveData LoadData();
 
-
+    protected IEnumerator SoundEffect()
+    {
+        yield return new WaitForSeconds(2f);
+        if(SceneLoadManager.currentChapter!=0)
+            AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("Music\\Crack4"), Camera.main.transform.position);
+    }
 }
