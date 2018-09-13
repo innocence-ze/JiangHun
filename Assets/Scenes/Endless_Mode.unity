@@ -7359,7 +7359,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Destructible2D.D2dDestructibleListEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  MainTex: {fileID: 2800000, guid: 0b363e8e7df229c4383166c8d16d1d72, type: 3}
+  MainTex: {fileID: 2800000, guid: e6cf39069bcca88428c020d987b966bb, type: 3}
   DensityTex: {fileID: 0}
   HealTex: {fileID: 0}
   Indestructible: 0
@@ -7406,7 +7406,7 @@ Transform:
   m_GameObject: {fileID: 954107240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20.32519, y: 2.2066123, z: 1}
+  m_LocalScale: {x: 10.7460375, y: 2.434945, z: 1}
   m_Children:
   - {fileID: 1294059886}
   m_Father: {fileID: 0}
@@ -8320,6 +8320,10 @@ Prefab:
     - target: {fileID: 4960755203204590, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
       propertyPath: m_LocalPosition.y
       value: -5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1701240700789980, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
