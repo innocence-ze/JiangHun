@@ -1066,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1993801659727364
 GameObject:
   m_ObjectHideFlags: 1
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   - {fileID: 114641665765650228}
   - {fileID: 114296854492472196}
   templeLine: []
-  bFragile: 0
+  bFragile: 1
 --- !u!114 &114030146665036646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2529,7 +2529,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141949391768870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -3638,28 +3638,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eachLine_node:
   - Array:
-    - {fileID: 0}
-    - {fileID: 1882990152859974}
-    - {fileID: 1882990152859974}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 1882990152859974}
-    - {fileID: 1882990152859974}
-    - {fileID: 0}
-  - Array:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - Array:
-    - {fileID: 0}
-    - {fileID: 1882990152859974}
-    - {fileID: 1882990152859974}
-    - {fileID: 0}
+    - {fileID: 1391182951905514}
+    - {fileID: 1410916192716282}
+    - {fileID: 1410916192716282}
+    - {fileID: 1924525732117510}
 --- !u!114 &114726582340155104
 MonoBehaviour:
   m_ObjectHideFlags: 1
