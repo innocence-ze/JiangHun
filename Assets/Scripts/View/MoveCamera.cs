@@ -7,11 +7,9 @@ using UnityEngine.EventSystems;
 /// 关卡内缩放移动（相机）
 /// </summary>
 public class MoveCamera : MonoBehaviour {
-
-    [SerializeField]
+    
     protected float maxSize = 4f;
-    [SerializeField]
-    private float minSize = 1f;
+    protected float minSize = 1f;
 
     //记录上一次手机触摸位置判断用户是在放大还是缩小
     private Vector2 oldPosition1;
@@ -27,13 +25,9 @@ public class MoveCamera : MonoBehaviour {
     float moveFactor = 0.45f;
 
     //定义摄像机可以活动的范围
-    [SerializeField]
     protected float xMin = -8;
-    [SerializeField]
     protected float xMax = 8;
-    [SerializeField]
     protected float yMin = -5;
-    [SerializeField]
     protected float yMax = 5;
 
     //这个变量用来记录单指双指的变换
