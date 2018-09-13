@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour {
 
     public void ChangeMusic()
     {
-        if (currentScene != 0 && currentScene != 5 && currentScene != 6)
+        if (currentScene != 0 && currentScene != 7 && currentScene != 8)
             source.Stop();
 
         switch (currentScene)
@@ -66,8 +66,10 @@ public class AudioManager : MonoBehaviour {
             case 0: mainPlayer.PlayMusic(intro); StartCoroutine(BeginScene()); source.Play(); break;
             case 1: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
             case 2: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level2(Loop)")); break;
-            case 3: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
-            case 4: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level2(Loop)")); break;
+            case 3: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level3(Loop)")); break;
+            case 4: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
+            case 5: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level2(Loop)")); break;
+            case 6: mainPlayer.PlayMusic(Resources.Load<AudioClip>("Music\\Level1(Loop)")); break;
         }
     }
  

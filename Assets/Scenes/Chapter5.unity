@@ -203,6 +203,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30fff44be8f104a4a8cd32b5df915281, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &42053429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1701240700789980, guid: 30fff44be8f104a4a8cd32b5df915281,
+    type: 2}
+  m_PrefabInternal: {fileID: 42053428}
 --- !u!1 &94354654
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b3c0aa2c76be740bdf40a737c9425a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfLevel: 4
+  numOfLevel: 3
   bg: {fileID: 583805235}
   level: 0
   prefab: {fileID: 0}
@@ -590,6 +595,8 @@ GameObject:
   - component: {fileID: 886229552}
   - component: {fileID: 886229551}
   - component: {fileID: 886229550}
+  - component: {fileID: 886229553}
+  - component: {fileID: 886229554}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -657,6 +664,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886229553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 886229549}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08d9af60e73cd448b3658b3a1ed1856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWin: 0
+  moveDis: 10
+  BG: {fileID: 583805235}
+  wall: {fileID: 42053429}
+  levelManager: {fileID: 803810231}
+  oldBG: {fileID: 94354654}
+  newBG: {fileID: 1676361162}
+--- !u!114 &886229554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 886229549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5dd1cb7db5ceb45b80bcdd25d36af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize: 6
+  minSize: 3
+  xMin: -11
+  xMax: 11
+  yMin: -7
+  yMax: 7
 --- !u!1 &1307374925
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,6 +884,10 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1528393294176260, guid: 77642e89ef1b72747b2f2b8a5760741a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243186621018414, guid: 77642e89ef1b72747b2f2b8a5760741a, type: 2}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

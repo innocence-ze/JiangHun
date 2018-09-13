@@ -58,6 +58,7 @@ public class LevelManager : MonoBehaviour {
         if (level >= numOfLevel)
         {
             Camera.main.orthographicSize = 5;
+            Camera.main.GetComponent<GameWinMove>().enabled = true;
             Camera.main.GetComponent<GameWinMove>().MoveWin();
             StartCoroutine(Hide());
             StartCoroutine(WinAnim());
@@ -91,7 +92,10 @@ public class LevelManager : MonoBehaviour {
     IEnumerator Load()
     {
         prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
-        yield return new WaitForSeconds(1f);         
+        if (SceneLoadManager.currentChapter >= 4)
+            yield return new WaitForSeconds(2f);
+        else
+            yield return new WaitForSeconds(1f);
         if (prefab != null)
         {
             prefab = Instantiate(prefab);
