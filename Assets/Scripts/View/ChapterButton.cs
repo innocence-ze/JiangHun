@@ -25,6 +25,7 @@ public class ChapterButton : MonoBehaviour {
     public void Load()
     {
         sand.GetComponent<Animator>().Play(Animator.StringToHash("Shade"));
+        AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("Music\\Opendoor"),Camera.main.transform.position,0.2f);
         StartCoroutine(LoadScene());    
     }
 
