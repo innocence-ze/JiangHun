@@ -154,7 +154,7 @@ public class R_GameManager : GameManager {
         ShowData(LoadData());
         //Debug.Log("Victory");
         //LevelManager.Instance.LoadNewLevel();
-        passPanel.GetComponent<ChoosePanel>().Stop();
+        //passPanel.GetComponent<ChoosePanel>().Stop();
         StartCoroutine(delayStop(passPanel));
     }
 
