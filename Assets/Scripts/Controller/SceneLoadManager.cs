@@ -43,8 +43,8 @@ public class SceneLoadManager : MonoBehaviour {
     {
         if (i == 1 && aimLevel == 1)
         {
-            currentChapter = 5;
-            SceneManager.LoadScene(5);
+            currentChapter = 7;
+            SceneManager.LoadScene(7);
             return;
         }
         currentChapter = i;
@@ -54,7 +54,7 @@ public class SceneLoadManager : MonoBehaviour {
     public static void LoadNextScene()
     {
         currentChapter++;
-        if (currentChapter > 3)
+        if (currentChapter > 5)
             currentChapter = 0;
         SceneManager.LoadScene(currentChapter);       
     }

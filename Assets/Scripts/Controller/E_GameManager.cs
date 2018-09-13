@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class E_GameManager : GameManager {
 
@@ -15,7 +16,10 @@ public class E_GameManager : GameManager {
 
     [SerializeField]
     [Header("每步增加的可点击次数，要设定，可修改")]
-    private int addClick;   
+    private int addClick;
+
+    [SerializeField]
+    private TextMeshProUGUI text;
 
     void Awake()
     {
@@ -142,7 +146,8 @@ public class E_GameManager : GameManager {
         var recordStep = data.EndlessStep;
         //是否为新纪录
         var bHighScore = currentStep >= recordStep ? true : false;
-        Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep + "是否为新纪录:" + bHighScore);
+        //Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep + "是否为新纪录:" + bHighScore);
+        text.text = "当前步数：" + currentStep + "\n" + "历史纪录：" + recordStep;
     }
 
     protected override void SaveData()
