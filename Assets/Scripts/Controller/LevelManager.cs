@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     public GameObject canvas;
 
+    private Transform trans;
+
     public int Level { get { return level; } }
 
 	// Use this for initialization
@@ -55,6 +57,7 @@ public class LevelManager : MonoBehaviour {
     {
         if (level >= numOfLevel)
         {
+            Camera.main.orthographicSize = 5;
             Camera.main.GetComponent<GameWinMove>().MoveWin();
             StartCoroutine(Hide());
             StartCoroutine(WinAnim());
@@ -64,7 +67,10 @@ public class LevelManager : MonoBehaviour {
         if (level!=0&&prefab!=null)
         {
             DestroyImmediate(prefab);
-            bg.transform.DOLocalMove(new Vector3(bg.transform.position.x - 10f, 0, 0), 1f);
+            if (SceneLoadManager.currentChapter >= 4)
+                StartCoroutine(ResetCamera());
+            else
+                bg.transform.DOLocalMove(new Vector3(bg.transform.position.x - 10f, 0, 0), 1f);
         }
        
         level++;
@@ -84,8 +90,8 @@ public class LevelManager : MonoBehaviour {
     //TODO增加显示效果
     IEnumerator Load()
     {
-        yield return new WaitForSeconds(1f);  
         prefab = Resources.Load<GameObject>("C"+SceneLoadManager.currentChapter.ToString()+"L"+level.ToString());
+        yield return new WaitForSeconds(1f);         
         if (prefab != null)
         {
             prefab = Instantiate(prefab);
@@ -199,5 +205,13 @@ public class LevelManager : MonoBehaviour {
             b.gameObject.SetActive(false);
         shade.gameObject.SetActive(true);
         shade.Play(Animator.StringToHash("Shade"));
+    }
+
+    IEnumerator ResetCamera()
+    {
+        Camera.main.transform.DOLocalMove(Vector3.zero, 1f);
+        Camera.main.DOOrthoSize(5f, 1f);
+        yield return new WaitForSeconds(1f);
+        bg.transform.DOLocalMove(new Vector3(bg.transform.position.x - 10f, 0, 0), 1f);
     }
  }
