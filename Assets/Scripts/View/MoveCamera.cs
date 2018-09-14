@@ -53,9 +53,21 @@ public class MoveCamera : MonoBehaviour {
     protected void Update()
     {
         if (BOnUI())
-            return;    
+            return;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+        m_Camera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * sizeFactor;
+        m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
+        m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y, yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), m_CameraOffset.z);
+        if (Input.GetMouseButtonDown(0))
+        {
+            lastSingleTouchPosition = Input.mousePosition;
+        }
+        if (Input.GetMouseButton(0))
+        {
+            MovingCamera(Input.mousePosition);
+        }
 
-#if !UNITY_EDITOR
+#elif UNITY_IPHONE || UNITY_ANDROID
         //判断触摸数量为单点触摸
         if (Input.touchCount == 1)
         {
@@ -87,18 +99,6 @@ public class MoveCamera : MonoBehaviour {
             }
 
             m_IsSingleFinger = false;
-        }       
-#else
-        m_Camera.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * sizeFactor;
-        m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
-        m_CameraOffset = new Vector3(Mathf.Clamp(m_CameraOffset.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(m_CameraOffset.y , yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), m_CameraOffset.z);
-        if (Input.GetMouseButtonDown(0))
-        {
-            lastSingleTouchPosition = Input.mousePosition;
-        }
-        if (Input.GetMouseButton(0))
-        {
-            MovingCamera(Input.mousePosition);
         }
 #endif
     }
@@ -145,11 +145,16 @@ public class MoveCamera : MonoBehaviour {
     {
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (EventSystem.current.IsPointerOverGameObject())
+        {
             return true;
+        }
 #elif UNITY_IPHONE || UNITY_ANDROID
-        if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        if (Input.touchCount > 0 && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+        {
             return true;
+        }
 #endif
+
         return false;
     }
 

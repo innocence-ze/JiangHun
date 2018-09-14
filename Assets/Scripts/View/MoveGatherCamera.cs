@@ -24,6 +24,8 @@ public class MoveGatherCamera : MoveCamera {
     {
         ChangeBoundary();
         base.Update();
+        //(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (Input.GetMouseButtonDown(0))
         {
             down = Input.mousePosition;
@@ -32,7 +34,7 @@ public class MoveGatherCamera : MoveCamera {
         if (Input.GetMouseButtonUp(0))
         {
             up = Input.mousePosition;
-            if(Vector3.Distance(down,up) < 10f)
+            if (Vector3.Distance(down, up) < 10f)
             {
                 if (!BOnUI())
                 {
@@ -45,10 +47,40 @@ public class MoveGatherCamera : MoveCamera {
             else if (!BOnUI())
             {
                 if (!(canvas.activeSelf))
-                    return;                
+                    return;
                 HideUI();
             }
         }
+#elif UNITY_IPHONE || UNITY_ANDROID
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                down = Input.GetTouch(0).position;
+
+            }
+            if (Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetTouch(0).phase == TouchPhase.Stationary)
+            {               
+                up = Input.GetTouch(0).position;
+                if (Vector3.Distance(down, up) < 10f)
+                {
+                    if (!BOnUI())
+                    {
+                        if (!hide)
+                            HideUI();
+                        else
+                            ShowUI();
+                    }
+                }
+                else if (!BOnUI())
+                {
+                    if (!(canvas.activeSelf))
+                        return;
+                    HideUI();
+                }
+            }
+        }
+#endif
     }
 
     void ChangeBoundary()
@@ -60,7 +92,7 @@ public class MoveGatherCamera : MoveCamera {
         xMin = -xMax;
         yMax = height / 2f;
         yMin = -yMax;
-        maxSize = (xMax / 16 > yMax / 9) ? yMax : 16 / 9f * xMax;
+        maxSize = (xMax / 16 > yMax / 9) ? yMax : 9f / 16 * xMax;
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin + 16 / 9f * m_Camera.orthographicSize, xMax - 16 / 9f * m_Camera.orthographicSize), Mathf.Clamp(transform.position.y, yMin + m_Camera.orthographicSize, yMax - m_Camera.orthographicSize), -10);
         m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, minSize, maxSize);
     }
