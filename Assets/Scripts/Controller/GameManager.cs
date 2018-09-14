@@ -211,12 +211,14 @@ public abstract class GameManager : MonoBehaviour {
         bool bStatic = false;
         foreach (var n in nodes)
         {
-            if (n.B_Fragile)
+            if (n!=null&&n.B_Fragile)
             {
                 n.B_Fragile = false;
                 bStatic = true;
             }
         }
+        if (nodes[0] == null || nodes[1] == null)
+            return;
         var length = Vector3.Distance(nodes[0].Position, nodes[1].Position);
         int index = Random.Range(2, 6);
         GameObject line= Resources.Load<GameObject>("Line" + index);           

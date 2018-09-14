@@ -43,7 +43,10 @@ public class MoveCamera : MonoBehaviour {
     protected void Start()
     {
         m_Camera = GetComponent<Camera>();
-        m_Camera.orthographicSize = 10f;
+        if(SceneLoadManager.currentChapter == 4|| SceneLoadManager.currentChapter == 5)
+            m_Camera.orthographicSize = 6f;
+        else
+            m_Camera.orthographicSize = 10f;
         m_CameraOffset = m_Camera.transform.position;
     }
 

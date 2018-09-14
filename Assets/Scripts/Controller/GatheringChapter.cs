@@ -56,7 +56,15 @@ public class GatheringChapter : MonoBehaviour {
                     "绝地舍出自己肉身饲虎的故事。";
                 ChangeBG("舍身饲虎");
                 break;
-            case 3: text.text = "美术不给图，策划不给文字，我木得办法";break;
+            case 3: text.text = "莫高窟第103窟此窟开凿于盛唐，塑像为释迦牟尼佛、菩萨、弟子，塑像为清" +
+                    "修及清塑。窟形为覆斗形顶，窟顶四坡绘千佛。此窟主要画有两品：妙庄严王本事品和化城喻品。" +
+                    "其中化城喻品为法华经的主要内容之一。该品主要讲述了一个富商在一向导的指引下到宝城取宝，" +
+                    "历经千辛万苦，跋山涉水，以坚忍不拔的精神冲破重重险阻到达目的地的故事。";
+                ChangeBG("化城取宝");
+                break;
+            case 4: text.text = "第四章";
+                ChangeBG("日常");
+                break;
         }
         TextMeshProUGUI[] children = gameObject.GetComponentsInChildren<TextMeshProUGUI>();
         foreach(TextMeshProUGUI t in children)

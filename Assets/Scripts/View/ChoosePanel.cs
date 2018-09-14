@@ -82,7 +82,7 @@ public class ChoosePanel : MonoBehaviour
 
     public void EndRestart()
     {
-        SceneLoadManager.LoadScene(4);
+        SceneLoadManager.LoadScene(6);
     }
 
     public void EndStop()

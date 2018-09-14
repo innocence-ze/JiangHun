@@ -36,6 +36,8 @@ public class ButtonController : MonoBehaviour {
     {
         foreach(var i in image)
         {
+            if (i.gameObject.name == "Shade")
+                continue;
             if(i.sprite != null)
                 i.DOColor(new Color(1, 1, 1, 1), 1);
             i.raycastTarget = true;

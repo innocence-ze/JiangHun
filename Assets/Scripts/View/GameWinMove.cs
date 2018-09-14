@@ -50,6 +50,7 @@ public class GameWinMove : MonoBehaviour {
     {
         if(levelManager.GetComponent<LevelManager>().prefab!=null)
             DestroyImmediate(levelManager.GetComponent<LevelManager>().prefab);
+        BG = GameObject.Find("BG");
         oldBG.transform.position = BG.transform.position;
         newBG.transform.position = BG.transform.position;
         DestroyImmediate(BG);
