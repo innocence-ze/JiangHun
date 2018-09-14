@@ -177,6 +177,29 @@ public class Node : MonoBehaviour, IComparable
         return false;
     }
 
+    void OnEnable()
+    {
+        if (bFragile)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).GetComponent<Outline>() == null)
+                    transform.GetChild(i).gameObject.AddComponent<Outline>();
+                transform.GetChild(i).gameObject.GetComponent<Outline>().color = 1;
+            }
+        }
+        else
+        {
+            if (lineList.Count == 0)
+                return;
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).GetComponent<Outline>() != null)
+                    DestroyImmediate(transform.GetChild(i).gameObject.GetComponent<Outline>());
+            }
+        }
+    }
+
     void Update()
     {
         if (bFragile)
@@ -190,6 +213,8 @@ public class Node : MonoBehaviour, IComparable
         }
         else
         {
+            if (lineList.Count == 0)
+                return;
             for (int i = 0; i < transform.childCount; i++)
             {
                 if (transform.GetChild(i).GetComponent<Outline>() != null)
