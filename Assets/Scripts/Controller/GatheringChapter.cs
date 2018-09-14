@@ -62,7 +62,7 @@ public class GatheringChapter : MonoBehaviour {
                     "历经千辛万苦，跋山涉水，以坚忍不拔的精神冲破重重险阻到达目的地的故事。";
                 ChangeBG("化城取宝");
                 break;
-            case 4: text.text = "第四章";
+            case 4: text.text = "本壁画讲述了民间对佛教的崇拜，展现了当时人们的日常生活";
                 ChangeBG("日常");
                 break;
         }
