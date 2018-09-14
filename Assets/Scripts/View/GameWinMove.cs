@@ -62,7 +62,7 @@ public class GameWinMove : MonoBehaviour {
         yield return new WaitForSeconds(0.8f);
 
         Vector3 nowPos = new Vector3(20,0,-10f);
-        Vector3 startPos = new Vector3(-30, 0, -10f);
+        Vector3 startPos = new Vector3(-20, 0, -10f);
         Sequence s = DOTween.Sequence();
         Sequence s2 = DOTween.Sequence();
         //快速回到初始点，坐标或移动时间有需求自己改
