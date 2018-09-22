@@ -18,7 +18,7 @@ public class GameWinMove : MonoBehaviour {
     private Vector3 myTarget;
     [SerializeField]
     [Header("移动间隔")]
-    private float moveDis = 10;
+    //private float moveDis = 10;
     //用于控制背景透明度
     private float i = 0;
 
