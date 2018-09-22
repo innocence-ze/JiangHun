@@ -220,7 +220,7 @@ public abstract class GameManager : MonoBehaviour {
         if (nodes[0] == null || nodes[1] == null)
             return;
         var length = Vector3.Distance(nodes[0].Position, nodes[1].Position);
-        int index = Random.Range(2, 6);
+        int index = Random.Range(2, 5);
         GameObject line= Resources.Load<GameObject>("Line" + index);           
         line = Instantiate(line, gameObject.transform);
         line.GetComponent<Line>().Init(nodes, bStatic);
@@ -324,6 +324,9 @@ public abstract class GameManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(2f);
         if(SceneLoadManager.currentChapter!=0)
-            AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("Music\\Crack4"), Camera.main.transform.position);
+        {
+
+            AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("Music/Crack"), Camera.main.transform.position);
+        }
     }
 }

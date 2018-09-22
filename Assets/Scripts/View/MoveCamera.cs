@@ -23,8 +23,8 @@ public class MoveCamera : MonoBehaviour {
     protected Vector3 m_CameraOffset;
     protected Camera m_Camera;
 
-    float sizeFactor = 0.3f;
-    float moveFactor = 0.45f;
+    float sizeFactor = 0.7f;
+    float moveFactor = 0.5f;
 
     //定义摄像机可以活动的范围
     [SerializeField]
