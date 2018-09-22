@@ -145,7 +145,7 @@ public class E_GameManager : GameManager {
         //记录步数
         var recordStep = data.EndlessStep;
         //是否为新纪录
-        var bHighScore = currentStep >= recordStep ? true : false;
+        //var bHighScore = currentStep >= recordStep ? true : false;
         //Debug.Log("当前步数：" + currentStep + "记录是：" + recordStep + "是否为新纪录:" + bHighScore);
         text.text = "当前步数：" + currentStep + "\n" + "历史纪录：" + recordStep;
     }
