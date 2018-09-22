@@ -28,14 +28,14 @@ public class GatheringPanel : MonoBehaviour {
 
     public void MoveLeft()
     {
-        gameObject.GetComponent<RectTransform>().DOLocalMove(leftPosition.position - new Vector3(960, 540, 0), 1f);
+        gameObject.GetComponent<RectTransform>().DOLocalMove(leftPosition.position - new Vector3(Screen.width / 2f, Screen.height / 2f, 0), 1f);
         rightButton.SetActive(true);
         leftButton.SetActive(false);
     }
 
     public void MoveRight()
     {
-        gameObject.GetComponent<RectTransform>().DOLocalMove(rightPosition.position - new Vector3(960, 540, 0), 1f);
+        gameObject.GetComponent<RectTransform>().DOLocalMove(rightPosition.position - new Vector3(Screen.width / 2f, Screen.height / 2f, 0), 1f);
         leftButton.SetActive(true);
         rightButton.SetActive(false);
     }
