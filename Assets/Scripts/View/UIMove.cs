@@ -27,8 +27,8 @@ public class UIMove : MonoBehaviour {
     private GameObject shade;
 
     //用于镜头缩放
-    private float scale;
-    public float aimScale;
+    private Vector2 scale;
+    public Vector2 aimScale;
     [SerializeField]
     private GameObject sand;
     [SerializeField]
@@ -51,13 +51,13 @@ public class UIMove : MonoBehaviour {
             c.sand = sand;
         }
 
-        scale = BG.GetComponentInParent<CanvasScaler>().scaleFactor;
+        scale = BG.GetComponentInParent<CanvasScaler>().referenceResolution;
 
         switch (SceneLoadManager.aimChoose)
         {
             case 1:BG.localPosition = -begin.localPosition; return;
-            case 2:BG.localPosition = -modelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; scale = aimScale; return;
-            case 3:BG.localPosition = -levelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().scaleFactor = aimScale; scale = aimScale; return;
+            case 2:BG.localPosition = -modelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().referenceResolution = aimScale; scale = aimScale; return;
+            case 3:BG.localPosition = -levelChoose.localPosition; BG.GetComponentInParent<CanvasScaler>().referenceResolution = aimScale; scale = aimScale; return;
         }
         SceneLoadManager.aimChoose = 1;
 
@@ -65,7 +65,7 @@ public class UIMove : MonoBehaviour {
 
     private void Update()
     {
-        BG.GetComponentInParent<CanvasScaler>().scaleFactor = scale;
+        BG.GetComponentInParent<CanvasScaler>().referenceResolution = scale;
     }
 
     public void MoveToModelChoose(float time)
